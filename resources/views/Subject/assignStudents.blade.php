@@ -7,7 +7,7 @@
 
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        Assign Students for {{$subject->name}} Course
+                        Assign Students for <b>{{$subject->name}}</b> Course
                     </div>
                     <div class="panel-body">
 
@@ -20,7 +20,7 @@
 
                                 <option>Select Teacher</option>
                                 @foreach($teachers as $teacher)
-                                    <option value="{{$teacher}}">{{$teacher->name}}</option>
+                                    <option value="{{$teacher->id}}">{{$teacher->name}}</option>
                                 @endforeach
                             </select>
 
@@ -29,9 +29,14 @@
 
                                 <option>Select Class</option>
                                 @foreach($classes as $class)
-                                    <option>{{$class->name}}</option>
+                                    <option value="{{$class->id}}">{{$class->name}}</option>
                                 @endforeach
                             </select>
+
+                            <!-- subject id -->
+
+                            <input type="hidden" value="{{$subject->id}}" name="subject">
+
 
                             <label class="label-info text-center center-block control-label" style="margin-top: 10px;
                             height: 20px;">Students Entry</label>

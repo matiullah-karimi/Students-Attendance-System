@@ -8,7 +8,7 @@
 
                 <div class="panel-body">
                     <a href="{{url('teachers')}}" class="btn btn-info">Teacher Entry</a>
-                    <a href="{{url('subjects')}}" class="btn btn-info">Student Entry</a>
+                    <a href="{{url('subjects')}}" class="btn btn-info">Course Entry</a>
                 </div>
             </div>
         </div>

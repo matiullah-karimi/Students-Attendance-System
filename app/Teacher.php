@@ -15,5 +15,10 @@ class Teacher extends Model
         return $this->belongsToMany('App\Subject');
     }
 
+    public function classes()
+    {
+        return $this->belongsToMany('App\Clas', 'class_teacher', 'class_id', 'teacher_id');
+    }
+
 
 }
