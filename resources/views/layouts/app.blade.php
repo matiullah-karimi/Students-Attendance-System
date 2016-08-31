@@ -44,7 +44,7 @@
 
                 <!-- Branding Image -->
                 <a class="navbar-brand" href="{{ url('/') }}">
-                    Laravel
+                    Students Attendance Management System
                 </a>
             </div>
 

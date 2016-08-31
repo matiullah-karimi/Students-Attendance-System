@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Clas;
+use App\Student;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -15,7 +17,10 @@ class studentController extends Controller
      */
     public function index()
     {
-        //
+        $students = Student::all();
+        $classes = Clas::all();
+
+        return view('students/student', compact('students', 'classes'));
     }
 
     /**
@@ -81,6 +86,17 @@ class studentController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $student = Student::find($id);
+        $student->delete();;
+
+        return redirect()->back();
+    }
+
+    public function filterStudents($id){
+
+       $class = Clas::find($id);
+        $students = $class->students;
+
+        return view('students/class-students', compact('students'));
     }
 }

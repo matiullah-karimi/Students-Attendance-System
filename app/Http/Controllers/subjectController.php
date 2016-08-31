@@ -113,8 +113,6 @@ class subjectController extends Controller
     }
 
     public function saveStudents(Request $request){
-
-
         // adding students to a class
         $class = $request->get('class');
 
@@ -128,7 +126,6 @@ class subjectController extends Controller
             $student->classes()->attach($class);
         }
 
-
         // adding subjects to a class
         $subject = $request->get('subject');
         $classModel = Clas::find($class);
@@ -137,8 +134,6 @@ class subjectController extends Controller
         // adding teachers to a class
         $teacher = $request->get('teacher');
         $classModel->teachers()->attach($teacher);
-
-
 
 
         return redirect()->back();
