@@ -9,6 +9,7 @@ use App\Clas;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
+use Illuminate\Support\Facades\Auth;
 
 class subjectController extends Controller
 {
@@ -17,8 +18,18 @@ class subjectController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+    public function __construct()
+    {
+
+        $this->middleware('auth');
+    }
+
     public function index()
     {
+        if (Auth::user()->roll != 1){
+            return redirect()->back();
+        }
         $subjects = Subject::all();
         return view('Subject/subject', compact('subjects'));
     }
@@ -134,6 +145,9 @@ class subjectController extends Controller
         // adding teachers to a class
         $teacher = $request->get('teacher');
         $classModel->teachers()->attach($teacher);
+
+        $subjectT = Subject::find($subject);
+        $subjectT->teachers()->attach($teacher);
 
 
         return redirect()->back();

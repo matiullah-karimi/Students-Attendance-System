@@ -46,8 +46,8 @@
                                     <div class="input_fields_wrap form-group margin">
                                         <button class="add_field_button btn btn-success">Add More Fields</button>
                                         <div class="marginTop">
-                                            <input type="text" name="name[0][]" class="name" placeholder="name" data-num ="0">
-                                            <input type="text" name="fname[0][]" class="fname" placeholder="father name" data-num ="0">
+                                            <input type="text" name="name[0][]" class="name" placeholder="name" data-num ="0" required>
+                                            <input type="text" name="fname[0][]" class="fname" placeholder="father name" data-num ="0" required>
                                             <a class="close marginleft" href="#" aria-hidden="true"></a>
 
                                         </div>

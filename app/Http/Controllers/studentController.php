@@ -7,6 +7,8 @@ use App\Student;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
+use Illuminate\Http\Response;
+use Illuminate\Support\Facades\Auth;
 
 class studentController extends Controller
 {
@@ -17,6 +19,9 @@ class studentController extends Controller
      */
     public function index()
     {
+        if (Auth::user()->role != 1) {
+            return Response::HTTP_FORBIDDEN;
+        }
         $students = Student::all();
         $classes = Clas::all();
 
@@ -86,10 +91,13 @@ class studentController extends Controller
      */
     public function destroy($id)
     {
+
+
         $student = Student::find($id);
         $student->delete();;
 
         return redirect()->back();
+
     }
 
     public function filterStudents($id){
