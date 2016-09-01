@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Foundation\Auth\User;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -13,9 +14,17 @@ class userController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     public function index()
     {
-        //
+
+        $teachers = User::all();
+
+        return view('teacher/teacher')->with('teachers',$teachers);
     }
 
     /**
@@ -25,7 +34,7 @@ class userController extends Controller
      */
     public function create()
     {
-        //
+        return view('teacher/addTeacher');
     }
 
     /**
@@ -36,7 +45,14 @@ class userController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $teacher = new User;
+
+        $teacher->name = $request->get('name');
+        $teacher->email = $request->get('email');
+        $teacher->password = $request->get('password');
+        $teacher->save();
+
+        return redirect('users');
     }
 
     /**
@@ -58,7 +74,9 @@ class userController extends Controller
      */
     public function edit($id)
     {
-        //
+        $teacher = User::find($id);
+
+        return view('teacher/editTeacher', compact('teacher'));
     }
 
     /**
@@ -70,7 +88,15 @@ class userController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+
+        $teacher = User::find($id);
+        $teacher->name = $request->get('name');
+        $teacher->email = $request->get('email');
+        $teacher->password = $request->get('password');
+
+        $teacher->update();
+
+        return redirect('users');
     }
 
     /**
@@ -81,6 +107,16 @@ class userController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $teacher = User::find($id);
+        $teacher->delete();
+
+        return redirect('users');
+    }
+
+    public function destroyUser($id){
+        $teacher = User::find($id);
+        $teacher->delete();
+
+        return redirect('User has been deleted successfully');
     }
 }

@@ -8,7 +8,7 @@
                     <div class="panel-heading">Dashboard</div>
 
                     <div class="panel-body">
-                        <form action="{{url('teachers/'.$teacher->id)}}" method="post">
+                        <form action="{{url('users/'.$teacher->id)}}" method="post">
                             <input type="hidden" name="_method" value="PUT">
                             <input type="hidden" name="_token" value="{{csrf_token()}}">
 

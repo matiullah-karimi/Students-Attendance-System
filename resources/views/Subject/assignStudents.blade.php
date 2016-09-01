@@ -16,7 +16,7 @@
                             <input type="hidden" name="_token" value="{{csrf_token()}}">
 
                             <!-- teachers list -->
-                            <select class="form-control" name="teacher">
+                            <select class="form-control marginTop" name="teacher" >
 
                                 <option>Select Teacher</option>
                                 @foreach($teachers as $teacher)
@@ -25,7 +25,7 @@
                             </select>
 
                             <!-- classes list -->
-                            <select class="form-control" name="class">
+                            <select class="form-control marginTop" name="class">
 
                                 <option>Select Class</option>
                                 @foreach($classes as $class)
@@ -38,8 +38,6 @@
                             <input type="hidden" value="{{$subject->id}}" name="subject">
 
 
-                            <label class="label-info text-center center-block control-label" style="margin-top: 10px;
-                            height: 20px;">Students Entry</label>
 
                             <div class="row" style="margin-top: 5px;
                             padding:5px; border: lightseagreen">

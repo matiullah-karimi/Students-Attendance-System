@@ -8,7 +8,7 @@
                     <div class="panel-heading">Add Teacher</div>
 
                     <div class="panel-body">
-                        <form method="post" action="{{ url('teachers') }}">
+                        <form method="post" action="{{ url('users') }}">
                             <input type="hidden" value="{{csrf_token()}}" name="_token">
                             <div class="form-group">
                                 <label class="control-label">Name</label>

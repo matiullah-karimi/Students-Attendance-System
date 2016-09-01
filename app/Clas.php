@@ -25,6 +25,6 @@ class Clas extends Model
 
     public function teachers()
     {
-        return $this->belongsToMany('App\Teacher', 'class_teacher', 'class_id', 'teacher_id');
+        return $this->belongsToMany('App\User', 'class_user', 'class_id', 'user_id');
     }
 }

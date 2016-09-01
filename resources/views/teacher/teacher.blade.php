@@ -9,7 +9,7 @@
                     <div class="panel-heading">Teachers</div>
 
                     <div class="panel-body">
-                        <a href="{{url('teachers/create')}}" class="btn btn-lg">Add Teacher</a>
+                        <a href="{{url('users/create')}}" class="btn btn-lg">Add Teacher</a>
 
                         <table class="table table-bordered table-responsive">
                             <thead>
@@ -25,10 +25,10 @@
 
                                 <td>{{$teacher->name}}</td>
                                 <td>{{$teacher->email}}</td>
-                                    <td> <a href="{{url('teachers/'.$teacher->id.'/edit')}}"  value="Edit" class="btn btn-info btn-group-sm "> Edit</a> </td>
+                                    <td> <a href="{{url('users/'.$teacher->id.'/edit')}}"  value="Edit" class="btn btn-info btn-group-sm "> Edit</a> </td>
 
                                     <td>
-                                        <form action="{{url('teachers/'.$teacher->id)}}" method="post" id="{{$teacher->id}}">
+                                        <form action="{{url('users/'.$teacher->id)}}" method="post" id="{{$teacher->id}}">
                                             <input type="hidden" name="_method" value="DELETE">
                                             <input type="hidden" name="_token" value="{{csrf_token()}}">
                                             <div class="form-group">

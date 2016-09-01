@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Student;
 use App\Subject;
-use App\Teacher;
+use App\User;
 use App\Clas;
 use Illuminate\Http\Request;
 
@@ -105,7 +105,7 @@ class subjectController extends Controller
 
     public function assignStd($id){
 
-        $teachers = Teacher::all();
+        $teachers = User::all();
         $classes = Clas::all();
         $subject = Subject::find($id);
 
