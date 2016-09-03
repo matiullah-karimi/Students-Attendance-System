@@ -3,7 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests;
+use App\Student;
+use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+
 
 class HomeController extends Controller
 {
@@ -24,6 +28,18 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $teacherId = Auth::user()->id;
+
+        $teacher = User::find($teacherId);
+
+        $students = Student::all();
+
+        return view('home', compact('teacher', 'students'));
+    }
+
+    public function storeResult(Request $request){
+
+        dd($request->ge);
+
     }
 }

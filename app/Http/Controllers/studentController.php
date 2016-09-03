@@ -19,6 +19,8 @@ class studentController extends Controller
      */
     public function index()
     {
+
+
         if (Auth::user()->role != 1) {
             return Response::HTTP_FORBIDDEN;
         }
@@ -106,5 +108,13 @@ class studentController extends Controller
         $students = $class->students;
 
         return view('students/class-students', compact('students'));
+    }
+
+    public function filterStudents2($id){
+
+        $class = Clas::find($id);
+        $students = $class->students;
+
+        return view('students/class-students2', compact('students'));
     }
 }

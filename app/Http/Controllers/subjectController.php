@@ -27,9 +27,9 @@ class subjectController extends Controller
 
     public function index()
     {
-        if (Auth::user()->roll != 1){
-            return redirect()->back();
-        }
+//        if (Auth::user()->roll != 1){
+//            return redirect()->back();
+//        }
         $subjects = Subject::all();
         return view('Subject/subject', compact('subjects'));
     }
