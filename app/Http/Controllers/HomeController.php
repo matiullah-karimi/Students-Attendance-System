@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Attendance;
 use App\Http\Requests;
 use App\Student;
 use App\User;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -39,7 +41,39 @@ class HomeController extends Controller
 
     public function storeResult(Request $request){
 
-        dd($request->ge);
+        $teacherId = Auth::user()->id;
+        $subjectId = $request->get('subject');
+        $classId = $request->get('class');
+
+        $attendance = new Attendance();
+
+        $attendance->subject_id = $subjectId;
+        $attendance->user_id = $teacherId;
+        $attendance->class_id = $classId;
+        $attendance->date = Carbon::now();
+
+        $attendance->save();
+
+
+
+
+        $student_status = $request->get('status');
+
+        foreach ($student_status as $key => $value){
+
+            $student =  Student::find($key);
+            if($value == 'on'){
+                $value = 1;
+            }else{
+                $value = 0;
+            }
+            $attendance->students()->attach($student->id, ['status' => $value]);
+
+        }
+
+
+        return redirect()->back();
+
 
     }
 }

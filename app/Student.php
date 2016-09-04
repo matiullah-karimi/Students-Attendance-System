@@ -9,13 +9,13 @@ class Student extends Model
     protected $fillable = ['name','fname'];
 
 
-    public function students(){
-
-        return $this->belongsToMany('App\Clas');
-    }
 
     public function classes(){
 
       return $this->belongsToMany('App\Clas', 'class_student', 'student_id', 'class_id');
+    }
+
+    public function attendances(){
+        return $this->belongsToMany('App\Attendance');
     }
 }

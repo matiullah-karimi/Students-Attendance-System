@@ -9,26 +9,31 @@
                 <div class="panel-body">
                     @if(Auth::user()->role != 1)
 
-                        <select name="class">
-                            <option>Select Class</option>
-                            @foreach($teacher->classes as $class)
-                                <option value="{{$class->id}}" id="classes" >{{$class->name}}</option>
+                        <form action="{{ url('storeResult') }}" method="POST">
+                            <input type="hidden" name="_token" value="{{csrf_token()}}">
 
-                            @endforeach
-                        </select>
+                            <select name="class">
+                                <option>Select Class</option>
+                                @foreach($teacher->classes as $class)
+                                    <option value="{{$class->id}}" id="classes" >{{$class->name}}</option>
 
-                        <select name="subject">
-                            <option>Select Subject</option>
-                        @foreach($teacher->subjects as $subject)
-                            <option value="{{$subject->id}}"> {{$subject->name}} </option>
                                 @endforeach
-                        </select>
-                    <div id="class-students">
+                            </select>
+
+                            <select name="subject">
+                                <option>Select Subject</option>
+                            @foreach($teacher->subjects as $subject)
+                                <option value="{{$subject->id}}"> {{$subject->name}} </option>
+                                    @endforeach
+                            </select>
+                            <div id="class-students">
 
 
 
 
-                    </div>
+                             </div>
+
+                        </form>
 
                     @else
                     <a href="{{url('users')}}" class="btn btn-info">Teacher Entry</a>

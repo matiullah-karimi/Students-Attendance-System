@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateStudentAttsTable extends Migration
+class CreateAttendanceStudentTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,16 +12,15 @@ class CreateStudentAttsTable extends Migration
      */
     public function up()
     {
-        Schema::create('studentAtts', function (Blueprint $table) {
+        Schema::create('attendance_student', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('student_id')->unsigned()->nullable();
-            $table->foreign('student_id')->references('id')->on('students')->onDelete('cascade');
-
             $table->integer('attendance_id')->unsigned()->nullable();
-            $table->foreign('attendance_id')->references('id')->on('attendances')->onDelete('cascade');
-
-            $table->tinyInteger('status');
+            $table->integer('student_id')->unsigned()->nullable();
             $table->timestamps();
+            $table->tinyInteger('status');
+
+            $table->foreign('attendance_id')->references('id')->on('attendances')->onDelete('cascade');
+            $table->foreign('student_id')->references('id')->on('students')->onDelete('cascade');
         });
     }
 
@@ -32,6 +31,6 @@ class CreateStudentAttsTable extends Migration
      */
     public function down()
     {
-        Schema::drop('studentAtts');
+        Schema::drop('attendance_student');
     }
 }

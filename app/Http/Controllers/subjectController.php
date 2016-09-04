@@ -116,7 +116,7 @@ class subjectController extends Controller
 
     public function assignStd($id){
 
-        $teachers = User::all();
+        $teachers = User::where('role', '=' , 0)->get();
         $classes = Clas::all();
         $subject = Subject::find($id);
 

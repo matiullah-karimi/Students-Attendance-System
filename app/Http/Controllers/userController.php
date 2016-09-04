@@ -6,6 +6,7 @@ use Illuminate\Foundation\Auth\User;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
+use Illuminate\Support\Facades\Hash;
 
 class userController extends Controller
 {
@@ -22,7 +23,7 @@ class userController extends Controller
     public function index()
     {
 
-        $teachers = User::all();
+        $teachers = User::where('role', '=', 0)->get();
 
         return view('teacher/teacher')->with('teachers',$teachers);
     }
@@ -49,7 +50,7 @@ class userController extends Controller
 
         $teacher->name = $request->get('name');
         $teacher->email = $request->get('email');
-        $teacher->password = $request->get('password');
+        $teacher->password = Hash::make($request->get('password'));
         $teacher->save();
 
         return redirect('users');
@@ -92,7 +93,7 @@ class userController extends Controller
         $teacher = User::find($id);
         $teacher->name = $request->get('name');
         $teacher->email = $request->get('email');
-        $teacher->password = $request->get('password');
+        $teacher->password = Hash::make($request->get('password'));
 
         $teacher->update();
 

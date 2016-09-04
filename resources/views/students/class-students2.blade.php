@@ -1,5 +1,3 @@
-<form action="{{ url('storeResult') }}" method="POST">
-    <input type="hidden" name="_token" value="{{csrf_token()}}">
 
 <table class="table table-responsive table-bordered marginTop" id="students_table">
     <thead>
@@ -13,10 +11,10 @@
     @foreach($students as $student)
         <tr>
 
-            <td>{{$student->name}} <input type="hidden" value="{{$student->id}}" name="id[{{0}}][]"></td>
+            <td>{{$student->name}}</td>
             <td>{{$student->fname}}</td>
-            <td><input type="checkbox" name="status[{{0}}][]" checked class="form-control"></td>
-
+            <td><input type="hidden" name="status[{{$student->id}}]" value="off" class="form-control"></td>
+            <td><input type="checkbox" name="status[{{$student->id}}]" value="on" checked class="form-control"></td>
         </tr>
 
     @endforeach
@@ -26,4 +24,3 @@
 </table>
     <input type="submit" value="Submit" class="btn btn-success">
 
-</form>
