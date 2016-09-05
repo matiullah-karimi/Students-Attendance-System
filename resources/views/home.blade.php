@@ -41,6 +41,8 @@
                     <a href="{{url('students')}}" class="btn btn-info">Students</a>
                     @endif
 
+                    <a href="{{url('student/attendance')}}">View Students Attendance</a>
+
                 </div>
             </div>
         </div>

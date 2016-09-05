@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Attendance;
 use App\Clas;
 use App\Student;
+use App\Subject;
+use App\User;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -116,5 +119,20 @@ class studentController extends Controller
         $students = $class->students;
 
         return view('students/class-students2', compact('students'));
+    }
+
+    public function studentsAttendance(){
+
+
+        $classes = Clas::all();
+        $subjects = Subject::all();
+
+        $teacher_id = Auth::user()->id;
+        $teacher = User::find($teacher_id);
+
+        $attendances = Attendance::all();
+        $students = Student::all();
+
+        return view('students/students-attendance', compact('attendances', 'students', 'subjects', 'classes', 'teacher'));
     }
 }
