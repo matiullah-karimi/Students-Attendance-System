@@ -2,8 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="53446fad-7f81-4682-9169-752112a5b57f" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/studentController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/studentController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/students/students-attendance.blade.php" afterPath="$PROJECT_DIR$/resources/views/students/students-attendance.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Attendance.php" afterPath="$PROJECT_DIR$/app/Attendance.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Clas.php" afterPath="$PROJECT_DIR$/app/Clas.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Subject.php" afterPath="$PROJECT_DIR$/app/Subject.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/User.php" afterPath="$PROJECT_DIR$/app/User.php" />
     </list>
     <ignored path="AttendanceSystem.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -45,10 +48,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="studentController.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="studentController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/studentController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.6830509">
+            <state vertical-scroll-proportion="-15.5">
               <caret line="137" column="64" selection-start-line="137" selection-start-column="64" selection-end-line="137" selection-end-column="64" />
               <folding>
                 <marker date="1473188624740" expanded="false" signature="44:48" placeholder="..." />
@@ -58,11 +61,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="students-attendances-filter.blade.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="students-attendances-filter.blade.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/views/students/students-attendances-filter.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-17.653847">
-              <caret line="27" column="12" selection-start-line="27" selection-start-column="12" selection-end-line="27" selection-end-column="12" />
+            <state vertical-scroll-proportion="0.5762712">
+              <caret line="20" column="58" selection-start-line="20" selection-start-column="58" selection-end-line="20" selection-end-column="58" />
               <folding />
             </state>
           </provider>
@@ -125,18 +128,15 @@
         <option value="$PROJECT_DIR$/app/Teacher.php" />
         <option value="$PROJECT_DIR$/database/migrations/2016_09_01_045409_create_subject_user_table.php" />
         <option value="$PROJECT_DIR$/database/migrations/2016_09_01_045813_create_class_user_table.php" />
-        <option value="$PROJECT_DIR$/app/Subject.php" />
         <option value="$PROJECT_DIR$/resources/views/teacherLoginModal.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/students/class-students.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/teacher/addTeacher.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/teacher/teacher.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/teacher/editTeacher.blade.php" />
-        <option value="$PROJECT_DIR$/app/Clas.php" />
         <option value="$PROJECT_DIR$/resources/views/students/student.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/layouts/app.blade.php" />
         <option value="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Foundation/Auth/AuthenticatesUsers.php" />
         <option value="$PROJECT_DIR$/resources/views/Subject/assignStudents.blade.php" />
-        <option value="$PROJECT_DIR$/app/User.php" />
         <option value="$PROJECT_DIR$/composer.json" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Auth/AuthController.php" />
         <option value="$PROJECT_DIR$/resources/views/students/class-students2.blade.php" />
@@ -151,12 +151,15 @@
         <option value="$PROJECT_DIR$/database/migrations/2016_09_05_094958_make_name_column_unique_in_subjects.php" />
         <option value="$PROJECT_DIR$/resources/views/home.blade.php" />
         <option value="$PROJECT_DIR$/.env" />
-        <option value="$PROJECT_DIR$/app/Attendance.php" />
         <option value="$PROJECT_DIR$/app/Student.php" />
-        <option value="$PROJECT_DIR$/resources/views/students/students-attendances-filter.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/routes.php" />
         <option value="$PROJECT_DIR$/resources/views/students/students-attendance.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/studentController.php" />
+        <option value="$PROJECT_DIR$/resources/views/students/students-attendances-filter.blade.php" />
+        <option value="$PROJECT_DIR$/app/Subject.php" />
+        <option value="$PROJECT_DIR$/app/User.php" />
+        <option value="$PROJECT_DIR$/app/Clas.php" />
+        <option value="$PROJECT_DIR$/app/Attendance.php" />
       </list>
     </option>
   </component>
@@ -606,13 +609,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Subject.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.29220778">
-          <caret line="12" column="22" selection-start-line="12" selection-start-column="22" selection-end-line="12" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.3409091">
@@ -624,13 +620,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-12.5">
           <caret line="21" column="85" selection-start-line="21" selection-start-column="85" selection-end-line="21" selection-end-column="85" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/User.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7548701">
-          <caret line="31" column="25" selection-start-line="31" selection-start-column="25" selection-end-line="31" selection-end-column="25" />
         </state>
       </provider>
     </entry>
@@ -680,13 +669,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-11.291667">
           <caret line="31" column="45" selection-start-line="31" selection-start-column="45" selection-end-line="31" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Clas.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.25">
-          <caret line="10" column="33" selection-start-line="10" selection-start-column="33" selection-end-line="10" selection-end-column="33" />
         </state>
       </provider>
     </entry>
@@ -802,14 +784,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Attendance.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3457627">
-          <caret line="12" column="43" selection-start-line="12" selection-start-column="43" selection-end-line="12" selection-end-column="43" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Student.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.5186441">
@@ -834,14 +808,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/students/students-attendances-filter.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-17.653847">
-          <caret line="27" column="12" selection-start-line="27" selection-start-column="12" selection-end-line="27" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-9.807693">
@@ -860,12 +826,52 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/studentController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6830509">
+        <state vertical-scroll-proportion="-15.5">
           <caret line="137" column="64" selection-start-line="137" selection-start-column="64" selection-end-line="137" selection-end-column="64" />
           <folding>
             <marker date="1473188624740" expanded="false" signature="44:48" placeholder="..." />
             <marker date="1473188624740" expanded="true" signature="2624:2632" placeholder="..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Clas.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.9220339">
+          <caret line="32" column="5" selection-start-line="32" selection-start-column="5" selection-end-line="32" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/User.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.94237286">
+          <caret line="38" column="5" selection-start-line="38" selection-start-column="5" selection-end-line="38" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Subject.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6338983">
+          <caret line="22" column="5" selection-start-line="20" selection-start-column="4" selection-end-line="22" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Attendance.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.66271186">
+          <caret line="23" column="24" selection-start-line="23" selection-start-column="24" selection-end-line="23" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/students/students-attendances-filter.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5762712">
+          <caret line="20" column="58" selection-start-line="20" selection-start-column="58" selection-end-line="20" selection-end-column="58" />
+          <folding />
         </state>
       </provider>
     </entry>
