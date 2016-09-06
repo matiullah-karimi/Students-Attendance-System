@@ -2,13 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="53446fad-7f81-4682-9169-752112a5b57f" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/students/students-attendance.blade.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/students/students-attendances-filter.blade.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Attendance.php" afterPath="$PROJECT_DIR$/app/Attendance.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/studentController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/studentController.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/routes.php" afterPath="$PROJECT_DIR$/app/Http/routes.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database/migrations/2014_08_20_111516_create_subjects_table.php" afterPath="$PROJECT_DIR$/database/migrations/2014_08_20_111516_create_subjects_table.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database/migrations/2014_08_20_111850_create_classes_table.php" afterPath="$PROJECT_DIR$/database/migrations/2014_08_20_111850_create_classes_table.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/home.blade.php" afterPath="$PROJECT_DIR$/resources/views/home.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Student.php" afterPath="$PROJECT_DIR$/app/Student.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/students/students-attendance.blade.php" afterPath="$PROJECT_DIR$/resources/views/students/students-attendance.blade.php" />
     </list>
     <ignored path="AttendanceSystem.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -30,11 +30,64 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="students-attendance.blade.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="students-attendance.blade.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/students/students-attendance.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.7305195">
-              <caret line="30" column="15" selection-start-line="30" selection-start-column="15" selection-end-line="30" selection-end-column="15" />
+            <state vertical-scroll-proportion="-11.576923">
+              <caret line="37" column="25" selection-start-line="37" selection-start-column="25" selection-end-line="37" selection-end-column="25" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="routes.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.43220338">
+              <caret line="15" column="23" selection-start-line="15" selection-start-column="23" selection-end-line="15" selection-end-column="23" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="studentController.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/studentController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-16.807692">
+              <caret line="140" column="73" selection-start-line="140" selection-start-column="73" selection-end-line="140" selection-end-column="73" />
+              <folding>
+                <marker date="1473186917912" expanded="false" signature="44:48" placeholder="..." />
+                <marker date="1473186917912" expanded="true" signature="2586:2594" placeholder="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="students-attendances-filter.blade.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/students/students-attendances-filter.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-17.653847">
+              <caret line="27" column="12" selection-start-line="27" selection-start-column="12" selection-end-line="27" selection-end-column="12" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="student.blade.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/students/student.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-6.5">
+              <caret line="53" column="0" selection-start-line="53" selection-start-column="0" selection-end-line="73" selection-end-column="15" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="home.blade.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/home.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-6.423077">
+              <caret line="17" column="52" selection-start-line="17" selection-start-column="52" selection-end-line="17" selection-end-column="52" />
               <folding />
             </state>
           </provider>
@@ -43,32 +96,8 @@
       <file leaf-file-name="HomeController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/HomeController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-25.791666">
-              <caret line="63" column="44" selection-start-line="63" selection-start-column="44" selection-end-line="63" selection-end-column="44" />
-              <folding>
-                <element signature="e#40#59#0#PHP" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="studentController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/studentController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-18.791666">
-              <caret line="130" column="42" selection-start-line="130" selection-start-column="42" selection-end-line="130" selection-end-column="42" />
-              <folding>
-                <element signature="e#40#59#0#PHP" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="home.blade.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/home.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-5.4166665">
-              <caret line="11" column="24" selection-start-line="11" selection-start-column="24" selection-end-line="35" selection-end-column="31" />
+            <state vertical-scroll-proportion="-42.23077">
+              <caret line="74" column="34" selection-start-line="74" selection-start-column="34" selection-end-line="74" selection-end-column="34" />
               <folding />
             </state>
           </provider>
@@ -82,9 +111,7 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/database/migrations/2016_08_20_112007_create_attendances_table.php" />
         <option value="$PROJECT_DIR$/database/migrations/2016_08_20_112530_create_class_student_table.php" />
-        <option value="$PROJECT_DIR$/.env" />
         <option value="$PROJECT_DIR$/database/migrations/2016_08_20_114426_create_subject_teacher_table.php" />
         <option value="$PROJECT_DIR$/database/migrations/2016_08_20_113539_create_class_student_table.php" />
         <option value="$PROJECT_DIR$/database/migrations/2016_08_20_072217_create_class_subject_table.php" />
@@ -117,9 +144,7 @@
         <option value="$PROJECT_DIR$/app/User.php" />
         <option value="$PROJECT_DIR$/composer.json" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Auth/AuthController.php" />
-        <option value="$PROJECT_DIR$/app/Student.php" />
         <option value="$PROJECT_DIR$/resources/views/students/class-students2.blade.php" />
-        <option value="$PROJECT_DIR$/app/Attendance.php" />
         <option value="$PROJECT_DIR$/database/migrations/2016_09_04_091252_create_attendance_student_table.php" />
         <option value="$PROJECT_DIR$/database/migrations/2016_08_20_072001_create_attendances_table.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/subjectController.php" />
@@ -130,9 +155,13 @@
         <option value="$PROJECT_DIR$/database/migrations/2014_08_20_111516_create_subjects_table.php" />
         <option value="$PROJECT_DIR$/database/migrations/2016_09_05_094958_make_name_column_unique_in_subjects.php" />
         <option value="$PROJECT_DIR$/resources/views/home.blade.php" />
-        <option value="$PROJECT_DIR$/app/Http/routes.php" />
+        <option value="$PROJECT_DIR$/.env" />
+        <option value="$PROJECT_DIR$/app/Attendance.php" />
+        <option value="$PROJECT_DIR$/app/Student.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/studentController.php" />
+        <option value="$PROJECT_DIR$/resources/views/students/students-attendances-filter.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/students/students-attendance.blade.php" />
+        <option value="$PROJECT_DIR$/app/Http/routes.php" />
       </list>
     </option>
   </component>
@@ -153,10 +182,10 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="65" />
-    <option name="y" value="-4" />
-    <option name="width" value="1301" />
-    <option name="height" value="772" />
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1382" />
+    <option name="height" value="754" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -197,7 +226,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="AttendanceSystem" />
+              <option name="myItemId" value="Students-Attendance-System" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -207,7 +236,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="AttendanceSystem" />
+              <option name="myItemId" value="Students-Attendance-System" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -225,7 +254,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="AttendanceSystem" />
+              <option name="myItemId" value="Students-Attendance-System" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -247,29 +276,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="AttendanceSystem" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="resources" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Subject" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="AttendanceSystem" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="AttendanceSystem" />
+              <option name="myItemId" value="Students-Attendance-System" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -291,29 +298,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="AttendanceSystem" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="resources" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="layouts" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="AttendanceSystem" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="AttendanceSystem" />
+              <option name="myItemId" value="Students-Attendance-System" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -327,7 +312,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="AttendanceSystem" />
+              <option name="myItemId" value="Students-Attendance-System" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -341,7 +326,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="AttendanceSystem" />
+              <option name="myItemId" value="Students-Attendance-System" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -359,7 +344,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="AttendanceSystem" />
+              <option name="myItemId" value="Students-Attendance-System" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -384,7 +369,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="js-jscs-nodeInterpreter" value="/usr/bin/node" />
-    <property name="SearchEverywhereHistoryKey" value="Homecon&#9;FILE&#9;file:///home/ahmadjavidsapand/Desktop/Development/AttendanceSystem/app/Http/Controllers/HomeController.php&#10;home.blad&#9;FILE&#9;file:///home/ahmadjavidsapand/Desktop/Development/AttendanceSystem/resources/views/home.blade.php&#10;routes&#9;FILE&#9;file:///home/ahmadjavidsapand/Desktop/Development/AttendanceSystem/app/Http/routes.php&#10;home.b&#9;FILE&#9;file:///home/ahmadjavidsapand/Desktop/Development/AttendanceSystem/resources/views/home.blade.php&#10;home&#9;FILE&#9;file:///home/ahmadjavidsapand/Desktop/Development/AttendanceSystem/app/Http/Controllers/HomeController.php&#10;Studen&#9;null&#9;null&#10;homecon&#9;FILE&#9;file:///home/ahmadjavidsapand/Desktop/Development/AttendanceSystem/app/Http/Controllers/HomeController.php&#10;rout&#9;FILE&#9;file:///home/ahmadjavidsapand/Desktop/Development/AttendanceSystem/app/Http/routes.php&#10;Cl&#9;FILE&#9;file:///home/ahmadjavidsapand/Desktop/Development/AttendanceSystem/app/Clas.php&#10;subjectcon&#9;FILE&#9;file:///home/ahmadjavidsapand/Desktop/Development/AttendanceSystem/app/Http/Controllers/subjectController.php&#10;assi&#9;FILE&#9;file:///home/ahmadjavidsapand/Desktop/Development/AttendanceSystem/resources/views/Subject/assignStudents.blade.php&#10;subjec&#9;FILE&#9;file:///home/ahmadjavidsapand/Desktop/Development/AttendanceSystem/app/Http/Controllers/subjectController.php&#10;app&#9;FILE&#9;file:///home/ahmadjavidsapand/Desktop/Development/AttendanceSystem/resources/views/layouts/app.blade.php&#10;app.b&#9;FILE&#9;file:///home/ahmadjavidsapand/Desktop/Development/AttendanceSystem/resources/views/layouts/app.blade.php&#10;custo&#9;FILE&#9;file:///home/ahmadjavidsapand/Desktop/Development/AttendanceSystem/public/css/custom.css&#10;Clas&#9;null&#9;null&#10;createstudents&#9;FILE&#9;file:///home/ahmadjavidsapand/Desktop/Development/AttendanceSystem/database/migrations/2016_08_20_111801_create_studentss_table.php&#10;createstud&#9;FILE&#9;file:///home/ahmadjavidsapand/Desktop/Development/AttendanceSystem/database/migrations/2016_08_20_113539_create_class_student_table.php&#10;route&#9;FILE&#9;file:///home/ahmadjavidsapand/Desktop/Development/AttendanceSystem/app/Http/routes.php&#10;delete&#9;FILE&#9;file:///home/ahmadjavidsapand/Desktop/Development/AttendanceSystem/resources/views/deleteModalConfirmation.blade.php&#10;cus&#9;FILE&#9;file:///home/ahmadjavidsapand/Desktop/Development/AttendanceSystem/public/css/custom.css&#10;dele&#9;FILE&#9;file:///home/ahmadjavidsapand/Desktop/Development/AttendanceSystem/resources/views/deleteModalConfirmation.blade.php&#10;Student&#9;null&#9;null&#10;app.&#9;FILE&#9;file:///home/ahmadjavidsapand/Desktop/Development/AttendanceSystem/resources/views/layouts/app.blade.php&#10;app.bl&#9;FILE&#9;file:///home/ahmadjavidsapand/Desktop/Development/AttendanceSystem/resources/views/layouts/app.blade.php&#10;Subject&#9;null&#9;null&#10;teacher&#9;FILE&#9;file:///home/ahmadjavidsapand/Desktop/Development/AttendanceSystem/app/Http/Controllers/teacherController.php&#10;subjectCon&#9;FILE&#9;file:///home/ahmadjavidsapand/Desktop/Development/AttendanceSystem/app/Http/Controllers/subjectController.php&#10;subjectcoon&#9;null&#9;null&#10;teachercon&#9;FILE&#9;file:///home/ahmadjavidsapand/Desktop/Development/AttendanceSystem/app/Http/Controllers/teacherController.php&#10;teachercont&#9;FILE&#9;file:///home/ahmadjavidsapand/Desktop/Development/AttendanceSystem/app/Http/Controllers/teacherController.php&#10;teacherc&#9;null&#9;null" />
+    <property name="SearchEverywhereHistoryKey" value="route&#9;FILE&#9;file://C:/xampp/htdocs/Students-Attendance-System/app/Http/routes.php&#10;routes&#9;FILE&#9;file://C:/xampp/htdocs/Students-Attendance-System/app/Http/routes.php&#10;Homecon&#9;FILE&#9;file:///home/ahmadjavidsapand/Desktop/Development/AttendanceSystem/app/Http/Controllers/HomeController.php&#10;home.blad&#9;FILE&#9;file:///home/ahmadjavidsapand/Desktop/Development/AttendanceSystem/resources/views/home.blade.php&#10;home.b&#9;FILE&#9;file:///home/ahmadjavidsapand/Desktop/Development/AttendanceSystem/resources/views/home.blade.php&#10;home&#9;FILE&#9;file:///home/ahmadjavidsapand/Desktop/Development/AttendanceSystem/app/Http/Controllers/HomeController.php&#10;Studen&#9;null&#9;null&#10;homecon&#9;FILE&#9;file:///home/ahmadjavidsapand/Desktop/Development/AttendanceSystem/app/Http/Controllers/HomeController.php&#10;rout&#9;FILE&#9;file:///home/ahmadjavidsapand/Desktop/Development/AttendanceSystem/app/Http/routes.php&#10;Cl&#9;FILE&#9;file:///home/ahmadjavidsapand/Desktop/Development/AttendanceSystem/app/Clas.php&#10;subjectcon&#9;FILE&#9;file:///home/ahmadjavidsapand/Desktop/Development/AttendanceSystem/app/Http/Controllers/subjectController.php&#10;assi&#9;FILE&#9;file:///home/ahmadjavidsapand/Desktop/Development/AttendanceSystem/resources/views/Subject/assignStudents.blade.php&#10;subjec&#9;FILE&#9;file:///home/ahmadjavidsapand/Desktop/Development/AttendanceSystem/app/Http/Controllers/subjectController.php&#10;app&#9;FILE&#9;file:///home/ahmadjavidsapand/Desktop/Development/AttendanceSystem/resources/views/layouts/app.blade.php&#10;app.b&#9;FILE&#9;file:///home/ahmadjavidsapand/Desktop/Development/AttendanceSystem/resources/views/layouts/app.blade.php&#10;custo&#9;FILE&#9;file:///home/ahmadjavidsapand/Desktop/Development/AttendanceSystem/public/css/custom.css&#10;Clas&#9;null&#9;null&#10;createstudents&#9;FILE&#9;file:///home/ahmadjavidsapand/Desktop/Development/AttendanceSystem/database/migrations/2016_08_20_111801_create_studentss_table.php&#10;createstud&#9;FILE&#9;file:///home/ahmadjavidsapand/Desktop/Development/AttendanceSystem/database/migrations/2016_08_20_113539_create_class_student_table.php&#10;delete&#9;FILE&#9;file:///home/ahmadjavidsapand/Desktop/Development/AttendanceSystem/resources/views/deleteModalConfirmation.blade.php&#10;cus&#9;FILE&#9;file:///home/ahmadjavidsapand/Desktop/Development/AttendanceSystem/public/css/custom.css&#10;dele&#9;FILE&#9;file:///home/ahmadjavidsapand/Desktop/Development/AttendanceSystem/resources/views/deleteModalConfirmation.blade.php&#10;Student&#9;null&#9;null&#10;app.&#9;FILE&#9;file:///home/ahmadjavidsapand/Desktop/Development/AttendanceSystem/resources/views/layouts/app.blade.php&#10;app.bl&#9;FILE&#9;file:///home/ahmadjavidsapand/Desktop/Development/AttendanceSystem/resources/views/layouts/app.blade.php&#10;Subject&#9;null&#9;null&#10;teacher&#9;FILE&#9;file:///home/ahmadjavidsapand/Desktop/Development/AttendanceSystem/app/Http/Controllers/teacherController.php&#10;subjectCon&#9;FILE&#9;file:///home/ahmadjavidsapand/Desktop/Development/AttendanceSystem/app/Http/Controllers/subjectController.php&#10;subjectcoon&#9;null&#9;null&#10;teachercon&#9;FILE&#9;file:///home/ahmadjavidsapand/Desktop/Development/AttendanceSystem/app/Http/Controllers/teacherController.php&#10;teachercont&#9;FILE&#9;file:///home/ahmadjavidsapand/Desktop/Development/AttendanceSystem/app/Http/Controllers/teacherController.php&#10;teacherc&#9;null&#9;null" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -440,11 +425,11 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="65" y="-4" width="1301" height="772" extended-state="6" />
+    <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2705611" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2510981" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32985073" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -514,31 +499,10 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/database/seeds/DatabaseSeeder.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/storage/logs/laravel.log">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.375">
-          <caret line="476" column="0" selection-start-line="476" selection-start-column="0" selection-end-line="476" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/database/migrations/2016_08_20_072217_create_class_subject_table.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.38961038">
           <caret line="17" column="41" selection-start-line="17" selection-start-column="41" selection-end-line="17" selection-end-column="65" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.env">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.28125">
-          <caret line="12" column="17" selection-start-line="12" selection-start-column="17" selection-end-line="12" selection-end-column="17" />
         </state>
       </provider>
     </entry>
@@ -672,7 +636,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.7548701">
           <caret line="31" column="25" selection-start-line="31" selection-start-column="25" selection-end-line="31" selection-end-column="25" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -729,7 +692,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-6.25">
           <caret line="10" column="33" selection-start-line="10" selection-start-column="33" selection-end-line="10" selection-end-column="33" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -737,14 +699,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.48701298">
           <caret line="21" column="91" selection-start-line="15" selection-start-column="11" selection-end-line="21" selection-end-column="91" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Student.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-11.25">
-          <caret line="18" column="44" selection-start-line="18" selection-start-column="44" selection-end-line="18" selection-end-column="44" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -783,39 +737,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/students/class-students2.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.38961038">
-          <caret line="16" column="116" selection-start-line="16" selection-start-column="116" selection-end-line="16" selection-end-column="116" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/students/class-students.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.4383117">
           <caret line="18" column="56" selection-start-line="18" selection-start-column="56" selection-end-line="18" selection-end-column="56" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Attendance.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.21915585">
-          <caret line="9" column="72" selection-start-line="9" selection-start-column="72" selection-end-line="9" selection-end-column="72" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/teacher/teacher.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.024350649">
-          <caret line="11" column="45" selection-start-line="11" selection-start-column="45" selection-end-line="11" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-9.375">
-          <caret line="15" column="23" selection-start-line="15" selection-start-column="23" selection-end-line="15" selection-end-column="23" />
         </state>
       </provider>
     </entry>
@@ -832,7 +757,7 @@
         <state vertical-scroll-proportion="-76.25">
           <caret line="122" column="34" selection-start-line="122" selection-start-column="34" selection-end-line="122" selection-end-column="34" />
           <folding>
-            <element signature="e#40#56#0#PHP" expanded="true" />
+            <element signature="e#40#56#0#PHP" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -841,50 +766,110 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.53571427">
           <caret line="22" column="50" selection-start-line="22" selection-start-column="50" selection-end-line="22" selection-end-column="50" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/students/student.blade.php">
+    <entry file="file://$PROJECT_DIR$/.env.example">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.073051944">
-          <caret line="3" column="23" selection-start-line="3" selection-start-column="23" selection-end-line="3" selection-end-column="23" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.env">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.27597404">
+          <caret line="10" column="12" selection-start-line="10" selection-start-column="12" selection-end-line="10" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/teacher/teacher.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.31694916">
+          <caret line="11" column="45" selection-start-line="11" selection-start-column="45" selection-end-line="11" selection-end-column="45" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/HomeController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-25.791666">
-          <caret line="63" column="44" selection-start-line="63" selection-start-column="44" selection-end-line="63" selection-end-column="44" />
-          <folding>
-            <element signature="e#40#59#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/studentController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-18.791666">
-          <caret line="130" column="42" selection-start-line="130" selection-start-column="42" selection-end-line="130" selection-end-column="42" />
-          <folding>
-            <element signature="e#40#59#0#PHP" expanded="true" />
-          </folding>
+        <state vertical-scroll-proportion="-42.23077">
+          <caret line="74" column="34" selection-start-line="74" selection-start-column="34" selection-end-line="74" selection-end-column="34" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/home.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-5.4166665">
-          <caret line="11" column="24" selection-start-line="11" selection-start-column="24" selection-end-line="35" selection-end-column="31" />
+        <state vertical-scroll-proportion="-6.423077">
+          <caret line="17" column="52" selection-start-line="17" selection-start-column="52" selection-end-line="17" selection-end-column="52" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Attendance.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3457627">
+          <caret line="12" column="43" selection-start-line="12" selection-start-column="43" selection-end-line="12" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Student.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5186441">
+          <caret line="18" column="30" selection-start-line="18" selection-start-column="30" selection-end-line="18" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/studentController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-16.807692">
+          <caret line="140" column="73" selection-start-line="140" selection-start-column="73" selection-end-line="140" selection-end-column="73" />
+          <folding>
+            <marker date="1473186917912" expanded="false" signature="44:48" placeholder="..." />
+            <marker date="1473186917912" expanded="true" signature="2586:2594" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/students/class-students2.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.46101695">
+          <caret line="16" column="116" selection-start-line="16" selection-start-column="116" selection-end-line="16" selection-end-column="116" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/students/student.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-6.5">
+          <caret line="53" column="0" selection-start-line="53" selection-start-column="0" selection-end-line="73" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/students/students-attendances-filter.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-17.653847">
+          <caret line="27" column="12" selection-start-line="27" selection-start-column="12" selection-end-line="27" selection-end-column="12" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/students/students-attendance.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7305195">
-          <caret line="30" column="15" selection-start-line="30" selection-start-column="15" selection-end-line="30" selection-end-column="15" />
+        <state vertical-scroll-proportion="-11.576923">
+          <caret line="37" column="25" selection-start-line="37" selection-start-column="25" selection-end-line="37" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.43220338">
+          <caret line="15" column="23" selection-start-line="15" selection-start-column="23" selection-end-line="15" selection-end-column="23" />
           <folding />
         </state>
       </provider>

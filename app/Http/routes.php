@@ -13,6 +13,7 @@ Route::group(['middleware' => ['auth']], function () {
     Route::resource('students', 'studentController');
     Route::get('students/filter/{id}', 'studentController@filterStudents');
     Route::get('students/filter2/{id}', 'studentController@filterStudents2');
+    Route::get('student/filter3/{id}', 'studentController@filterStudents3');
     Route::get('student/attendance', 'studentController@studentsAttendance');
 
 
