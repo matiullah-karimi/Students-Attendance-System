@@ -32,10 +32,12 @@
 
         $(function(){
 
-            $('select[name="class"]').change(function(){
-                var id = $('select[name=class]').val();
+            $('select[name="subject"]').change(function(){
+                var classId = $('select[name=class]').val();
+                var subjectId = $('select[name=subject]').val();
                 $.ajax({
-                    url:'filter3/'+id,
+                    url:'filter3/'+classId,
+                    data:{subId: subjectId},
                     success:function(data){
                         console.log(data)
                         $('#students-atts').empty();
