@@ -28,7 +28,7 @@ class studentController extends Controller
         if (Auth::user()->role != 1) {
             return Response::HTTP_FORBIDDEN;
         }
-        $students = Student::all();
+        $students = Student::paginate(10);
         $classes = Clas::all();
 
         return view('students/student', compact('students', 'classes'));
@@ -138,6 +138,8 @@ class studentController extends Controller
         $atts = Attendance::where('subject_id', '=', $subject_id)->where('class_id', '=', $id)
             ->where('user_id', '=', Auth::user()->id)->get();
 
-        return view('students/students-attendances-filter', compact('atts'));
+        $class = Clas::find($id);
+
+        return view('students/students-attendances-filter', compact('atts', 'class'));
     }
 }
