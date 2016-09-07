@@ -16,7 +16,7 @@
                             <input type="hidden" name="_token" value="{{csrf_token()}}">
 
                             <!-- teachers list -->
-                            <select class="form-control marginTop" name="teacher" >
+                            <select class="form-control marginTop controlWidth center-block" name="teacher" >
 
                                 <option>Select Teacher</option>
                                 @foreach($teachers as $teacher)
@@ -25,7 +25,7 @@
                             </select>
 
                             <!-- classes list -->
-                            <select class="form-control marginTop" name="class">
+                            <select class="form-control marginTop controlWidth center-block" name="class">
 
                                 <option>Select Class</option>
                                 @foreach($classes as $class)
@@ -38,35 +38,31 @@
                             <input type="hidden" value="{{$subject->id}}" name="subject">
 
 
+                            <div class="form-group marginTop">
+                                <button class="add_field_button btn btn-success">Add More Fields</button>
 
-                            <div class="row" style="margin-top: 5px;
-                            padding:5px; border: lightseagreen">
-                                <div class="col-md-7">
+                            </div>
 
-                                    <div class="input_fields_wrap form-group margin">
-                                        <button class="add_field_button btn btn-success">Add More Fields</button>
-                                        <div class="marginTop">
-                                            <input type="text" name="name[0][]" class="name" placeholder="name" data-num ="0" required>
-                                            <input type="text" name="fname[0][]" class="fname" placeholder="father name" data-num ="0" required>
-                                            <a class="close marginleft" href="#" aria-hidden="true"></a>
-
+                            <div class="row">
+                                <div class="col-md-4">
+                                        <div class=" form-group">
+                                            <input type="text" name="name[0][]" class="name form-control" placeholder="name" data-num ="0" required >
                                         </div>
                                     </div>
 
+                                <div class="col-md-4">
+                                    <input type="text" name="fname[0][]" class="fname form-control" placeholder="father name" data-num ="0" required>
                                 </div>
 
+                                </div>
+
+                    <div class="input_fields_wrap">
+                    </div>
 
 
-                                <div class="col-md-6">
-
-                                    </div>
-
-
-                                <div class="form-group">
+                    <div class="form-group marginTop">
                                     <input type="submit" value="Submit" class="btn btn-info form-control">
                                 </div>
-
-                        </div>
 
                         </form>
 
@@ -95,17 +91,20 @@
             if(x < max_fields){ //max input box allowed
                 x++; //text box increment
                 data_num++;
-                $(wrapper).append('<div>' +
-                        '<input type="text" name="name['+data_num+'][]" class="margin" placeholder="name" id="name"/> ' +
-                        '<input type="text" name="fname['+data_num+'][]" class="" placeholder="father name"/>' +
-                        '<a href="#" class="remove_field close marginTop"aria-hidden="true" ">&times;</a>' +
+                $(wrapper).append('<div class="row marginTop" id="row">' +
+                        '<div class="col-md-4"><input type="text" name="name['+data_num+'][]" class="form-control" placeholder="name" id="name"/></div> ' +
+                        '<div class="col-md-4"><input type="text" name="fname['+data_num+'][]" class="form-control" placeholder="father name"/></div>' +
+                        '<div class="col-md-1"><a href="#" class="remove_field glyphicon glyphicon-remove marginTop" aria-hidden="true"></a></div>' +
                         '</div>'); //add input box
             }
         });
 
         $(wrapper).on("click",".remove_field", function(e){ //user click on remove text
-            e.preventDefault(); $(this).parent('div').remove(); x--;
-             $(this).parent('div').remove(); x--;
+            e.preventDefault();
+            $(this).parent("div").parent("div").remove();
+            x--;
+            $(this).parent("div").parent("div").remove();
+            x--;
             data_num--;
         })
     });

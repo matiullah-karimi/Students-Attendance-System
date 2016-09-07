@@ -1,4 +1,4 @@
-<table class="table table-bordered table-responsive">
+<table class="table table-bordered table-responsive marginTop">
 
     <thead>
     <th>Name</th>

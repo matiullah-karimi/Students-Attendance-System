@@ -3,7 +3,7 @@
 
 <div class="container">
 
-    <select name="class">
+    <select name="class" class="center-block form-control controlWidth">
 
         <option>Filter Students by class</option>
         @foreach($classes as $class)

@@ -4,20 +4,29 @@
 
     <div class="container">
 
-            <select name="class">
-                <option>Select Class</option>
-                @foreach($teacher->classes as $class)
-                    <option value="{{$class->id}}" id="classes" >{{$class->name}}</option>
+        <div class="row">
+            <div class="col-md-5">
+                <select name="class" class="form-control controlWidth">
+                    <option>Select Class</option>
+                    @foreach($teacher->classes as $class)
+                        <option value="{{$class->id}}" id="classes" >{{$class->name}}</option>
 
-                @endforeach
-            </select>
+                    @endforeach
+                </select>
+            </div>
+            <div class="col-md-5">
+                <select name="subject" class="form-control controlWidth">
+                    <option>Select Subject</option>
+                    @foreach($teacher->subjects as $subject)
+                        <option value="{{$subject->id}}"> {{$subject->name}} </option>
+                    @endforeach
+                </select>
+            </div>
+        </div>
 
-            <select name="subject">
-                <option>Select Subject</option>
-                @foreach($teacher->subjects as $subject)
-                    <option value="{{$subject->id}}"> {{$subject->name}} </option>
-                @endforeach
-            </select>
+
+
+
 
             <div id="students-atts">
 

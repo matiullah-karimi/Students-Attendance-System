@@ -131,12 +131,12 @@ class studentController extends Controller
         return view('students/students-attendance', compact('teacher'));
     }
 
-    public function filterStudents3($id){
+    public function filterStudentsAttendance($id){
 
         $subject_id = Input::get('subId');
 
-        $atts = Attendance::where('subject_id', '=', $subject_id)->where('class_id', '=', $id)
-            ->where('user_id', '=', Auth::user()->id)->get();
+        $atts = Attendance::where('subject_id', $subject_id)->where('class_id', $id)
+            ->where('user_id', Auth::user()->id)->get();
 
         return view('students/students-attendances-filter', compact('atts'));
     }

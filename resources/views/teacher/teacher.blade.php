@@ -9,9 +9,9 @@
                     <div class="panel-heading">Teachers</div>
 
                     <div class="panel-body">
-                        <a href="{{url('users/create')}}" class="btn btn-lg">Add Teacher</a>
+                        <a href="{{url('users/create')}}" class="btn btn-lg btn-success">Add Teacher</a>
 
-                        <table class="table table-bordered table-responsive">
+                        <table class="table table-bordered table-responsive marginTop">
                             <thead>
                             <th>Name</th>
                             <th>Email</th>
@@ -33,7 +33,7 @@
                                             <input type="hidden" name="_token" value="{{csrf_token()}}">
                                             <div class="form-group">
 
-                                                <button class="btn btn-info" type="submit">Delete</button>
+                                                <button class="btn btn-danger" type="submit">Delete</button>
                                                 {{--<button class="btn btn-xs btn-danger" type="button" data-toggle="modal" data-target="#confirmDelete" data-title="Delete User" data-message="Are you sure you want to delete this user ?">--}}
                                                     {{--Delete</button>--}}
 

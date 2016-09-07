@@ -9,10 +9,10 @@
 
                     <div class="panel-body">
 
-                        <a href="{{url('subjects/create')}}" class="btn btn-lg">Create a Course</a>
+                        <a href="{{url('subjects/create')}}" class="btn btn-lg btn-success">Create a Course</a>
 
 
-                        <table class="table table-responsive table-bordered table-responsive">
+                        <table class="table table-responsive table-bordered marginTop">
                             <thead>
                             <th>Name</th>
                             <th>Assign Students</th>
@@ -32,7 +32,7 @@
                                             <input type="hidden" name="_method" value="DELETE">
                                             <input type="hidden" name="_token" value="{{csrf_token()}}">
                                             <div class="form-group">
-                                                <button type="submit" class="btn btn-info">Delete</button>
+                                                <button type="submit" class="btn btn-danger">Delete</button>
                                             </div>
                                         </form>
                                     </td>

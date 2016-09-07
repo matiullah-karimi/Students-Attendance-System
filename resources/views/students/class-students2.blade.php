@@ -3,7 +3,7 @@
     <thead>
     <th>Name</th>
     <th>F/Name</th>
-    <th colspan="2">Status</th>
+    <th>Status</th>
     </thead>
 
     <tbody>
@@ -13,7 +13,7 @@
 
             <td>{{$student->name}}</td>
             <td>{{$student->fname}}</td>
-            <td><input type="hidden" name="status[{{$student->id}}]" value="off" class="form-control"></td>
+            <input type="hidden" name="status[{{$student->id}}]" value="off" class="form-control">
             <td><input type="checkbox" name="status[{{$student->id}}]" value="on" checked class="form-control"></td>
         </tr>
 
