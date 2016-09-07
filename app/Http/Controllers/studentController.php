@@ -12,6 +12,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Input;
 
 class studentController extends Controller
 {
@@ -123,16 +124,20 @@ class studentController extends Controller
 
     public function studentsAttendance(){
 
-
-        $classes = Clas::all();
-        $subjects = Subject::all();
-
         $teacher_id = Auth::user()->id;
         $teacher = User::find($teacher_id);
 
-        $attendances = Attendance::all();
-        $students = Student::all();
 
-        return view('students/students-attendance', compact('attendances', 'students', 'subjects', 'classes', 'teacher'));
+        return view('students/students-attendance', compact('teacher'));
+    }
+
+    public function filterStudents3($id){
+
+        $subject_id = Input::get('subId');
+
+        $atts = Attendance::where('subject_id', '=', $subject_id)->where('class_id', '=', $id)
+            ->where('user_id', '=', Auth::user()->id)->get();
+
+        return view('students/students-attendances-filter', compact('atts'));
     }
 }

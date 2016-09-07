@@ -4,9 +4,6 @@
 
     <div class="container">
 
-        <form action="{{ url('storeResult') }}" method="POST">
-            <input type="hidden" name="_token" value="{{csrf_token()}}">
-
             <select name="class">
                 <option>Select Class</option>
                 @foreach($teacher->classes as $class)
@@ -21,33 +18,35 @@
                     <option value="{{$subject->id}}"> {{$subject->name}} </option>
                 @endforeach
             </select>
-            <div id="class-students">
 
-
-
+            <div id="students-atts">
 
             </div>
 
-        </form>
-
-        <table class="table table-bordered table-responsive">
-
-            <thead>
-            <th>Name</th>
-            <th>F/Name</th>
-
-            <?php
-            for ($i= 1; $i<= 30; $i++){
-                echo '<th>'.$i.'</th>';
-            }
-            ?>
-            </thead>
-
-        </table>
-
     </div>
 
+@endsection
 
+@section('page_specific_scripts')
+    <script>
 
+        $(function(){
 
+            $('select[name="subject"]').change(function(){
+                var classId = $('select[name=class]').val();
+                var subjectId = $('select[name=subject]').val();
+                $.ajax({
+                    url:'filter3/'+classId,
+                    data:{subId: subjectId},
+                    success:function(data){
+                        console.log(data)
+                        $('#students-atts').empty();
+                        $('#students-atts').append(data);
+                    }
+                });
+            });
+
+        })
+
+    </script>
 @endsection

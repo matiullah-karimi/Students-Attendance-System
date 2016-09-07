@@ -27,4 +27,8 @@ class Clas extends Model
     {
         return $this->belongsToMany('App\User', 'class_user', 'class_id', 'user_id');
     }
+
+    public function attendances(){
+        return $this->hasMany('App\Attendance');
+    }
 }
