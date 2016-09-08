@@ -12,7 +12,7 @@
                             <input type="hidden" value="{{csrf_token()}}" name="_token">
                             <div class="form-group">
                                 <label class="control-label">Name</label>
-                                <input type="text" class="form-control" name="name">
+                                <input type="text" class="form-control" name="name" required>
                             </div>
 
                             <div class="form-group">

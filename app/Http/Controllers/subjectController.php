@@ -146,6 +146,7 @@ class subjectController extends Controller
         $teacher = $request->get('teacher');
         $classModel->teachers()->attach($teacher);
 
+
         $subjectT = Subject::find($subject);
         $subjectT->teachers()->attach($teacher);
 

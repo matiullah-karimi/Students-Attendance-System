@@ -92,8 +92,8 @@
                 x++; //text box increment
                 data_num++;
                 $(wrapper).append('<div class="row marginTop" id="row">' +
-                        '<div class="col-md-4"><input type="text" name="name['+data_num+'][]" class="form-control" placeholder="name" id="name"/></div> ' +
-                        '<div class="col-md-4"><input type="text" name="fname['+data_num+'][]" class="form-control" placeholder="father name"/></div>' +
+                        '<div class="col-md-4"><input type="text" name="name['+data_num+'][]" class="form-control" placeholder="name" id="name" required/></div> ' +
+                        '<div class="col-md-4"><input type="text" name="fname['+data_num+'][]" class="form-control" placeholder="father name" required/></div>' +
                         '<div class="col-md-1"><a href="#" class="remove_field glyphicon glyphicon-remove marginTop" aria-hidden="true"></a></div>' +
                         '</div>'); //add input box
             }

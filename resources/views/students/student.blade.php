@@ -29,7 +29,7 @@
 
             <td>{{$student->name}}</td>
             <td>{{$student->fname}}</td>
-            <td><a href="{{url('students/'.$student.'/edit')}}" class=" btn btn-info">Edit</a></td>
+            <td><a href="{{url('students/'.$student->id.'/edit')}}" class="btn btn-info ">Edit</a></td>
             <td>
                 <form method="post" action="{{url('students/'.$student->id)}}">
                     <input type="hidden" name="_method" value="DELETE">
@@ -44,6 +44,7 @@
             @endforeach
         </tbody>
     </table>
+        {!! $students->render()  !!}
     </div>
 
 </div>

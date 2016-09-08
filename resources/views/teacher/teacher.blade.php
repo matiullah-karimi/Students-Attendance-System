@@ -25,7 +25,7 @@
 
                                 <td>{{$teacher->name}}</td>
                                 <td>{{$teacher->email}}</td>
-                                    <td> <a href="{{url('users/'.$teacher->id.'/edit')}}"  value="Edit" class="btn btn-info btn-group-sm "> Edit</a> </td>
+                                    <td> <a href="{{url('users/'.$teacher->id.'/edit')}}"  value="Edit" class="btn btn-info btn-group-sm">Edit</a></td>
 
                                     <td>
                                         <form action="{{url('users/'.$teacher->id)}}" method="post" id="{{$teacher->id}}">

@@ -13,15 +13,15 @@
                             <input type="hidden" name="_token" value="{{csrf_token()}}">
 
                             <div class="form-group">
-                                <input type="text" placeholder="name" name="name" class="form-control" value="{{$teacher->name}}">
+                                <input type="text" placeholder="name" name="name" class="form-control" value="{{$teacher->name}}" required>
                             </div>
 
                             <div class="form-group">
-                                <input type="text" placeholder="email" name="email" class="form-control" value="{{$teacher->email}}">
+                                <input type="email" placeholder="email" name="email" class="form-control" value="{{$teacher->email}}" required>
                             </div>
 
                             <div class="form-group">
-                                <input type="password" placeholder="password" name="password" class="form-control" value="{{$teacher->password}}">
+                                <input type="password" placeholder="password" name="password" class="form-control" value="{{$teacher->password}}" required>
                             </div>
 
                             <div class="form-group">
