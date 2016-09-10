@@ -145,13 +145,19 @@ class studentController extends Controller
     public function filterStudentsAttendance($id){
 
         $subject_id = Input::get('subId');
-
-        $atts = Attendance::where('subject_id', $subject_id)->where('class_id', $id)
-            ->where('user_id', Auth::user()->id)->get();
-
         $class = Clas::find($id);
 
-        return view('students/students-attendances-filter', compact('atts', 'class'));
+
+        if (Auth::user()->role == 0){
+            $atts = Attendance::where('subject_id', $subject_id)->where('class_id', $id)
+                ->where('user_id', Auth::user()->id)->get();
+        }
+        else{
+            $atts = Attendance::where('subject_id', $subject_id)->where('class_id', $id)->get();
+        }
+
+
+        return view('students/students-attendances-filter', compact('atts', 'class', 'subject_id'));
     }
 
 
