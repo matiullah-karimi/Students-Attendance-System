@@ -3,12 +3,14 @@
 namespace App\Http\Controllers;
 
 use App\Attendance;
+use App\Clas;
 use App\Http\Requests;
 use App\Student;
 use App\User;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Maatwebsite\Excel\Facades\Excel;
 
 
 class HomeController extends Controller
@@ -67,5 +69,19 @@ class HomeController extends Controller
 
         }
         return redirect()->back();
+    }
+
+    public function export2Excel(){
+
+        Excel::create('New file', function($excel) {
+
+            $excel->sheet('New sheet', function($sheet) {
+                $classes = Clas::all();
+                
+//                $sheet->loadView('students.students-attendance', compact('classes'));
+
+            });
+
+        })->download('xls');
     }
 }

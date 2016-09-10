@@ -1,4 +1,9 @@
 @extends('layouts.app')
+
+@section('page_specific_styles')
+    <link rel="stylesheet" href="{{asset('/bootstrap/css/bootstrap.min.css')}}">
+    <link rel="stylesheet" href="{{asset('/css/custom.css')}}">
+    @stop
 @section('content')
     <div class="container">
 
@@ -47,6 +52,7 @@
 
             </div>
 
+        <a href="{{url('export2Excel')}}" class="btn btn-primary marginTop">Export to Excel</a>
     </div>
 
 @endsection

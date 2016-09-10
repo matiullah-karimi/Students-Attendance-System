@@ -10,11 +10,8 @@
 
 
     <!-- Latest compiled and minified CSS -->
-
-    <script src="{{asset('bootstrap/js/jquery.min.js')}}"></script>
-    <script src="{{asset('bootstrap/js/bootstrap.min.js')}}"></script>
-    <link rel="stylesheet" href="{{asset('bootstrap/css/bootstrap.min.css')}}">
-    <link rel="stylesheet" href="{{asset('css/custom.css')}}">
+    <link rel="stylesheet" href="{{asset('/bootstrap/css/bootstrap.min.css')}}">
+    <link rel="stylesheet" href="{{asset('/css/custom.css')}}">
 
 
     <style>
@@ -79,6 +76,8 @@
 
 
 
+    <script src="{{asset('bootstrap/js/jquery.min.js')}}"></script>
+    <script src="{{asset('bootstrap/js/bootstrap.min.js')}}"></script>
 
     @yield('page_specific_scripts')
 </body>
