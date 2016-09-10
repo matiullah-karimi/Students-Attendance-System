@@ -19,16 +19,16 @@
                 <td>{{$student->fname}}</td>
             @foreach($atts as $att)
                 <?php $student_attendance = $student->attendances()->where('attendance_id', $att->id)->first(); ?>
-                @if(count($student_attendance) >0 )
+                @if(count($student_attendance) > 0 )
                     @if($student_attendance->pivot->status == 1)
-
                             <td><i class="glyphicon glyphicon-ok"></i></td>
                         @else
                             <td><i class="glyphicon glyphicon-remove"></i></td>
                         @endif
+                    @else
+                        <td>N/A</td>
                     @endif
             @endforeach
-
         </tr>
     @endforeach
 
