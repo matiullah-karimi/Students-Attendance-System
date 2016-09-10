@@ -22,17 +22,16 @@
                                 @endforeach
                             </select>
 
-                            <select name="subject" class="form-control controlWidth">
-                                <option>Select Subject</option>
-                            @foreach($teacher->subjects as $subject)
-                                <option value="{{$subject->id}}"> {{$subject->name}} </option>
-                                    @endforeach
-                            </select>
+                            <div id="teacher-subject">
+                                {{--<select name="subject" class="form-control controlWidth">--}}
+                                    {{--<option>Select Subject</option>--}}
+                                    {{--@foreach($teacher->subjects as $subject)--}}
+                                        {{--<option value="{{$subject->id}}"> {{$subject->name}} </option>--}}
+                                    {{--@endforeach--}}
+                                {{--</select>--}}
+                            </div>
+
                             <div id="class-students">
-
-
-
-
                              </div>
 
                         </form>
@@ -64,6 +63,15 @@
                         console.log(data)
                         $('#class-students').empty();
                         $('#class-students').append(data);
+                    }
+                });
+
+                $.ajax({
+                    url:'subjects/filterSubject/'+id,
+                    success:function(data){
+                        console.log(data)
+                        $('#teacher-subject').empty();
+                        $('#teacher-subject').append(data);
                     }
                 });
             });

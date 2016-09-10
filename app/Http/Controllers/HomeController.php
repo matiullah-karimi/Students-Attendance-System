@@ -51,11 +51,7 @@ class HomeController extends Controller
         $attendance->user_id = $teacherId;
         $attendance->class_id = $classId;
         $attendance->date = Carbon::now();
-
         $attendance->save();
-
-
-
 
         $student_status = $request->get('status');
 
@@ -70,10 +66,6 @@ class HomeController extends Controller
             $attendance->students()->attach($student->id, ['status' => $value]);
 
         }
-
-
         return redirect()->back();
-
-
     }
 }

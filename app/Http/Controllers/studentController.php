@@ -135,8 +135,11 @@ class studentController extends Controller
         $teacher_id = Auth::user()->id;
         $teacher = User::find($teacher_id);
 
+        $classes = Clas::all();
+        $subjects = Subject::all();
 
-        return view('students/students-attendance', compact('teacher'));
+
+        return view('students/students-attendance', compact('teacher', 'classes', 'subjects'));
     }
 
     public function filterStudentsAttendance($id){
@@ -150,4 +153,6 @@ class studentController extends Controller
 
         return view('students/students-attendances-filter', compact('atts', 'class'));
     }
+
+
 }

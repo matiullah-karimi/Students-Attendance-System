@@ -136,7 +136,6 @@ class subjectController extends Controller
 
             $student->classes()->attach($class);
         }
-
         // adding subjects to a class
         $subject = $request->get('subject');
         $classModel = Clas::find($class);
@@ -146,12 +145,17 @@ class subjectController extends Controller
         $teacher = $request->get('teacher');
         $classModel->teachers()->attach($teacher);
 
-
         $subjectT = Subject::find($subject);
         $subjectT->teachers()->attach($teacher);
 
-
         return redirect()->back();
+    }
 
+    public function filterSubjects($id){
+
+        $class = Clas::find($id);
+        $teacher = User::find(Auth::user()->id);
+
+        return view('Subject/filter-subjects', compact('class', 'teacher'));
     }
 }
