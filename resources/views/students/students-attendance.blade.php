@@ -12,10 +12,9 @@
             <div class="col-md-5">
 
                 <select name="class" class="form-control controlWidth">
-                    <option>Select Class</option>
+                    <option selected disabled>Select Class</option>
                     @foreach($teacher->classes as $class)
                         <option value="{{$class->id}}" id="classes" >{{$class->name}}</option>
-
                     @endforeach
                 </select>
             </div>

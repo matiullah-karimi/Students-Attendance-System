@@ -22,7 +22,7 @@
                                 @endforeach
                             </select>
 
-                            <div id="teacher-subject">
+                            <div id="teacher-subject" class="marginTop">
                                 {{--<select name="subject" class="form-control controlWidth">--}}
                                     {{--<option>Select Subject</option>--}}
                                     {{--@foreach($teacher->subjects as $subject)--}}
@@ -43,6 +43,17 @@
                     @endif
 
 
+                </div>
+                <div class="panel-footer">
+                    @if (count($errors) > 0)
+                        <div class="alert alert-danger">
+                            <ul>
+                                @foreach ($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    @endif
                 </div>
             </div>
         </div>

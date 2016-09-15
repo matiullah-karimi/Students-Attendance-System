@@ -43,6 +43,11 @@ class HomeController extends Controller
 
     public function storeResult(Request $request){
 
+        $this->validate($request, [
+            'class' => 'required|not_in:Select Class',
+            'subject' => 'required|not_in:Select Subject'
+        ]);
+
         $teacherId = Auth::user()->id;
         $subjectId = $request->get('subject');
         $classId = $request->get('class');

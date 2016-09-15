@@ -6,6 +6,7 @@ use Illuminate\Foundation\Auth\User;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 
 class userController extends Controller
@@ -22,6 +23,9 @@ class userController extends Controller
 
     public function index()
     {
+        if (Auth::user()->role != 1) {
+            return Response::HTTP_FORBIDDEN;
+        }
 
         $teachers = User::where('role', '=', 0)->get();
 
@@ -35,6 +39,9 @@ class userController extends Controller
      */
     public function create()
     {
+        if (Auth::user()->role != 1) {
+            return Response::HTTP_FORBIDDEN;
+        }
         return view('teacher/addTeacher');
     }
 
@@ -46,6 +53,9 @@ class userController extends Controller
      */
     public function store(Request $request)
     {
+        if (Auth::user()->role != 1) {
+            return Response::HTTP_FORBIDDEN;
+        }
         $teacher = new User;
 
         $teacher->name = $request->get('name');
@@ -75,6 +85,9 @@ class userController extends Controller
      */
     public function edit($id)
     {
+        if (Auth::user()->role != 1) {
+            return Response::HTTP_FORBIDDEN;
+        }
         $teacher = User::find($id);
 
         return view('teacher/editTeacher', compact('teacher'));
@@ -89,6 +102,9 @@ class userController extends Controller
      */
     public function update(Request $request, $id)
     {
+        if (Auth::user()->role != 1) {
+            return Response::HTTP_FORBIDDEN;
+        }
 
         $teacher = User::find($id);
         $teacher->name = $request->get('name');
@@ -108,16 +124,13 @@ class userController extends Controller
      */
     public function destroy($id)
     {
+        if (Auth::user()->role != 1) {
+            return Response::HTTP_FORBIDDEN;
+        }
         $teacher = User::find($id);
         $teacher->delete();
 
         return redirect('users');
     }
 
-    public function destroyUser($id){
-        $teacher = User::find($id);
-        $teacher->delete();
-
-        return redirect('User has been deleted successfully');
-    }
 }

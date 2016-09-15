@@ -37,7 +37,6 @@
 
                             <input type="hidden" value="{{$subject->id}}" name="subject">
 
-
                             <div class="form-group marginTop">
                                 <button class="add_field_button btn btn-success">Add More Fields</button>
 
@@ -67,6 +66,17 @@
                         </form>
 
 
+                    </div>
+                    <div class="panel-footer">
+                        @if (count($errors) > 0)
+                            <div class="alert alert-danger">
+                                <ul>
+                                    @foreach ($errors->all() as $error)
+                                        <li>{{ $error }}</li>
+                                    @endforeach
+                                </ul>
+                            </div>
+                        @endif
                     </div>
                 </div>
 

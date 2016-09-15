@@ -34,6 +34,10 @@
             @endforeach
 
 
+                <?php $present = $student->attendances()->where('attendance_id', $att->id)->having('status', '>', 0)->get()->count();?>
+                <td><?php echo $present?></td>
+
+
 
         </tr>
     @endforeach

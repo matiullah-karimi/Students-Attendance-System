@@ -27,9 +27,9 @@ class subjectController extends Controller
 
     public function index()
     {
-//        if (Auth::user()->roll != 1){
-//            return redirect()->back();
-//        }
+        if (Auth::user()->role != 1) {
+            return Response::HTTP_FORBIDDEN;
+        }
         $subjects = Subject::all();
         return view('Subject/subject', compact('subjects'));
     }
@@ -41,6 +41,9 @@ class subjectController extends Controller
      */
     public function create()
     {
+        if (Auth::user()->role != 1) {
+            return Response::HTTP_FORBIDDEN;
+        }
         return view('Subject/createSubject');
     }
     /**
@@ -51,6 +54,9 @@ class subjectController extends Controller
      */
     public function store(Request $request)
     {
+        if (Auth::user()->role != 1) {
+            return Response::HTTP_FORBIDDEN;
+        }
         $subject = new Subject();
 
         $subject->name = $request->get('name');
@@ -67,8 +73,10 @@ class subjectController extends Controller
      */
     public function show($id)
     {
+        if (Auth::user()->role != 1) {
+            return Response::HTTP_FORBIDDEN;
+        }
         $subject = Subject::find($id);
-
         return view('Subject/showSubject');
     }
 
@@ -80,6 +88,9 @@ class subjectController extends Controller
      */
     public function edit($id)
     {
+        if (Auth::user()->role != 1) {
+            return Response::HTTP_FORBIDDEN;
+        }
         $subject = Subject::find($id);
         return view('Subject/editSubject', compact('subject'));
     }
@@ -93,7 +104,9 @@ class subjectController extends Controller
      */
     public function update(Request $request, $id)
     {
-
+        if (Auth::user()->role != 1) {
+            return Response::HTTP_FORBIDDEN;
+        }
         $subject = Subject::find($id);
         $subject->update($request->all());
 
@@ -108,14 +121,20 @@ class subjectController extends Controller
      */
     public function destroy($id)
     {
+        if (Auth::user()->role != 1) {
+            return Response::HTTP_FORBIDDEN;
+        }
         $subject = Subject::find($id);
         $subject->delete();
 
         return redirect('subjects');
     }
 
-    public function assignStd($id){
-
+    public function assignStd($id)
+    {
+        if (Auth::user()->role != 1) {
+            return Response::HTTP_FORBIDDEN;
+        }
         $teachers = User::where('role', '=' , 0)->get();
         $classes = Clas::all();
         $subject = Subject::find($id);
@@ -124,6 +143,15 @@ class subjectController extends Controller
     }
 
     public function saveStudents(Request $request){
+        if (Auth::user()->role != 1) {
+            return Response::HTTP_FORBIDDEN;
+        }
+        $this->validate($request, [
+            'class' => 'required|not_in:Select Class',
+            'teacher' => 'required|not_in:Select Teacher',
+            'name' => 'required',
+            'fname' => 'required'
+        ]);
         // adding students to a class
         $class = $request->get('class');
 
