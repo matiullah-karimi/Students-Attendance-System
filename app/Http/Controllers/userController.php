@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Clas;
 use Illuminate\Foundation\Auth\User;
 use Illuminate\Http\Request;
 
@@ -24,7 +25,7 @@ class userController extends Controller
     public function index()
     {
         if (Auth::user()->role != 1) {
-            return Response::HTTP_FORBIDDEN;
+            return response()->view('errors.403');
         }
 
         $teachers = User::where('role', '=', 0)->get();
@@ -40,7 +41,7 @@ class userController extends Controller
     public function create()
     {
         if (Auth::user()->role != 1) {
-            return Response::HTTP_FORBIDDEN;
+            return response()->view('errors.403');
         }
         return view('teacher/addTeacher');
     }
@@ -133,4 +134,26 @@ class userController extends Controller
         return redirect('users');
     }
 
+    public function assignClasses($id)
+    {
+        $teacher = User::find($id);
+        $classes = Clas::all();
+
+        return view('teacher.assign-classes', compact('teacher', 'classes'));
+    }
+
+    public function saveTeacherClasses($id, Request $request)
+    {
+        $teacher = User::find($id);
+
+        $classes = $request->get('classes');
+        if (!empty($classes) && is_array($classes)) {
+            foreach ($classes as $classId){
+                $class = Clas::find($classId);
+                $class->teachers()->attach($teacher);
+            }
+        }
+
+        return redirect('users');
+    }
 }

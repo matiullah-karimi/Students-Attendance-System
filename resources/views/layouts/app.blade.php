@@ -14,6 +14,8 @@
     <script src="{{asset('bootstrap/js/bootstrap.min.js')}}"></script>
     <link rel="stylesheet" href="{{asset('/bootstrap/css/bootstrap.min.css')}}">
     <link rel="stylesheet" href="{{asset('/css/custom.css')}}">
+    <script type="text/javascript" src="{{asset('bootstrap/js/bootstrap-multiselect.js')}}"></script>
+    <link rel="stylesheet" href=" {{asset('bootstrap/css/bootstrap-multiselect.css')}}" type="text/css"/>
 
 
     <style>

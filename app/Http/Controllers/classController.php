@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Clas;
+use App\Student;
 use Illuminate\Http\Request;
-
 use App\Http\Requests;
 
 class classController extends Controller
@@ -15,7 +16,11 @@ class classController extends Controller
      */
     public function index()
     {
-        //
+        if (Auth::user()->role != 1) {
+        return response()->view('errors.403');
+    }
+        $classes = Clas::all();
+        return view('classes.classes', compact('classes'));
     }
 
     /**
@@ -25,7 +30,10 @@ class classController extends Controller
      */
     public function create()
     {
-        //
+        if (Auth::user()->role != 1) {
+            return response()->view('errors.403');
+        }
+        return view('classes.create-class');
     }
 
     /**
@@ -36,7 +44,20 @@ class classController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        if (Auth::user()->role != 1) {
+            return response()->view('errors.403');
+        }
+        $class_name = $request->get('name');
+
+        if (!empty($class_name) && is_array($class_name)) {
+            foreach ($class_name as $name) {
+                $class = new Clas();
+                $class->name = $name;
+                $class->save();
+            }
+        }
+
+        return redirect('classes');
     }
 
     /**
@@ -47,7 +68,7 @@ class classController extends Controller
      */
     public function show($id)
     {
-        //
+
     }
 
     /**
@@ -58,7 +79,11 @@ class classController extends Controller
      */
     public function edit($id)
     {
-        //
+        if (Auth::user()->role != 1) {
+            return response()->view('errors.403');
+        }
+        $class = Clas::find($id);
+        return view('classes.edit-class', compact('class'));
     }
 
     /**
@@ -70,7 +95,13 @@ class classController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        if (Auth::user()->role != 1) {
+            return response()->view('errors.403');
+        }
+        $class = Clas::find($id);
+        $class->update ($request->all());
+        return redirect('classes');
+
     }
 
     /**
@@ -81,6 +112,42 @@ class classController extends Controller
      */
     public function destroy($id)
     {
-        //
+        if (Auth::user()->role != 1) {
+            return response()->view('errors.403');
+        }
+        $class = Clas::find($id);
+        $class->delete();
+
+        return redirect()->back();
+    }
+
+    public function AssignStudents($id)
+    {
+        if (Auth::user()->role != 1) {
+            return response()->view('errors.403');
+        }
+
+        $class = Clas::find($id);
+
+        return view('classes.assign-students', compact('class'));
+    }
+
+    public function saveClassStudents($id, Request $request)
+    {
+        if (Auth::user()->role != 1) {
+            return response()->view('errors.403');
+        }
+        $class = Clas::find($id);
+        $i = 0;
+        foreach ($request->get('name') as $studentName){
+            $student = new Student();
+            $student->name = $studentName[0];
+            $student->fname = $request->get('fname')[$i++][0];
+            $student->save();
+
+            $student->classes()->attach($class);
+        }
+
+        return redirect('classes');
     }
 }

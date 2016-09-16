@@ -23,10 +23,8 @@ class studentController extends Controller
      */
     public function index()
     {
-
-
         if (Auth::user()->role != 1) {
-            return Response::HTTP_FORBIDDEN;
+            return response()->view('errors.403');
         }
         $students = Student::paginate(10);
         $classes = Clas::all();
@@ -152,6 +150,7 @@ class studentController extends Controller
 
         $subject_id = Input::get('subId');
         $class = Clas::find($id);
+        $class_id = $id;
 
 
         if (Auth::user()->role == 0){
@@ -163,7 +162,7 @@ class studentController extends Controller
         }
 
 
-        return view('students/students-attendances-filter', compact('atts', 'class', 'subject_id'));
+        return view('students/students-attendances-filter', compact('atts', 'class', 'subject_id', 'class_id'));
     }
 
 

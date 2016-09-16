@@ -5,11 +5,16 @@
 Route::group(['middleware' => ['auth']], function () {
 
     Route::get('/home', 'HomeController@index');
+    Route::resource('classes', 'classController');
+    Route::get('classes/assignStudents/{id}', 'classController@assignStudents');
+    Route::post('classes/saveClassStudents/{id}', 'classController@saveClassStudents');
     Route::resource('users', 'userController');
+    Route::get('users/assignClasses/{id}', 'userController@assignClasses');
+    Route::post('users/saveTeacherClasses/{id}', 'userController@saveTeacherClasses');
     Route::post('storeResult', 'HomeController@storeResult');
     Route::resource('subjects', 'subjectController');
-    Route::get('subjects/assignStd/{id}', 'subjectController@assignStd');
-    Route::post('subjects/saveStudents', 'subjectController@saveStudents');
+    Route::get('subjects/assignTeacher/{id}', 'subjectController@assignTeacher');
+    Route::post('subjects/saveSubjectTeacher', 'subjectController@saveSubjectTeacher');
     Route::resource('students', 'studentController');
     Route::get('students/filter/{id}', 'studentController@filterStudents');
     Route::get('students/filter2/{id}', 'studentController@filterStudents2');
@@ -18,7 +23,5 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('student/attendance', 'studentController@studentsAttendance');
     Route::get('export2Excel', 'HomeController@export2Excel');
 
-
 });
-
 Route::auth();

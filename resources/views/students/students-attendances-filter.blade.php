@@ -34,10 +34,12 @@
             @endforeach
 
 
-                <?php $present = $student->attendances()->where('attendance_id', $att->id)->having('status', '>', 0)->get()->count();?>
+                <?php $present = $student->attendances()->where('subject_id', $subject_id)->where('class_id', $class_id)
+                        ->having('status', '>', 0)->get()->count();?>
+                <?php $absent = $student->attendances()->where('subject_id', $subject_id)->where('class_id', $class_id)
+                        ->where('subject_id', $subject_id)->having('status', '=', 0)->get()->count();?>
                 <td><?php echo $present?></td>
-
-
+                <td><?php echo $absent?></td>
 
         </tr>
     @endforeach

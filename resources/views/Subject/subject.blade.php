@@ -9,7 +9,7 @@
 
                     <div class="panel-body">
 
-                        <a href="{{url('subjects/create')}}" class="btn btn-lg btn-success">Create a Course</a>
+                        <a href="{{url('subjects/create')}}" class="btn btn-lg btn-success">Create a Subject</a>
 
 
                         <table class="table table-responsive table-bordered marginTop">
@@ -24,7 +24,7 @@
                                 @foreach($subjects as $subject)
                                     <tr>
                                     <td>{{$subject->name}}</td>
-                                    <td><a href="{{url('subjects/assignStd/'.$subject->id)}}" class="btn btn-info">Assign Students</a> </td>
+                                    <td><a href="{{url('subjects/assignTeacher/'.$subject->id)}}" class="btn btn-info">Assign Teacher</a> </td>
                                     <td> <a href="{{url('subjects/'.$subject->id.'/edit')}}"  value="Edit" class="btn btn-info btn-group-sm "> Edit</a> </td>
 
                                     <td>

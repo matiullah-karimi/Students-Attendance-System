@@ -22,24 +22,17 @@
                                 @endforeach
                             </select>
 
-                            <div id="teacher-subject" class="marginTop">
-                                {{--<select name="subject" class="form-control controlWidth">--}}
-                                    {{--<option>Select Subject</option>--}}
-                                    {{--@foreach($teacher->subjects as $subject)--}}
-                                        {{--<option value="{{$subject->id}}"> {{$subject->name}} </option>--}}
-                                    {{--@endforeach--}}
-                                {{--</select>--}}
-                            </div>
+                            <div id="teacher-subject" class="marginTop"></div>
 
-                            <div id="class-students">
-                             </div>
+                            <div id="class-students"></div>
 
                         </form>
 
                     @else
-                    <a href="{{url('users')}}" class="btn btn-info">Teacher Entry</a>
-                    <a href="{{url('subjects')}}" class="btn btn-info">Course Entry</a>
-                    <a href="{{url('students')}}" class="btn btn-info">Students</a>
+                        <a href="{{url('classes')}}" class="btn btn-info">Class Entry</a>
+                        <a href="{{url('users')}}" class="btn btn-info">Teacher Entry</a>
+                        <a href="{{url('subjects')}}" class="btn btn-info">Subject Entry</a>
+                        <a href="{{url('students')}}" class="btn btn-info">Students</a>
                     @endif
 
 

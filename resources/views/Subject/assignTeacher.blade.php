@@ -7,12 +7,12 @@
 
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        Assign Students for <b>{{$subject->name}}</b> Course
+                        Assign Teacher for <b>{{$subject->name}}</b> Course
                     </div>
                     <div class="panel-body">
 
 
-                        <form method="post" action="{{url('subjects/saveStudents')}}">
+                        <form method="post" action="{{url('subjects/saveSubjectTeacher')}}">
                             <input type="hidden" name="_token" value="{{csrf_token()}}">
 
                             <!-- teachers list -->
@@ -24,39 +24,39 @@
                                 @endforeach
                             </select>
 
-                            <!-- classes list -->
-                            <select class="form-control marginTop controlWidth center-block" name="class">
+                            {{--<!-- classes list -->--}}
+                            {{--<select class="form-control marginTop controlWidth center-block" name="class">--}}
 
-                                <option>Select Class</option>
-                                @foreach($classes as $class)
-                                    <option value="{{$class->id}}">{{$class->name}}</option>
-                                @endforeach
-                            </select>
+                                {{--<option>Select Class</option>--}}
+                                {{--@foreach($classes as $class)--}}
+                                    {{--<option value="{{$class->id}}">{{$class->name}}</option>--}}
+                                {{--@endforeach--}}
+                            {{--</select>--}}
 
-                            <!-- subject id -->
+                            {{--<!-- subject id -->--}}
 
                             <input type="hidden" value="{{$subject->id}}" name="subject">
 
-                            <div class="form-group marginTop">
-                                <button class="add_field_button btn btn-success">Add More Fields</button>
+                            {{--<div class="form-group marginTop">--}}
+                                {{--<button class="add_field_button btn btn-success">Add More Fields</button>--}}
 
-                            </div>
+                            {{--</div>--}}
 
-                            <div class="row">
-                                <div class="col-md-4">
-                                        <div class=" form-group">
-                                            <input type="text" name="name[0][]" class="name form-control" placeholder="name" data-num ="0" required >
-                                        </div>
-                                    </div>
+                            {{--<div class="row">--}}
+                                {{--<div class="col-md-4">--}}
+                                        {{--<div class=" form-group">--}}
+                                            {{--<input type="text" name="name[0][]" class="name form-control" placeholder="name" data-num ="0" required >--}}
+                                        {{--</div>--}}
+                                    {{--</div>--}}
 
-                                <div class="col-md-4">
-                                    <input type="text" name="fname[0][]" class="fname form-control" placeholder="father name" data-num ="0" required>
-                                </div>
+                                {{--<div class="col-md-4">--}}
+                                    {{--<input type="text" name="fname[0][]" class="fname form-control" placeholder="father name" data-num ="0" required>--}}
+                                {{--</div>--}}
 
-                                </div>
+                                {{--</div>--}}
 
-                    <div class="input_fields_wrap">
-                    </div>
+                    {{--<div class="input_fields_wrap">--}}
+                    {{--</div>--}}
 
 
                     <div class="form-group marginTop">

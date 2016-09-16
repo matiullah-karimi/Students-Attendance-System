@@ -7,9 +7,9 @@ use App\Subject;
 use App\User;
 use App\Clas;
 use Illuminate\Http\Request;
-
 use App\Http\Requests;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Input;
 
 class subjectController extends Controller
 {
@@ -28,7 +28,7 @@ class subjectController extends Controller
     public function index()
     {
         if (Auth::user()->role != 1) {
-            return Response::HTTP_FORBIDDEN;
+            return response()->view('errors.403');
         }
         $subjects = Subject::all();
         return view('Subject/subject', compact('subjects'));
@@ -42,9 +42,10 @@ class subjectController extends Controller
     public function create()
     {
         if (Auth::user()->role != 1) {
-            return Response::HTTP_FORBIDDEN;
+            return response()->view('errors.403');
         }
-        return view('Subject/createSubject');
+        $classes = Clas::all();
+        return view('Subject/createSubject', compact('classes'));
     }
     /**
      * Store a newly created resource in storage.
@@ -55,13 +56,22 @@ class subjectController extends Controller
     public function store(Request $request)
     {
         if (Auth::user()->role != 1) {
-            return Response::HTTP_FORBIDDEN;
+            return response()->view('errors.403');
         }
-        $subject = new Subject();
 
-        $subject->name = $request->get('name');
-        $subject->save();
+        $class_id = Input::get('class');
+        $classModel = Clas::find($class_id);
 
+        $subject_name = $request->get('name');
+        if (!empty($subject_name) && is_array($subject_name)) {
+            foreach ($subject_name as $name) {
+                $subject = new Subject();
+                $subject->name = $name;
+                $subject->save();
+
+                $subject->classes()->attach($classModel);
+            }
+        }
         return redirect('/subjects');
     }
 
@@ -74,7 +84,7 @@ class subjectController extends Controller
     public function show($id)
     {
         if (Auth::user()->role != 1) {
-            return Response::HTTP_FORBIDDEN;
+            return response()->view('errors.403');
         }
         $subject = Subject::find($id);
         return view('Subject/showSubject');
@@ -89,7 +99,7 @@ class subjectController extends Controller
     public function edit($id)
     {
         if (Auth::user()->role != 1) {
-            return Response::HTTP_FORBIDDEN;
+            return response()->view('errors.403');
         }
         $subject = Subject::find($id);
         return view('Subject/editSubject', compact('subject'));
@@ -105,7 +115,7 @@ class subjectController extends Controller
     public function update(Request $request, $id)
     {
         if (Auth::user()->role != 1) {
-            return Response::HTTP_FORBIDDEN;
+            return response()->view('errors.403');
         }
         $subject = Subject::find($id);
         $subject->update($request->all());
@@ -122,7 +132,7 @@ class subjectController extends Controller
     public function destroy($id)
     {
         if (Auth::user()->role != 1) {
-            return Response::HTTP_FORBIDDEN;
+            return response()->view('errors.403');
         }
         $subject = Subject::find($id);
         $subject->delete();
@@ -130,53 +140,40 @@ class subjectController extends Controller
         return redirect('subjects');
     }
 
-    public function assignStd($id)
+    public function assignTeacher($id)
     {
         if (Auth::user()->role != 1) {
-            return Response::HTTP_FORBIDDEN;
+            return response()->view('errors.403');
         }
         $teachers = User::where('role', '=' , 0)->get();
-        $classes = Clas::all();
         $subject = Subject::find($id);
 
-        return view('Subject/assignStudents', compact('teachers', 'classes', 'subject'));
+        return view('Subject/assignTeacher', compact('teachers', 'subject'));
     }
 
-    public function saveStudents(Request $request){
+    public function saveSubjectTeacher(Request $request){
         if (Auth::user()->role != 1) {
-            return Response::HTTP_FORBIDDEN;
+            return response()->view('errors.403');
         }
         $this->validate($request, [
-            'class' => 'required|not_in:Select Class',
             'teacher' => 'required|not_in:Select Teacher',
-            'name' => 'required',
-            'fname' => 'required'
         ]);
         // adding students to a class
         $class = $request->get('class');
 
-        $i = 0;
-        foreach ($request->get('name') as $studentName){
-            $student = new Student();
-            $student->name = $studentName[0];
-            $student->fname = $request->get('fname')[$i++][0];
-            $student->save();
 
-            $student->classes()->attach($class);
-        }
         // adding subjects to a class
         $subject = $request->get('subject');
         $classModel = Clas::find($class);
-        $classModel->subjects()->attach($subject);
 
         // adding teachers to a class
         $teacher = $request->get('teacher');
-        $classModel->teachers()->attach($teacher);
+       // $classModel->teachers()->attach($teacher);
 
         $subjectT = Subject::find($subject);
         $subjectT->teachers()->attach($teacher);
 
-        return redirect()->back();
+        return redirect('subjects');
     }
 
     public function filterSubjects($id){
