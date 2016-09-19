@@ -1,7 +1,5 @@
 <?php
 
-
-
 Route::group(['middleware' => ['auth']], function () {
 
     Route::get('/home', 'HomeController@index');
@@ -25,3 +23,12 @@ Route::group(['middleware' => ['auth']], function () {
 
 });
 Route::auth();
+
+Route::group(['namespace' => 'Api', 'prefix' => 'api'], function()
+{
+    Route::group(['middleware' => ['jwt.auth']], function(){
+        Route::resource('teacher', 'apiController');
+    });
+
+    Route::post('teacher/login', 'apiController@authenticate');
+});
