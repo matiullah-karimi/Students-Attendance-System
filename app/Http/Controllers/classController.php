@@ -6,6 +6,7 @@ use App\Clas;
 use App\Student;
 use Illuminate\Http\Request;
 use App\Http\Requests;
+use Illuminate\Support\Facades\Auth;
 
 class classController extends Controller
 {
