@@ -2,9 +2,12 @@
 
 namespace App\Http\Controllers\Api;
 
+use App\Clas;
+use Illuminate\Foundation\Auth\User;
 use Illuminate\Http\Request;
 use App\Http\Requests;
 use Illuminate\Routing\Controller;
+use Illuminate\Support\Facades\Auth;
 use Tymon\JWTAuth\Exceptions\JWTException;
 use Tymon\JWTAuth\Facades\JWTAuth;
 
@@ -12,7 +15,12 @@ class apiController extends Controller
 {
 
     public function index(){
-        dd(\Auth::user()->id);
+        $id = Auth::user()->id;
+        $teacher = User::find($id);
+
+            $classes = $teacher->classes;
+
+            return response()->json($classes);
     }
 
     public function authenticate(Request $request)
