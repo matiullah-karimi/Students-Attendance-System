@@ -1,8 +1,9 @@
 <table class="table table-bordered table-responsive marginTop">
+
+    <thead><th></th></thead>
     <thead>
     <th>Name</th>
     <th>F/Name</th>
-
     @foreach($atts as $att)
         <th>{{$att->date}}</th>
     @endforeach

@@ -12,3 +12,6 @@
 .controlWidth{
     width: 400px;
 }
+@media print{
+   .noprint{display:none !important;}
+}
