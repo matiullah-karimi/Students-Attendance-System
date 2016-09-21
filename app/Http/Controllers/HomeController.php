@@ -77,16 +77,17 @@ class HomeController extends Controller
     }
 
     public function export2Excel(){
+        $teacher = User::find(Auth::user()->id);
 
-        Excel::create('New file', function($excel) {
+        Excel::create('New file', function($excel) use ($teacher){
 
-            $excel->sheet('New sheet', function($sheet) {
+            $excel->sheet('New sheet', function($sheet) use ($teacher) {
                 $classes = Clas::all();
                 
-//                $sheet->loadView('students.students-attendance', compact('classes'));
+                $sheet->loadView('students.students-attendance')->with('teacher', $teacher);
 
             });
 
-        })->download('xls');
+        })->export('xls');
     }
 }

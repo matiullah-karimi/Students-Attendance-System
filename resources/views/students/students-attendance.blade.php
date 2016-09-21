@@ -9,17 +9,18 @@
 
         @if(Auth::user()->role != 1)
         <div class="row">
-            <div class="col-md-5">
+            <div class="col-md-5 hidden-print">
 
-                <select name="class" class="form-control controlWidth">
+                <select name="class" class="form-control controlWidth" >
                     <option selected disabled>Select Class</option>
                     @foreach($teacher->classes as $class)
                         <option value="{{$class->id}}" id="classes" >{{$class->name}}</option>
                     @endforeach
                 </select>
+
             </div>
-            <div class="col-md-5" id="teacher-subjects">
-                <select name="subject" class="form-control controlWidth">
+            <div class="col-md-5 hidden-print" id="teacher-subjects">
+                <select name="subject" class="form-control controlWidth noprint">
                     <option>Select Subject</option>
                     @foreach($teacher->subjects as $subject)
                         <option value="{{$subject->id}}"> {{$subject->name}} </option>
@@ -48,10 +49,7 @@
         @endif
 
             <div id="students-atts">
-
             </div>
-
-        <a href="{{url('export2Excel')}}" class="btn btn-primary marginTop">Export to Excel</a>
     </div>
 
 @endsection

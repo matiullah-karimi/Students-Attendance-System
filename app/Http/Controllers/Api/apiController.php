@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Api;
 
 use App\Clas;
-use Illuminate\Foundation\Auth\User;
+use App\User;
 use Illuminate\Http\Request;
 use App\Http\Requests;
 use Illuminate\Routing\Controller;
@@ -15,12 +15,10 @@ class apiController extends Controller
 {
 
     public function index(){
-        $id = Auth::user()->id;
-        $teacher = User::find($id);
+        $teacher = User::find(Auth::user()->id);
+        $classes = $teacher->classes;
 
-            $classes = $teacher->classes;
-
-            return response()->json($classes);
+        return response()->json($classes);
     }
 
     public function authenticate(Request $request)
@@ -42,4 +40,24 @@ class apiController extends Controller
         // all good so return the token
         return response()->json(compact('token'));
     }
+
+    public function teacherClassSubjects($id)
+    {
+        $teacher = User::find(Auth::user()->id);
+        $class = Clas::find($id);
+        $subjects = $class->subjects;
+        $students = $class->students;
+        $teacherSubjects = array();
+        foreach ($subjects as $subject)
+        {
+            $subject_user = $teacher->subjects()->where('subject_id', $subject->id)->get();
+            $teacherSubjects[] = $subject_user;
+        }
+
+        $students_subjects = array_merge(['students' => $students->toArray()], ['subjects' => $teacherSubjects]);
+        return response()->json($students_subjects);
+
+
+    }
+
 }
