@@ -46,7 +46,6 @@ class apiController extends Controller
         $teacher = User::find(Auth::user()->id);
         $class = Clas::find($id);
         $subjects = $class->subjects;
-        $students = $class->students;
         $teacherSubjects = array();
         foreach ($subjects as $subject)
         {
@@ -54,10 +53,16 @@ class apiController extends Controller
             $teacherSubjects[] = $subject_user;
         }
 
-        $students_subjects = array_merge(['students' => $students->toArray()], ['subjects' => $teacherSubjects]);
-        return response()->json($students_subjects);
 
+        return response()->json($teacherSubjects);
+    }
 
+    public function classStudents ($id)
+    {
+        $class = Clas::find($id);
+        $students = $class->students;
+
+        return response()->json($students);
     }
 
 }

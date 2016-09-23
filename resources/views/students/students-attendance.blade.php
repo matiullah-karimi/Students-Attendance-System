@@ -27,6 +27,7 @@
                     @endforeach
                 </select>
             </div>
+            <div class="col-md-1 hidden-print"><button class="btn btn-default" onclick="print()">Print</button></div>
         </div>
 
             @else
@@ -42,7 +43,6 @@
                     </select>
                 </div>
                 <div class="col-md-5" id="teacher-subjects"> </div>
-
             </div>
 
 

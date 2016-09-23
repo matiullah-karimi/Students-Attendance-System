@@ -1,6 +1,9 @@
+<table class="table table-bordered table-responsive hidden visible-print">
+    <thead><th>class: {{$class->name}}</th><th>Subject: {{$subject->name}}</th></thead>
+</table>
 <table class="table table-bordered table-responsive marginTop">
 
-    <thead><th></th></thead>
+
     <thead>
     <th>Name</th>
     <th>F/Name</th>
