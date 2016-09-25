@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Api;
 
 use App\Clas;
 use App\User;
+use App\Attendance;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use App\Http\Requests;
 use Illuminate\Routing\Controller;
@@ -18,7 +20,7 @@ class apiController extends Controller
         $teacher = User::find(Auth::user()->id);
         $classes = $teacher->classes;
 
-        return response()->json($classes);
+        return response()->json(compact("classes"));
     }
 
     public function authenticate(Request $request)
@@ -54,7 +56,7 @@ class apiController extends Controller
         }
 
 
-        return response()->json($teacherSubjects);
+        return response()->json(compact("teacherSubjects"));
     }
 
     public function classStudents ($id)
@@ -62,7 +64,45 @@ class apiController extends Controller
         $class = Clas::find($id);
         $students = $class->students;
 
-        return response()->json($students);
+        return response()->json(compact("students"));
+    }
+
+    public function saveResult($id, $subject_id,  Request $request)
+    {
+         $teacherId = Auth::user()->id;
+         
+        $subjectId = $subject_id;
+        $classId = $id;
+
+
+         $attendance = new Attendance();
+
+        $attendance->subject_id = $subjectId;
+        $attendance->user_id = $teacherId;
+        $attendance->class_id = $classId;
+        $attendance->date = Carbon::now();
+        
+      $attendance->save();
+
+        $student_status = $request->get('results');
+
+        
+
+        return $student_status;
+
+        foreach ($student_status as $key => $value){
+
+
+            $student =  Student::find($key);
+
+            
+            $attendance->students()->attach($student->id, ['status' => $value]);
+
+        }
+
+        
+        
+
     }
 
 }
