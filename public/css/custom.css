@@ -12,6 +12,13 @@
 .controlWidth{
     width: 400px;
 }
+@media print {
+    .showInPrint{visibility: visible;}
+}
 @media print{
    .noprint{display:none !important;}
 }
+.hide{
+    visibility: hidden;
+}
+

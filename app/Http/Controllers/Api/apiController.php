@@ -3,11 +3,15 @@
 namespace App\Http\Controllers\Api;
 
 use App\Clas;
+use App\Student;
 use App\User;
+use App\Attendance;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use App\Http\Requests;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Log;
 use Tymon\JWTAuth\Exceptions\JWTException;
 use Tymon\JWTAuth\Facades\JWTAuth;
 
@@ -18,7 +22,7 @@ class apiController extends Controller
         $teacher = User::find(Auth::user()->id);
         $classes = $teacher->classes;
 
-        return response()->json(["classes" => $classes]);
+        return response()->json(compact("classes"));
     }
 
     public function authenticate(Request $request)
@@ -54,8 +58,51 @@ class apiController extends Controller
             $teacherSubjects[] = $subject_user;
         }
 
-        $students_subjects = array_merge(['students' => $students->toArray(), 'subjects' => $teacherSubjects]);
-        return response()->json($students_subjects);
+
+        return response()->json(compact("teacherSubjects"));
+    }
+
+    public function classStudents ($id)
+    {
+        $class = Clas::find($id);
+        $students = $class->students;
+
+        return response()->json(compact("students"));
+    }
+
+    public function saveResult($id, $subject_id,  Request $request)
+    {
+         $teacherId = Auth::user()->id;
+
+        $subjectId = $subject_id;
+        $classId = $id;
+
+
+         $attendance = new Attendance();
+
+        $attendance->subject_id = $subjectId;
+        $attendance->user_id = $teacherId;
+        $attendance->class_id = $classId;
+        $attendance->date = Carbon::now();
+
+      $attendance->save();
+
+        $student_status = $request->get('results');
+
+
+        print_r($student_status);
+
+        foreach ($student_status as $key => $value){
+
+
+            $student =  Student::find($key);
+
+
+            $attendance->students()->attach($student->id, ['status' => $value]);
+
+        }
+
+
 
 
     }

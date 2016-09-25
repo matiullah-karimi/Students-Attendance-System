@@ -149,6 +149,7 @@ class studentController extends Controller
     public function filterStudentsAttendance($id){
 
         $subject_id = Input::get('subId');
+        $subject = Subject::find($subject_id);
         $class = Clas::find($id);
         $class_id = $id;
 
@@ -162,7 +163,7 @@ class studentController extends Controller
         }
 
 
-        return view('students/students-attendances-filter', compact('atts', 'class', 'subject_id', 'class_id'));
+        return view('students/students-attendances-filter', compact('atts', 'class', 'subject_id', 'class_id', 'subject'));
     }
 
 

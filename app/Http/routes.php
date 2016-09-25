@@ -29,6 +29,8 @@ Route::group(['namespace' => 'Api', 'prefix' => 'api'], function()
     Route::group(['middleware' => ['jwt.auth']], function(){
         Route::get('teacher', 'apiController@index');
         Route::get('teacher/classSubjects/{id}', 'apiController@teacherClassSubjects');
+        Route::get('teacher/classStudents/{id}', 'apiController@classStudents');
+        Route::post('teacher/saveResult/{id}/{subjec_id}', 'apiController@saveResult');
     });
 
     Route::post('teacher/login', 'apiController@authenticate');
