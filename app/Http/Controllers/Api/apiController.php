@@ -18,7 +18,7 @@ class apiController extends Controller
         $teacher = User::find(Auth::user()->id);
         $classes = $teacher->classes;
 
-        return response()->json($classes);
+        return response()->json(["classes" => $classes]);
     }
 
     public function authenticate(Request $request)
@@ -54,7 +54,7 @@ class apiController extends Controller
             $teacherSubjects[] = $subject_user;
         }
 
-        $students_subjects = array_merge(['students' => $students->toArray()], ['subjects' => $teacherSubjects]);
+        $students_subjects = array_merge(['students' => $students->toArray(), 'subjects' => $teacherSubjects]);
         return response()->json($students_subjects);
 
 
