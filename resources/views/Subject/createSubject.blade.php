@@ -30,15 +30,21 @@
                             </div>
                             <div class="input_fields_wrap">
                             </div>
-
-
-
-
-
                             <div class="form-group marginTop">
-                                <input type="submit" class="form-control btn btn-danger">
+                                <input type="submit" class="form-control btn btn-info" value="Submit">
                             </div>
                         </form>
+                    </div>
+                    <div class="panel-footer">
+                        @if (count($errors) > 0)
+                            <div class="alert alert-danger">
+                                <ul>
+                                    @foreach ($errors->all() as $error)
+                                        <li>{{ $error }}</li>
+                                    @endforeach
+                                </ul>
+                            </div>
+                        @endif
                     </div>
                 </div>
             </div>

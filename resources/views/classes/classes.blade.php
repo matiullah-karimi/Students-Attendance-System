@@ -24,7 +24,7 @@
                                 <tr>
 
                                     <td>{{$class->name}}</td>
-                                    <td><a href="{{url('classes/assignStudents/'.$class->id)}}" class="btn btn-info">Assign Students</a> </td>                                    <td> <a href="{{url('classes/'.$class->id.'/edit')}}"  value="Edit" class="btn btn-info btn-group-sm">Edit</a></td>
+                                    <td><a href="{{url('classes/assignStudents/'.$class->id)}}" class="btn btn-warning">Assign Students</a> </td>                                    <td> <a href="{{url('classes/'.$class->id.'/edit')}}"  value="Edit" class="btn btn-info btn-group-sm">Edit</a></td>
 
                                     <td>
                                         <form action="{{url('classes/'.$class->id)}}" method="post" id="{{$class->id}}">

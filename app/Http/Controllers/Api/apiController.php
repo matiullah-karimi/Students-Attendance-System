@@ -3,9 +3,9 @@
 namespace App\Http\Controllers\Api;
 
 use App\Clas;
+use App\Student;
 use App\User;
 use App\Attendance;
-use App\Student;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use App\Http\Requests;
@@ -49,6 +49,7 @@ class apiController extends Controller
         $teacher = User::find(Auth::user()->id);
         $class = Clas::find($id);
         $subjects = $class->subjects;
+        $students = $class->students;
         $teacherSubjects = array();
         foreach ($subjects as $subject)
         {
@@ -87,13 +88,17 @@ class apiController extends Controller
 
         $student_status = $request->get('results');
 
-        return $student_status;
+
+        print_r($student_status);
 
         foreach ($student_status as $key => $value){
 
+
             $student =  Student::find($key);
-            
+
+
             $attendance->students()->attach($student->id, ['status' => $value]);
+
         }
 
 

@@ -23,7 +23,7 @@
                             </div>
 
                             <div class="form-group marginTop">
-                                <input type="submit" class="form-control btn btn-danger">
+                                <input type="submit" class="form-control btn btn-info" value="Create">
                             </div>
                         </form>
                     </div>

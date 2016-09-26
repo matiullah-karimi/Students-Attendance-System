@@ -24,7 +24,7 @@
                                 @foreach($subjects as $subject)
                                     <tr>
                                     <td>{{$subject->name}}</td>
-                                    <td><a href="{{url('subjects/assignTeacher/'.$subject->id)}}" class="btn btn-info">Assign Teacher</a> </td>
+                                    <td><a href="{{url('subjects/assignTeacher/'.$subject->id)}}" class="btn btn-warning">Assign Teacher</a> </td>
                                     <td> <a href="{{url('subjects/'.$subject->id.'/edit')}}"  value="Edit" class="btn btn-info btn-group-sm "> Edit</a> </td>
 
                                     <td>

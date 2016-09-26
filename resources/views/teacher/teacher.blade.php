@@ -26,7 +26,7 @@
 
                                 <td>{{$teacher->name}}</td>
                                 <td>{{$teacher->email}}</td>
-                                <td><a href="{{url('users/assignClasses/'.$teacher->id)}}" class="btn btn-info">Assign Classes</a></td>
+                                <td><a href="{{url('users/assignClasses/'.$teacher->id)}}" class="btn btn-warning">Assign Classes</a></td>
                                     <td> <a href="{{url('users/'.$teacher->id.'/edit')}}"  value="Edit" class="btn btn-info btn-group-sm">Edit</a></td>
 
                                     <td>
