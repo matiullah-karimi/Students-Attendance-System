@@ -32,7 +32,7 @@
 
             @else
 
-            <div class="row">
+            <div class="row hidden-print">
                 <div class="col-md-5">
 
                     <select name="class" class="form-control controlWidth">
@@ -43,10 +43,11 @@
                     </select>
                 </div>
                 <div class="col-md-5" id="teacher-subjects"> </div>
+                <div class="col-md-1 hidden-print">
+                    <button class="btn btn-default" onclick="print()">Print</button>
+                </div>
             </div>
-            <div class="col-md-1 hidden-print">
-                <button class="btn btn-default" onclick="print()">Print</button>
-            </div>
+
 
         @endif
 

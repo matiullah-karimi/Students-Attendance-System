@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 
 class userController extends Controller
@@ -137,7 +138,15 @@ class userController extends Controller
     public function assignClasses($id)
     {
         $teacher = User::find($id);
-        $classes = Clas::all();
+
+        $teacherClasses = DB::table('users')
+            ->join('class_user', 'users.id', '=', 'class_user.user_id')
+            ->join('classes', 'class_user.class_id', '=', 'classes.id')
+            ->where('users.id', '=', $teacher->id)
+            ->select('classes.id')->lists('id');
+
+        $classes = Clas::whereNotIn('id', $teacherClasses)->get();
+
 
         return view('teacher.assign-classes', compact('teacher', 'classes'));
     }

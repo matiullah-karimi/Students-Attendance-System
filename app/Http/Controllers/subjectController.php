@@ -9,6 +9,7 @@ use App\Clas;
 use Illuminate\Http\Request;
 use App\Http\Requests;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Input;
 
 class subjectController extends Controller
@@ -145,7 +146,16 @@ class subjectController extends Controller
         if (Auth::user()->role != 1) {
             return response()->view('errors.403');
         }
-        $teachers = User::where('role', '=' , 0)->get();
+
+        $subjectTeachers = DB::table('subjects')
+            ->join('subject_user', 'subjects.id', '=', 'subject_user.subject_id')
+            ->join('users', 'subject_user.user_id', '=', 'users.id')
+            ->where('subjects.id', '=', $id)
+            ->select('users.id')->lists('id');
+
+        $teachers = User::whereNotIn('id', $subjectTeachers)->where('users.role', '=', 0)->get();
+
+       // $teachers = User::where('role', '=' , 0)->get();
         $subject = Subject::find($id);
 
         return view('Subject/assignTeacher', compact('teachers', 'subject'));
