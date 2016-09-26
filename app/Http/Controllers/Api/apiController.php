@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Api;
 use App\Clas;
 use App\User;
 use App\Attendance;
+use App\Student;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use App\Http\Requests;
@@ -86,19 +87,17 @@ class apiController extends Controller
 
         $student_status = $request->get('results');
 
-        
-
         return $student_status;
 
         foreach ($student_status as $key => $value){
 
-
             $student =  Student::find($key);
-
             
             $attendance->students()->attach($student->id, ['status' => $value]);
-
         }
+
+
+        return response()->json("Succesfully Submited");
 
         
         
