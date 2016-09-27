@@ -59,21 +59,25 @@ class subjectController extends Controller
         if (Auth::user()->role != 1) {
             return response()->view('errors.403');
         }
-        $this->validate($request, [
-            'class' => 'required|not_in:Select Class',
-        ]);
-
-        $class_id = Input::get('class');
-        $classModel = Clas::find($class_id);
+//        $this->validate($request, [
+//            'class' => 'required|not_in:Select Class',
+//        ]);
 
         $subject_name = $request->get('name');
+        $classes = $request->get('classes');
+
         if (!empty($subject_name) && is_array($subject_name)) {
             foreach ($subject_name as $name) {
                 $subject = new Subject();
                 $subject->name = $name;
                 $subject->save();
 
-                $subject->classes()->attach($classModel);
+                if (!empty($classes) && is_array($classes)) {
+                    foreach ($classes as $classId){
+                        $class = Clas::find($classId);
+                        $class->subjects()->attach($subject);
+                    }
+                }
             }
         }
         return redirect('/subjects');
@@ -157,11 +161,11 @@ class subjectController extends Controller
             ->select('users.id')->lists('id');
 
         $teachers = User::whereNotIn('id', $subjectTeachers)->where('users.role', '=', 0)->get();
+        $subjectTeachers = User::whereIn('id', $subjectTeachers)->where('users.role', '=', 0)->get();
 
-       // $teachers = User::where('role', '=' , 0)->get();
         $subject = Subject::find($id);
 
-        return view('Subject/assignTeacher', compact('teachers', 'subject'));
+        return view('Subject/assignTeacher', compact('teachers', 'subject', 'subjectTeachers'));
     }
 
     public function saveSubjectTeacher(Request $request){

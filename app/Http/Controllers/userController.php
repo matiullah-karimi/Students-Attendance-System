@@ -147,16 +147,15 @@ class userController extends Controller
 
         $classes = Clas::whereNotIn('id', $teacherClasses)->get();
 
+        $allClasses = Clas::whereIn('id', $teacherClasses)->get();
 
-        return view('teacher.assign-classes', compact('teacher', 'classes'));
+
+        return view('teacher.assign-classes', compact('teacher', 'classes', 'allClasses'));
     }
 
     public function saveTeacherClasses($id, Request $request)
     {
 
-        $this->validate($request, [
-            'class' => 'required|not_in:None selected',
-        ]);
         $teacher = User::find($id);
 
         $classes = $request->get('classes');
