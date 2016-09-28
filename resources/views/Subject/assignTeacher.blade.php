@@ -2,84 +2,72 @@
 @section('content')
 
     <div class="container">
-        <div class="row">
-            <div class="col-md-10 col-md-offset-1">
-
-                <div class="panel panel-default">
-                    <div class="panel-heading">
-                        Assign Teacher for <b>{{$subject->name}}</b> Course
-                    </div>
-                    <div class="panel-body">
 
 
-                        <form method="post" action="{{url('subjects/saveSubjectTeacher')}}">
-                            <input type="hidden" name="_token" value="{{csrf_token()}}">
+        <h2>{{$subject->name}}</h2>
+        <ul class="nav nav-tabs">
+            <li class="active"><a data-toggle="tab" href="#home">Home</a></li>
+            <li><a data-toggle="tab" href="#menu1">Teachers</a></li>
 
-                            <!-- teachers list -->
-                            <select class="form-control marginTop controlWidth center-block" name="teacher" >
+        </ul>
 
-                                <option>Select Teacher</option>
-                                @foreach($teachers as $teacher)
-                                    <option value="{{$teacher->id}}">{{$teacher->name}}</option>
-                                @endforeach
-                            </select>
+        <div class="tab-content">
+            <div id="home" class="tab-pane fade in active">
+                <div class="row marginTop">
+                    <div class="col-md-10">
 
-                            {{--<!-- classes list -->--}}
-                            {{--<select class="form-control marginTop controlWidth center-block" name="class">--}}
-
-                                {{--<option>Select Class</option>--}}
-                                {{--@foreach($classes as $class)--}}
-                                    {{--<option value="{{$class->id}}">{{$class->name}}</option>--}}
-                                {{--@endforeach--}}
-                            {{--</select>--}}
-
-                            {{--<!-- subject id -->--}}
-
-                            <input type="hidden" value="{{$subject->id}}" name="subject">
-
-                            {{--<div class="form-group marginTop">--}}
-                                {{--<button class="add_field_button btn btn-success">Add More Fields</button>--}}
-
-                            {{--</div>--}}
-
-                            {{--<div class="row">--}}
-                                {{--<div class="col-md-4">--}}
-                                        {{--<div class=" form-group">--}}
-                                            {{--<input type="text" name="name[0][]" class="name form-control" placeholder="name" data-num ="0" required >--}}
-                                        {{--</div>--}}
-                                    {{--</div>--}}
-
-                                {{--<div class="col-md-4">--}}
-                                    {{--<input type="text" name="fname[0][]" class="fname form-control" placeholder="father name" data-num ="0" required>--}}
-                                {{--</div>--}}
-
-                                {{--</div>--}}
-
-                    {{--<div class="input_fields_wrap">--}}
-                    {{--</div>--}}
-
-
-                    <div class="form-group marginTop">
-                                    <input type="submit" value="Submit" class="btn btn-info form-control">
-                                </div>
-
-                        </form>
-
-
-                    </div>
-                    <div class="panel-footer">
-                        @if (count($errors) > 0)
-                            <div class="alert alert-danger">
-                                <ul>
-                                    @foreach ($errors->all() as $error)
-                                        <li>{{ $error }}</li>
-                                    @endforeach
-                                </ul>
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                Assign Teacher for <b>{{$subject->name}}</b> Course
                             </div>
-                        @endif
+                            <div class="panel-body">
+
+
+                                <form method="post" action="{{url('subjects/saveSubjectTeacher')}}">
+                                    <input type="hidden" name="_token" value="{{csrf_token()}}">
+
+                                    <!-- teachers list -->
+                                    <select class="form-control marginTop controlWidth center-block" name="teacher" >
+
+                                        <option>Select Teacher</option>
+                                        @foreach($teachers as $teacher)
+                                            <option value="{{$teacher->id}}">{{$teacher->name}}</option>
+                                        @endforeach
+                                    </select>
+
+                                    <input type="hidden" value="{{$subject->id}}" name="subject">
+
+                                    <div class="form-group marginTop">
+                                        <input type="submit" value="Submit" class="btn btn-info form-control">
+                                    </div>
+
+                                </form>
+
+
+                            </div>
+                            <div class="panel-footer">
+                                @if (count($errors) > 0)
+                                    <div class="alert alert-danger">
+                                        <ul>
+                                            @foreach ($errors->all() as $error)
+                                                <li>{{ $error }}</li>
+                                            @endforeach
+                                        </ul>
+                                    </div>
+                                @endif
+                            </div>
+                        </div>
+
                     </div>
                 </div>
+            </div>
+            <div id="menu1" class="tab-pane fade">
 
+                <ul>
+                    @foreach($subjectTeachers as $teacher)
+                        <li>{{$teacher->name}}</li>
+                    @endforeach
+                </ul>
             </div>
         </div>
     </div>

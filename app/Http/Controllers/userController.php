@@ -147,8 +147,10 @@ class userController extends Controller
 
         $classes = Clas::whereNotIn('id', $teacherClasses)->get();
 
+        $allClasses = Clas::whereIn('id', $teacherClasses)->get();
 
-        return view('teacher.assign-classes', compact('teacher', 'classes'));
+
+        return view('teacher.assign-classes', compact('teacher', 'classes', 'allClasses'));
     }
 
     public function saveTeacherClasses($id, Request $request)

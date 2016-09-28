@@ -13,8 +13,7 @@
 
                             <div class="form-group">
 
-                                <select name="class" class="form-control">
-                                    <option>Select Class</option>
+                                <select id="classes" name="classes[]" multiple="multiple" class="form-control controlWidth">
                                     @foreach($classes as $class)
                                         <option value="{{$class->id}}">{{$class->name}}</option>
                                     @endforeach
@@ -78,3 +77,15 @@
         });
     </script>
 @endsection
+
+@section('page_specific_scripts')
+    <script>
+        $(document).ready(function() {
+            $('#classes').multiselect({
+                includeSelectAllOption: true,
+                enableFiltering: true,
+                buttonWidth: '400px'
+            });
+        });
+    </script>
+    @endsection
