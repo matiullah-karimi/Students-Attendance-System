@@ -32,13 +32,15 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $teacherId = Auth::user()->id;
 
-        $teacher = User::find($teacherId);
-
-        $students = Student::all();
-
-        return view('home', compact('teacher', 'students'));
+        return view('layouts/Admin/pages/layout.master');
+//        $teacherId = Auth::user()->id;
+//
+//        $teacher = User::find($teacherId);
+//
+//        $students = Student::all();
+//
+//        return view('home', compact('teacher', 'students'));
     }
 
     public function storeResult(Request $request){
