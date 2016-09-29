@@ -5,6 +5,7 @@
     <div class="box-body">
         <table class="table table-condensed marginTop" id="students_table">
             <thead>
+            <th>ID</th>
             <th>Name</th>
             <th>F/Name</th>
             <th>Status</th>
@@ -14,10 +15,11 @@
 
             @foreach($students as $student)
                 <tr>
+                    <td>{{$student->id}}</td>
                     <td>{{$student->name}}</td>
                     <td>{{$student->fname}}</td>
                     <input type="hidden" name="status[{{$student->id}}]" value="off" class="form-control">
-                    <td><input type="checkbox" name="status[{{$student->id}}]" value="on" checked class="form-control"></td>
+                    <td><input type="checkbox" name="status[{{$student->id}}]" value="on" checked class="checkbox "></td>
                 </tr>
             @endforeach
             </tbody>

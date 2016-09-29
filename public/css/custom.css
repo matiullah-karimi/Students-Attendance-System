@@ -21,4 +21,10 @@
 .hide{
     visibility: hidden;
 }
+.boxWidth{
+    width:100%;
+}
+.checkboxWidth{
+    width:20px;
+}
 

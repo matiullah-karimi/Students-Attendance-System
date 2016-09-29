@@ -74,7 +74,7 @@
                                 <img src="{{asset('images/avatar5.png')}}" class="user-image" alt="User Image"></br>
                                 <p>
                                     {{Auth::user()->name}}
-                                    <small>Computer Science</small>
+                                    <small>{{Auth::user()->email}}</small>
                                 </p>
                             </li>
 
