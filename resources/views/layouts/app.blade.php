@@ -6,9 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title>Attendance</title>
-
-
-
     <!-- Latest compiled and minified CSS -->
     <script src="{{asset('bootstrap/js/jquery.min.js')}}"></script>
     <script src="{{asset('bootstrap/js/bootstrap.min.js')}}"></script>
