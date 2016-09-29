@@ -1,13 +1,8 @@
-@extends('layouts.app')
+@extends('layouts.master')
 @section('content')
 <div class="container">
     <div class="row">
         <div class="col-md-10 col-md-offset-1">
-            <div class="panel panel-default">
-                <div class="panel-heading">Attendance Dashboard</div>
-
-                <div class="panel-body">
-                    <a href="{{url('student/attendance')}}" class="btn btn-info pull-right">View Students Attendance</a>
 
                 @if(Auth::user()->role != 1)
 
@@ -29,15 +24,68 @@
                         </form>
 
                     @else
-                        <a href="{{url('classes')}}" class="btn btn-info">Class Entry</a>
-                        <a href="{{url('users')}}" class="btn btn-info">Teacher Entry</a>
-                        <a href="{{url('subjects')}}" class="btn btn-info">Subject Entry</a>
-                        <a href="{{url('students')}}" class="btn btn-info">Students</a>
+
+                    <div class="row">
+
+                        <div class="col-md-3 col-sm-6 col-xs-12">
+                            <div class="info-box">
+                                <span class="info-box-icon bg-aqua"><i class="fa fa-users"></i></span>
+
+                                <div class="info-box-content">
+                                    <span class="info-box-text">Students</span>
+                                    <span class="info-box-number">1,410</span>
+                                </div>
+                                <!-- /.info-box-content -->
+                            </div>
+                            <!-- /.info-box -->
+                        </div>
+
+                        <div class="col-md-3 col-sm-6 col-xs-12">
+                            <div class="info-box">
+                                <span class="info-box-icon bg-green"><i class="fa fa-user"></i></span>
+
+                                <div class="info-box-content">
+                                    <span class="info-box-text">Teachers</span>
+                                    <span class="info-box-number">1,410</span>
+                                </div>
+                                <!-- /.info-box-content -->
+                            </div>
+                            <!-- /.info-box -->
+                        </div>
+
+                        <div class="col-md-3 col-sm-6 col-xs-12">
+                            <div class="info-box">
+                                <span class="info-box-icon bg-orange"><i class="fa fa-th"></i></span>
+
+                                <div class="info-box-content">
+                                    <span class="info-box-text">Classes</span>
+                                    <span class="info-box-number">1,410</span>
+                                </div>
+                                <!-- /.info-box-content -->
+                            </div>
+                            <!-- /.info-box -->
+                        </div>
+
+                        <div class="col-md-3 col-sm-6 col-xs-12">
+                            <div class="info-box">
+                                <span class="info-box-icon bg-red"><i class="fa fa-book"></i></span>
+
+                                <div class="info-box-content">
+                                    <span class="info-box-text">Subjects</span>
+                                    <span class="info-box-number">1,410</span>
+                                </div>
+                                <!-- /.info-box-content -->
+                            </div>
+                            <!-- /.info-box -->
+                        </div>
+
+                    </div>
+
                     @endif
 
 
-                </div>
-                <div class="panel-footer">
+
+
                     @if (count($errors) > 0)
                         <div class="alert alert-danger">
                             <ul>
@@ -47,8 +95,7 @@
                             </ul>
                         </div>
                     @endif
-                </div>
-            </div>
+
         </div>
     </div>
 </div>

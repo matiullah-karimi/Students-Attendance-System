@@ -7,11 +7,12 @@
     <!-- Tell the browser to be responsive to screen width -->
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <!-- Bootstrap 3.3.6 -->
-    <link rel="stylesheet" href= {{asset('bootstrap/css/bootstrap.min.css')}}>
+    <link rel="stylesheet" href="{{asset('bootstrap/css/bootstrap.min.css')}}">
     <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="{{asset('css/font-awesome.min.css')}}">
     <!-- Ionicons -->
-    <link rel="stylesheet" href="{{asset('css/ionicons.min.css')}}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
     <!-- Theme style -->
     <link rel="stylesheet" href= "{{asset('dist/css/AdminLTE.min.css')}}">
     <!-- AdminLTE Skins. Choose a skin from the css/skins
@@ -119,8 +120,8 @@
                 </li>
 
                 <li>
-                    <a href="../widgets.html">
-                        <i class="fa fa-th"></i> <span>Teacher Entry</span>
+                    <a href="{{url('/users')}}">
+                        <i class="fa fa-user"></i> <span>Teacher Entry</span>
             <span class="pull-right-container">
 
             </span>
@@ -128,7 +129,7 @@
                 </li>
 
                 <li>
-                    <a href="../widgets.html">
+                    <a href="{{url('/classes')}}">
                         <i class="fa fa-th"></i> <span>Class Entry</span>
             <span class="pull-right-container">
 
@@ -137,8 +138,8 @@
                 </li>
 
                 <li>
-                    <a href="../widgets.html">
-                        <i class="fa fa-th"></i> <span>Subject Entry</span>
+                    <a href="{{url('/subjects')}}">
+                        <i class="fa fa-book"></i> <span>Subject Entry</span>
             <span class="pull-right-container">
 
             </span>
@@ -146,8 +147,17 @@
                 </li>
 
                 <li>
-                    <a href="../widgets.html">
-                        <i class="fa fa-th"></i> <span>Students</span>
+                    <a href="{{url('/students')}}">
+                        <i class="fa fa-users"></i> <span>Students</span>
+            <span class="pull-right-container">
+
+            </span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="{{url('student/attendance')}}">
+                        <i class="fa fa-eye"></i> <span>Students Attendance</span>
             <span class="pull-right-container">
 
             </span>
@@ -168,11 +178,14 @@
         <!-- Content Header (Page header) -->
         <section class="content-header">
 
+            @yield('header')
+
         </section>
 
         <!-- Main content -->
         <section class="content">
 
+            @yield('content')
         </section>
         <!-- /.content -->
     </div>
