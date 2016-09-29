@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.master')
 
 @section('page_specific_styles')
     <link rel="stylesheet" href="{{asset('/bootstrap/css/bootstrap.min.css')}}">

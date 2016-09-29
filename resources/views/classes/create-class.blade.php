@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.master')
 
 @section('content')
     <div class="container">
@@ -44,7 +44,7 @@
                 if (x < max_fields) { //max input box allowed
                     x++; //text box increment
                     $(wrapper).append('<div class="row marginTop" id="row">' +
-                            '<div class="col-md-4"><input type="text" name="name[]" class="form-control" placeholder="subject name" id="name" required/></div> '+
+                            '<div class="col-md-4"><input type="text" name="name[]" class="form-control" placeholder="class name" id="name" required/></div> '+
                             '<div class="col-md-1"><a href="#" class="remove_field glyphicon glyphicon-remove marginTop" aria-hidden="true"></a></div>' +
                             '</div>'); //add input box
                 }

@@ -1,4 +1,4 @@
-<table class="table table-responsive table-bordered marginTop" id="students_table">
+<table class="table table-condensed table-responsive table-bordered marginTop" id="students_table">
     <thead>
     <th>Name</th>
     <th>F/Name</th>

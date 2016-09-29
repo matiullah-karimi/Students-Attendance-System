@@ -1,5 +1,4 @@
-@extends('layouts.app')
-
+@extends('layouts.master')
 @section('content')
     <div class="container">
         <h2>{{$teacher->name}}</h2>

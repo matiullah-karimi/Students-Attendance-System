@@ -6,17 +6,26 @@
     <title>Students Attendance Management System</title>
     <!-- Tell the browser to be responsive to screen width -->
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <script src="{{asset('bootstrap/js/jquery.min.js')}}"></script>
+    <script src="{{asset('bootstrap/js/bootstrap.min.js')}}"></script>
+    <link rel="stylesheet" href="{{asset('/bootstrap/css/bootstrap.min.css')}}">
+    <link rel="stylesheet" href="{{asset('/css/custom.css')}}">
+    <script type="text/javascript" src="{{asset('bootstrap/js/bootstrap-multiselect.js')}}"></script>
+    <link rel="stylesheet" href=" {{asset('bootstrap/css/bootstrap-multiselect.css')}}" type="text/css"/>
+
+
+    <!-- jQuery 2.2.3 -->
+    {{--<script src="{{asset('plugins/jQuery/jquery-2.2.3.min.js')}}"></script>--}}
     <!-- Bootstrap 3.3.6 -->
-    <link rel="stylesheet" href= "{{asset('bootstrap/css/bootstrap.min.css')}}">
+
     <!-- Font Awesome -->
     <link rel="stylesheet" href="{{asset('css/font-awesome.min.css')}}">
     <!-- Ionicons -->
-    <link rel="stylesheet" href="{{asset('css/ionicons.min.css')}}">
     <!-- Theme style -->
     <link rel="stylesheet" href= "{{asset('dist/css/AdminLTE.min.css')}}">
     <!-- AdminLTE Skins. Choose a skin from the css/skins
          folder instead of downloading all of them to reduce the load. -->
-    <link rel="stylesheet" href=" {{asset('dist/css/skins/_all-skins.min.css')}}">
+    <link rel="stylesheet" href= {{asset('dist/css/skins/_all-skins.min.css')}}>
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -32,7 +41,7 @@
 
     <header class="main-header">
         <!-- Logo -->
-        <a href="../../index2.html" class="logo">
+        <a href="{{asset('images/avatar5.png')}}" class="logo">
             <!-- mini logo for sidebar mini 50x50 pixels -->
             <span class="logo-mini"><b>A</b>S</span>
             <!-- logo for regular state and mobile devices -->
@@ -111,15 +120,15 @@
                 <li class="header">MAIN NAVIGATION</li>
 
                 <li class="treeview">
-                    <a href="{{url('/dashboard')}}">
+                    <a href="{{url('/home')}}">
                         <i class="fa fa-dashboard"></i> <span>Dashboard</span>
                     </a>
 
                 </li>
 
                 <li>
-                    <a href="../widgets.html">
-                        <i class="fa fa-th"></i> <span>Teacher Entry</span>
+                    <a href="{{url('/users')}}">
+                        <i class="fa fa-user"></i> <span>Teacher Entry</span>
             <span class="pull-right-container">
 
             </span>
@@ -127,7 +136,7 @@
                 </li>
 
                 <li>
-                    <a href="../widgets.html">
+                    <a href="{{url('/classes')}}">
                         <i class="fa fa-th"></i> <span>Class Entry</span>
             <span class="pull-right-container">
 
@@ -136,8 +145,8 @@
                 </li>
 
                 <li>
-                    <a href="../widgets.html">
-                        <i class="fa fa-th"></i> <span>Subject Entry</span>
+                    <a href="{{url('/subjects')}}">
+                        <i class="fa fa-book"></i> <span>Subject Entry</span>
             <span class="pull-right-container">
 
             </span>
@@ -145,9 +154,20 @@
                 </li>
 
                 <li>
-                    <a href="../widgets.html">
-                        <i class="fa fa-th"></i> <span>Students</span>
-                        <span class="pull-right-container"></span>
+                    <a href="{{url('/students')}}">
+                        <i class="fa fa-users"></i> <span>Students</span>
+            <span class="pull-right-container">
+
+            </span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="{{url('student/attendance')}}">
+                        <i class="fa fa-eye"></i> <span>Students Attendance</span>
+            <span class="pull-right-container">
+
+            </span>
                     </a>
                 </li>
                 </ul>
@@ -163,21 +183,24 @@
         <!-- Content Header (Page header) -->
         <section class="content-header">
 
+            @yield('header')
+
         </section>
 
         <!-- Main content -->
         <section class="content">
 
+            @yield('content')
         </section>
         <!-- /.content -->
     </div>
     <!-- /.content-wrapper -->
 
-    <footer class="main-footer">
+    <footer class="main-footer hidden-print">
         <div class="pull-right hidden-xs">
             <b>Version</b> 1.0.0
         </div>
-        <strong>Copyright &copy; 2016 <a href="http://almsaeedstudio.com">Matiullah Karimi</a>.</strong> All rights
+        <strong>Copyright &copy; 2016 <a href="#">Matiullah Karimi</a>.</strong> All rights
         reserved.
     </footer>
 
@@ -199,11 +222,6 @@
     <div class="control-sidebar-bg"></div>
 </div>
 <!-- ./wrapper -->
-
-<!-- jQuery 2.2.3 -->
-<script src="{{asset('plugins/jQuery/jquery-2.2.3.min.js')}}"></script>
-<!-- Bootstrap 3.3.6 -->
-<script src="{{asset('bootstrap/js/bootstrap.min.js')}}"></script>
 <!-- SlimScroll -->
 <script src="{{asset('plugins/slimScroll/jquery.slimscroll.min.js')}}"></script>
 <!-- FastClick -->
@@ -212,5 +230,8 @@
 <script src="{{asset('dist/js/app.min.js')}}"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="{{asset('dist/js/demo.js')}}"></script>
+
+
+@yield('page_specific_scripts')
 </body>
 </html>
