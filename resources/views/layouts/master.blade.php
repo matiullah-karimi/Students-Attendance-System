@@ -127,8 +127,8 @@
                 </li>
 
                 <li>
-                    <a href="{{url('/users')}}">
-                        <i class="fa fa-user"></i> <span>Teacher Entry</span>
+                    <a href="{{url('/classes')}}">
+                        <i class="fa fa-th"></i> <span>Classes</span>
             <span class="pull-right-container">
 
             </span>
@@ -136,17 +136,18 @@
                 </li>
 
                 <li>
-                    <a href="{{url('/classes')}}">
-                        <i class="fa fa-th"></i> <span>Class Entry</span>
+                    <a href="{{url('/users')}}">
+                        <i class="fa fa-user"></i> <span>Teachers</span>
             <span class="pull-right-container">
 
             </span>
                     </a>
                 </li>
+
 
                 <li>
                     <a href="{{url('/subjects')}}">
-                        <i class="fa fa-book"></i> <span>Subject Entry</span>
+                        <i class="fa fa-book"></i> <span>Subjects</span>
             <span class="pull-right-container">
 
             </span>
@@ -164,7 +165,7 @@
 
                 <li>
                     <a href="{{url('student/attendance')}}">
-                        <i class="fa fa-eye"></i> <span>Students Attendance</span>
+                        <i class="fa fa-eye"></i> <span>Attendance</span>
             <span class="pull-right-container">
 
             </span>

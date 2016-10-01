@@ -6,6 +6,7 @@ use App\Attendance;
 use App\Clas;
 use App\Http\Requests;
 use App\Student;
+use App\Subject;
 use App\User;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
@@ -37,8 +38,11 @@ class HomeController extends Controller
         $teacher = User::find($teacherId);
 
         $students = Student::all();
+        $teachers = User::all();
+        $classes = Clas::all();
+        $subjects = Subject::all();
 
-        return view('home', compact('teacher', 'students'));
+        return view('home', compact('teacher', 'students', 'teachers', 'classes', 'subjects'));
     }
 
     public function storeResult(Request $request){
