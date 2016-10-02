@@ -7,15 +7,16 @@
             <?php
             $data = array();
             $counter = 0;
+            foreach($classes as $class)
+            {
+                $data[$counter]['country'] = $class->name;
+                $data[$counter]['visits'] = $class->students->count();
+                $data[$counter]['color'] = "#FF0F00";
+                $counter++;
+            }
+            header( 'Content-Type: application/json' );
+
             ?>
-            @foreach($classes as $class)
-                    <?php
-                    $data[$counter]['name'] = $class->name;
-                    $data[$counter]['total'] = $class->students->count();
-                    $counter++;
-                    ?>
-            @endforeach
-                <?php $chart_data = json_encode($data);?>
 
                 @if(Auth::user()->role != 1)
 
@@ -99,49 +100,69 @@
 
 
                             <!-- Styles -->
-                <style>
-                    #chartdiv {
-                        width: 100%;
-                        height: 500px;
-                    }
-                </style>
-
-                <!-- Resources -->
-                <script src="https://www.amcharts.com/lib/3/amcharts.js"></script>
-                <script src="https://www.amcharts.com/lib/3/funnel.js"></script>
-                <script src="https://www.amcharts.com/lib/3/plugins/export/export.min.js"></script>
-                <link rel="stylesheet" href="https://www.amcharts.com/lib/3/plugins/export/export.css" type="text/css" media="all" />
-                <script src="https://www.amcharts.com/lib/3/themes/light.js"></script>
-
-                <!-- Chart code -->
-                <script>
-                    var chart = AmCharts.makeChart( "chartdiv", {
-                        "type": "funnel",
-                        "theme": "light",
-                        "dataProvider": '{!! $chart_data !!}}',
-                        "balloon": {
-                            "fixedPosition": true
-                        },
-                        "valueField": "total",
-                        "titleField": "name",
-                        "marginRight": 240,
-                        "marginLeft": 50,
-                        "startX": -500,
-                        "depth3D": 100,
-                        "angle": 40,
-                        "outlineAlpha": 1,
-                        "outlineColor": "#FFFFFF",
-                        "outlineThickness": 2,
-                        "labelPosition": "right",
-                        "balloonText": "[[name]]: [[total]]n[[description]]",
-                        "export": {
-                            "enabled": true
+                    <style>
+                        #chartdiv {
+                            width: 100%;
+                            height: 500px;
                         }
-                    } );
-                </script>
+                        .amcharts-export-menu-top-right {
+                            top: 10px;
+                            right: 0;
+                        }
+                    </style>
 
-                <!-- HTML -->
-                <div id="chartdiv"></div>
+                    <!-- Resources -->
+                    <script src="{{asset('js/amcharts.js')}}"></script>
+                    <script src="{{asset('js/serial.js')}}"></script>
+                    <script src="{{asset('js/export.min.js')}}"></script>
+                    <link rel="stylesheet" href="{{asset('css/export.css')}}" type="text/css" media="all" />
+                    <script src="{{asset('js/light.js')}}"></script>
+                    <script src="{{asset('js/dataloader.min.js')}}"></script>
+
+                    <!-- Chart code -->
+                    <script>
+
+                        var chart = AmCharts.makeChart("chartdiv", {
+                            "type": "serial",
+                            "theme": "light",
+                            "marginRight": 70,
+                            "dataLoader": {
+                                "url": '{{url('teacherLoginModal')}}'
+                            }
+                            ,
+                            "valueAxes": [{
+                                "axisAlpha": 0,
+                                "position": "left",
+                                "title": "Numbers of Students in each class"
+                            }],
+                            "startDuration": 1,
+                            "graphs": [{
+                                "balloonText": "<b>[[category]]: [[value]]</b>",
+                                "fillColorsField": "color",
+                                "fillAlphas": 0.9,
+                                "lineAlpha": 0.2,
+                                "type": "column",
+                                "valueField": "visits"
+                            }],
+                            "chartCursor": {
+                                "categoryBalloonEnabled": false,
+                                "cursorAlpha": 0,
+                                "zoomable": false
+                            },
+                            "categoryField": "country",
+                            "categoryAxis": {
+                                "gridPosition": "start",
+                                "labelRotation": 45
+                            },
+                            "export": {
+                                "enabled": true
+                            }
+
+                        });
+                    </script>
+
+                    <!-- HTML -->
+                    <div id="chartdiv"></div>
 
 
                     {{--End Graph--}}

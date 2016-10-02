@@ -20,6 +20,7 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('subjects/filterSubject/{id}', 'subjectController@filterSubjects');
     Route::get('student/attendance', 'studentController@studentsAttendance');
     Route::get('export2Excel', 'HomeController@export2Excel');
+    Route::get('teacherLoginModal', 'HomeController@export2Excel');
 
 });
 Route::auth();

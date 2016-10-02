@@ -24,7 +24,8 @@
                                 <tr>
 
                                     <td>{{$class->name}}</td>
-                                    <td><a href="{{url('classes/assignStudents/'.$class->id)}}" class="btn btn-warning">Assign Students</a> </td>                                    <td> <a href="{{url('classes/'.$class->id.'/edit')}}"  value="Edit" class="btn btn-info btn-group-sm">Edit</a></td>
+                                    <td><a href="{{url('classes/assignStudents/'.$class->id)}}" class="btn btn-warning">Assign Students</a> </td>
+                                    <td> <a href="{{url('classes/'.$class->id.'/edit')}}"  value="Edit" class="btn btn-info btn-group-sm fa fa-edit "> Edit</a></td>
 
                                     <td>
                                         <form action="{{url('classes/'.$class->id)}}" method="post" id="{{$class->id}}">
@@ -32,7 +33,7 @@
                                             <input type="hidden" name="_token" value="{{csrf_token()}}">
                                             <div class="form-group">
 
-                                                <button class="btn btn-danger" type="submit">Delete</button>
+                                                <button class="btn btn-danger fa fa-trash-o " type="submit"> Delete</button>
                                                 {{--<button class="btn btn-xs btn-danger" type="button" data-toggle="modal" data-target="#confirmDelete" data-title="Delete User" data-message="Are you sure you want to delete this user ?">--}}
                                                 {{--Delete</button>--}}
 

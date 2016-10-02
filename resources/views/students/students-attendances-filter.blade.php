@@ -1,4 +1,4 @@
-<div class="box boxWidth">
+<div class="box scrollbox pre-scrollable">
     <div class="box-header"><b>class:</b> {{$class->name}}</br>
         <b>Subject:</b> {{$subject->name}}</div>
     <div class="box-body">
