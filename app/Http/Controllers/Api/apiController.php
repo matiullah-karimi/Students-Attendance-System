@@ -85,16 +85,13 @@ class apiController extends Controller
       $attendance->save();
 
         $student_status = $request->get('results');
-        print_r($student_status);
 
         foreach ($student_status as $key => $value){
             $student =  Student::find($key);
             $attendance->students()->attach($student->id, ['status' => $value]);
         }
 
-        $successMsg = "Succesfully Submited";
-
-        return response()->json(compact('successMsg'));
+        return response()->json(['message' => 'Successfully Submitted'], 200);
     }
 
 }

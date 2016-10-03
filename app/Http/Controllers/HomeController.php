@@ -80,8 +80,8 @@ class HomeController extends Controller
         return redirect()->back();
     }
 
-    public function export2Excel(){
+    public function ShowChart(){
         $classes = Clas::all();
-       return view('teacherLoginModal', compact('classes'));
+       return view('showChart', compact('classes'));
     }
 }

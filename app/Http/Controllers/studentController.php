@@ -166,5 +166,30 @@ class studentController extends Controller
         return view('students/students-attendances-filter', compact('atts', 'class', 'subject_id', 'class_id', 'subject'));
     }
 
+    public function preStudents($id, $class_id)
+    {
+
+        $class = Clas::find($id);
+        $students = $class->students;
+
+        return view('students/preStudents-filter', compact('students', 'class', 'class_id'));
+
+    }
+
+    public function assignPreStudents(Request $request, $id){
+
+        $class = Clas::find($id);
+        $students = $request->get('students');
+        if (!empty($students) && is_array($students)) {
+            foreach ($students as $student_id){
+                $student = Student::find($student_id);
+                $class->students()->attach($student);
+            }
+        }
+
+        return redirect()->back();
+    }
+
+
 
 }

@@ -2,8 +2,18 @@
 @section('content')
 
     <div class="container">
-        <div class="row">
-            <div class="col-md-10 col-md-offset-1">
+
+        <h2>{{$class->name}}</h2>
+        <ul class="nav nav-tabs">
+            <li class="active"><a data-toggle="tab" href="#home">Home</a></li>
+            <li><a data-toggle="tab" href="#menu1">Students</a></li>
+
+        </ul>
+
+        <div class="tab-content">
+            <div id="home" class="tab-pane fade in active">
+                <div class="row marginTop">
+                    <div class="col-md-10">
 
                 <div class="panel panel-default">
                     <div class="panel-heading">
@@ -60,6 +70,20 @@
         </div>
     </div>
 
+            <div id="menu1" class="tab-pane fade">
+                <select name="class" class="form-control controlWidth marginTop">
+                    <option>Filter Students by class</option>
+                    @foreach($classes as $class)
+                        <option value="{{$class->id}}"  id="classes">{{$class->name}}</option>
+                    @endforeach
+                </select>
+                <div id="preStudents" class="center-block marginTop">
+                </div>
+            </div>
+    </div>
+    </div>
+
+
 
 
     <script>
@@ -93,6 +117,24 @@
                 x--;
                 data_num--;
             })
+        });
+
+    </script>
+    <script>
+        $(function(){
+
+            $('select[name="class"]').change(function(){
+                var id = $('select[name=class]').val();
+                $.ajax({
+                    url:'/students/filter/preStudents/'+id+'/'+'{{ $class->id }}',
+                    success:function(data){
+                        console.log(data)
+                        $('#preStudents').empty();
+                        $('#preStudents').append(data);
+                    }
+                });
+            });
+
         });
     </script>
 

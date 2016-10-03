@@ -33,9 +33,9 @@
                                             <input type="hidden" name="_token" value="{{csrf_token()}}">
                                             <div class="form-group">
 
-                                                <button class="btn btn-danger fa fa-trash-o " type="submit"> Delete</button>
-                                                {{--<button class="btn btn-xs btn-danger" type="button" data-toggle="modal" data-target="#confirmDelete" data-title="Delete User" data-message="Are you sure you want to delete this user ?">--}}
-                                                {{--Delete</button>--}}
+                                                {{--<button class="btn btn-danger fa fa-trash-o " type="submit"> Delete</button>--}}
+                                                <button class="btn btn-xs btn-danger delete" type="button" data-toggle="modal" data-target="#confirmDelete" data-id="{{ $class->id }}" id="{{ $class->id }}">
+                                                Delete</button>
 
                                             </div>
                                         </form>
@@ -53,25 +53,29 @@
         </div>
     </div>
 
-
-    @include('deleteModalConfirmation')
 @endsection
-
+@include('deleteModalConfirmation')
 @section('page_specific_scripts')
 
+    <script>
 
-    {{--<script>--}}
+        $(function(){
+            <!-- Form confirm (yes/ok) handler, submits form -->
+            $('.confirm').click(function(){
 
+                event.preventDefault();
 
-    {{--<!-- Form confirm (yes/ok) handler, submits form -->--}}
-    {{--$('#confirm').click(function(){--}}
+                var id = $(this).val('#delete');
 
-    {{--var id = $('form').attr("id");--}}
+                console.log(id);
 
-    {{--window.location = "http://localhost:8000/teachers/"+id;--}}
-    {{--// $('form').submit();--}}
-    {{--});--}}
+//                alert(id);
 
-    {{--</script>--}}
+//     $('form').submit();
+            });
 
-@stop
+        });
+
+    </script>
+
+@endsection

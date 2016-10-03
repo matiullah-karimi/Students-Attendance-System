@@ -53,25 +53,9 @@
         </div>
     </div>
 
-
-  @include('deleteModalConfirmation')
 @endsection
 
 @section('page_specific_scripts')
 
 
-{{--<script>--}}
-
-
-    {{--<!-- Form confirm (yes/ok) handler, submits form -->--}}
-    {{--$('#confirm').click(function(){--}}
-
-        {{--var id = $('form').attr("id");--}}
-
-        {{--window.location = "http://localhost:8000/teachers/"+id;--}}
-       {{--// $('form').submit();--}}
-    {{--});--}}
-
-{{--</script>--}}
-
-@stop
+@endsection

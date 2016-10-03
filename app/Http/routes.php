@@ -15,12 +15,13 @@ Route::group(['middleware' => ['auth']], function () {
     Route::post('subjects/saveSubjectTeacher', 'subjectController@saveSubjectTeacher');
     Route::resource('students', 'studentController');
     Route::get('students/filter/{id}', 'studentController@filterStudents');
+    Route::get('students/filter/preStudents/{id}/{class_id}', 'studentController@preStudents');
+    Route::post('students/assign/preStudents/{id}', 'studentController@assignPreStudents');
     Route::get('students/filter2/{id}', 'studentController@filterStudents2');
     Route::get('student/filter3/{id}', 'studentController@filterStudentsAttendance');
     Route::get('subjects/filterSubject/{id}', 'subjectController@filterSubjects');
     Route::get('student/attendance', 'studentController@studentsAttendance');
-    Route::get('export2Excel', 'HomeController@export2Excel');
-    Route::get('teacherLoginModal', 'HomeController@export2Excel');
+    Route::get('showChart', 'HomeController@showChart');
 
 });
 Route::auth();

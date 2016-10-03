@@ -16,7 +16,7 @@
             <td>{{$student->fname}}</td>
             <td><a href="#" class=" btn btn-info">Edit</a></td>
             <td>
-                <form method="post" action="{{url('users/'.$student->id)}}">
+                <form method="post" action="{{url('students/'.$student->id)}}">
                     <input type="hidden" name="_method" value="DELETE">
                     <input type="hidden" name="_token" value="{{csrf_token()}}">
 

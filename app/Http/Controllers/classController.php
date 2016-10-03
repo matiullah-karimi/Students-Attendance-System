@@ -129,8 +129,9 @@ class classController extends Controller
         }
 
         $class = Clas::find($id);
+        $classes = Clas::all();
 
-        return view('classes.assign-students', compact('class'));
+        return view('classes.assign-students', compact('class', 'classes'));
     }
 
     public function saveClassStudents($id, Request $request)

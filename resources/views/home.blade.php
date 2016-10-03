@@ -127,7 +127,7 @@
                             "theme": "light",
                             "marginRight": 70,
                             "dataLoader": {
-                                "url": '{{url('teacherLoginModal')}}'
+                                "url": '{{url('showChart')}}'
                             }
                             ,
                             "valueAxes": [{
