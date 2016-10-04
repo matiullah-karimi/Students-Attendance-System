@@ -8,46 +8,94 @@
     <div class="container">
 
         @if(Auth::user()->role != 1)
-        <div class="row">
-            <div class="col-md-5 hidden-print">
+            <table class="table table-responsive hidden-print">
+                <tr>
+                    <td>
+                        <select name="class" class="form-control hidden-print" >
+                            <option selected disabled>Select Class</option>
+                            @foreach($teacher->classes as $class)
+                                <option value="{{$class->id}}" id="classes" >{{$class->name}}</option>
+                            @endforeach
+                        </select>
+                    </td>
 
-                <select name="class" class="form-control controlWidth" >
-                    <option selected disabled>Select Class</option>
-                    @foreach($teacher->classes as $class)
-                        <option value="{{$class->id}}" id="classes" >{{$class->name}}</option>
-                    @endforeach
-                </select>
+                    <td>
+                        <select name="subject" class="form-control hidden-print">
+                            <option>Select Subject</option>
 
-            </div>
-            <div class="col-md-5 hidden-print" id="teacher-subjects">
-                <select name="subject" class="form-control controlWidth noprint">
-                    <option>Select Subject</option>
-                    @foreach($teacher->subjects as $subject)
-                        <option value="{{$subject->id}}"> {{$subject->name}} </option>
-                    @endforeach
-                </select>
-            </div>
-            <div class="col-md-1 hidden-print"><button class="btn btn-default" onclick="print()">Print</button></div>
-        </div>
+                        </select>
+                    </td>
+                    <td>
+                        <button class="btn btn-default" onclick="print()">Print</button>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <div class="input-group date">
+                            <div class="input-group-addon">From</div>
+                            <input type="text" class="form-control pull-right datepicker" id="datepicker">
+                            <div class="input-group-addon">
+                                <i class="fa fa-calendar"></i>
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="input-group date">
+                            <div class="input-group-addon">To</div>
+                            <input type="text" class="form-control pull-right datepicker" id="datepicker">
+                            <div class="input-group-addon">
+                                <i class="fa fa-calendar"></i>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+            </table>
 
             @else
 
-            <div class="row hidden-print">
-                <div class="col-md-5">
-
-                    <select name="class" class="form-control controlWidth">
-                        <option>Select Class</option>
-                        @foreach($classes as $class)
-                            <option value="{{$class->id}}" id="classes" >{{$class->name}}</option>
-                        @endforeach
-                    </select>
-                </div>
-                <div class="col-md-5" id="teacher-subjects"> </div>
-                <div class="col-md-1 hidden-print">
-                    <button class="btn btn-default" onclick="print()">Print</button>
-                </div>
-            </div>
-
+            <table class="table table-responsive">
+                <tr>
+                    <td>
+                        <select name="class" class="form-control">
+                            <option>Select Class</option>
+                            @foreach($classes as $class)
+                                <option value="{{$class->id}}" id="classes" >{{$class->name}}</option>
+                            @endforeach
+                        </select>
+                    </td>
+                    <td>
+                        <div id="teacher-subjects">
+                            <select class="form-control">
+                                <option>Select Subject</option>
+                            </select>
+                        </div>
+                    </td>
+                    <td>
+                        <button class="btn btn-default" onclick="print()">Print</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="input-group date">
+                            <div class="input-group-addon">From</div>
+                            <input type="text" class="form-control pull-right datepicker" id="datepicker">
+                            <div class="input-group-addon">
+                                <i class="fa fa-calendar"></i>
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="input-group date">
+                            <div class="input-group-addon">To</div>
+                            <input type="text" class="form-control pull-right datepicker" id="datepicker">
+                            <div class="input-group-addon">
+                                <i class="fa fa-calendar"></i>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+            </table>
 
         @endif
 

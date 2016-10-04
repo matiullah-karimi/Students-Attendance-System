@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="{{asset('/bootstrap/css/bootstrap.min.css')}}">
     <link rel="stylesheet" href="{{asset('/css/custom.css')}}">
     <script type="text/javascript" src="{{asset('bootstrap/js/bootstrap-multiselect.js')}}"></script>
+    <script type="text/javascript" src="{{asset('js/datepicker.js')}}"></script>
     <link rel="stylesheet" href=" {{asset('bootstrap/css/bootstrap-multiselect.css')}}" type="text/css"/>
 
 
@@ -26,6 +27,7 @@
     <!-- AdminLTE Skins. Choose a skin from the css/skins
          folder instead of downloading all of them to reduce the load. -->
     <link rel="stylesheet" href= {{asset('dist/css/skins/_all-skins.min.css')}}>
+    <link rel="stylesheet" href= {{asset('css/datepicker.css')}}>
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -231,6 +233,13 @@
 <script src="{{asset('dist/js/app.min.js')}}"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="{{asset('dist/js/demo.js')}}"></script>
+
+<script>
+    //Date picker
+    $('.datepicker').datepicker({
+        autoclose: true
+    });
+</script>
 
 
 @yield('page_specific_scripts')

@@ -71,6 +71,7 @@
     </div>
 
             <div id="menu1" class="tab-pane fade">
+                <?php ?>
                 <select name="class" class="form-control controlWidth marginTop">
                     <option>Filter Students by class</option>
                     @foreach($classes as $class)

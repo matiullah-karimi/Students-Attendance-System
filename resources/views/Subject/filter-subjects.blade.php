@@ -1,4 +1,4 @@
-<select name="subject" onchange="filterSubjects()" class="form-control controlWidth">
+<select name="subject" onchange="filterSubjects()" class="form-control">
     <option>Select Subject</option>
     <?php $subjects = $class->subjects?>
     @foreach($subjects as $subject)
