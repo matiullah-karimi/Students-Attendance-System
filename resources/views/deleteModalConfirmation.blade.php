@@ -15,7 +15,7 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-                <button type="submit" class="btn btn-danger confirm" id="confirm">Delete</button>
+                <a class="delete"><button type="button" class="btn btn-danger confirm" id="confirm">Delete</button></a>
             </div>
         </div>
     </div>

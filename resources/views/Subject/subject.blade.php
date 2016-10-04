@@ -28,13 +28,8 @@
                                     <td> <a href="{{url('subjects/'.$subject->id.'/edit')}}"  value="Edit" class="btn btn-info btn-group-sm "> Edit</a> </td>
 
                                     <td>
-                                        <form action="{{url('subjects/'.$subject->id)}}" method="post">
-                                            <input type="hidden" name="_method" value="DELETE">
-                                            <input type="hidden" name="_token" value="{{csrf_token()}}">
-                                            <div class="form-group">
-                                                <button type="submit" class="btn btn-danger">Delete</button>
-                                            </div>
-                                        </form>
+                                        <a href="javascript:void(0)" id="{{ $subject->id }}" class="btn btn-danger delete" onclick="confirm(this.id);">
+                                            Delete</a>
                                     </td>
                                     </tr>
                                 @endforeach
@@ -47,4 +42,20 @@
             </div>
         </div>
     </div>
+@endsection
+@include('deleteModalConfirmation')
+@section('page_specific_scripts')
+
+    <script>
+        function confirm(id){
+            $('#confirmDelete').modal('show');
+            <!-- Form confirm (yes/ok) handler, submits form -->
+            $('.confirm').click(function(){
+                var url = '{{url('subjects/destroy')}}/'+id;
+                $('a.delete').attr('href', url);
+            });
+
+        };
+    </script>
+
 @endsection

@@ -28,17 +28,8 @@
                                     <td> <a href="{{url('classes/'.$class->id.'/edit')}}"  value="Edit" class="btn btn-info btn-group-sm fa fa-edit "> Edit</a></td>
 
                                     <td>
-                                        <form action="{{url('classes/'.$class->id)}}" method="post" id="{{$class->id}}">
-                                            <input type="hidden" name="_method" value="DELETE">
-                                            <input type="hidden" name="_token" value="{{csrf_token()}}">
-                                            <div class="form-group">
-
-                                                {{--<button class="btn btn-danger fa fa-trash-o " type="submit"> Delete</button>--}}
-                                                <button class="btn btn-xs btn-danger delete" type="button" data-toggle="modal" data-target="#confirmDelete" data-id="{{ $class->id }}" id="{{ $class->id }}">
-                                                Delete</button>
-
-                                            </div>
-                                        </form>
+                                        <a href="javascript:void(0)" id="{{ $class->id }}" class="btn btn-danger delete" onclick="confirm(this.id);">
+                                                Delete</a>
                                     </td>
                                 </tr>
 
@@ -59,22 +50,15 @@
 
     <script>
 
-        $(function(){
+        function confirm(id){
+            $('#confirmDelete').modal('show');
             <!-- Form confirm (yes/ok) handler, submits form -->
             $('.confirm').click(function(){
-
-                event.preventDefault();
-
-                var id = $(this).val('#delete');
-
-                console.log(id);
-
-//                alert(id);
-
-//     $('form').submit();
+                var url = '{{url('classes/destroy')}}/'+id;
+                $('a.delete').attr('href', url);
             });
 
-        });
+        };
 
     </script>
 

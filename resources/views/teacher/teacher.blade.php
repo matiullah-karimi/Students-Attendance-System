@@ -28,17 +28,8 @@
                                     <td> <a href="{{url('users/'.$teacher->id.'/edit')}}"  value="Edit" class="btn btn-info btn-group-sm">Edit</a></td>
 
                                     <td>
-                                        <form action="{{url('users/'.$teacher->id)}}" method="post" id="{{$teacher->id}}">
-                                            <input type="hidden" name="_method" value="DELETE">
-                                            <input type="hidden" name="_token" value="{{csrf_token()}}">
-                                            <div class="form-group">
-
-                                                <button class="btn btn-danger" type="submit">Delete</button>
-                                                {{--<button class="btn btn-xs btn-danger" type="button" data-toggle="modal" data-target="#confirmDelete" data-title="Delete User" data-message="Are you sure you want to delete this user ?">--}}
-                                                    {{--Delete</button>--}}
-
-                                            </div>
-                                        </form>
+                                        <a href="javascript:void(0)" id="{{ $teacher->id }}" class="btn btn-danger delete" onclick="confirm(this.id);">
+                                            Delete</a>
                                     </td>
                             </tr>
 
@@ -55,7 +46,19 @@
 
 @endsection
 
+@include('deleteModalConfirmation')
 @section('page_specific_scripts')
 
+    <script>
+        function confirm(id){
+            $('#confirmDelete').modal('show');
+            <!-- Form confirm (yes/ok) handler, submits form -->
+            $('.confirm').click(function(){
+                var url = '{{url('users/destroy')}}/'+id;
+                $('a.delete').attr('href', url);
+            });
+
+        };
+    </script>
 
 @endsection
