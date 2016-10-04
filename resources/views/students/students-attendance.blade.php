@@ -34,7 +34,7 @@
                     <td>
                         <div class="input-group date">
                             <div class="input-group-addon">From</div>
-                            <input type="text" class="form-control pull-right datepicker" id="datepicker">
+                            <input type="text" class="form-control pull-right datepicker" id="datepicker" name="from">
                             <div class="input-group-addon">
                                 <i class="fa fa-calendar"></i>
                             </div>
@@ -43,7 +43,7 @@
                     <td>
                         <div class="input-group date">
                             <div class="input-group-addon">To</div>
-                            <input type="text" class="form-control pull-right datepicker" id="datepicker">
+                            <input type="text" class="form-control pull-right datepicker" id="datepicker1" name="to">
                             <div class="input-group-addon">
                                 <i class="fa fa-calendar"></i>
                             </div>
@@ -79,7 +79,7 @@
                     <td>
                         <div class="input-group date">
                             <div class="input-group-addon">From</div>
-                            <input type="text" class="form-control pull-right datepicker" id="datepicker">
+                            <input type="text" class="form-control pull-right datepicker" id="datepicker" name="from">
                             <div class="input-group-addon">
                                 <i class="fa fa-calendar"></i>
                             </div>
@@ -88,7 +88,7 @@
                     <td>
                         <div class="input-group date">
                             <div class="input-group-addon">To</div>
-                            <input type="text" class="form-control pull-right datepicker" id="datepicker">
+                            <input type="text" class="form-control pull-right datepicker" id="datepicker1" name="to">
                             <div class="input-group-addon">
                                 <i class="fa fa-calendar"></i>
                             </div>
@@ -149,6 +149,14 @@
                 }
             });
         }
+    </script>
+
+    <script>
+        $(function(){
+            $('#datepicker1').change(function(){
+                console.log("date selected");
+            });
+        });
     </script>
 
 
