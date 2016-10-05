@@ -154,7 +154,12 @@
     <script>
         $(function(){
             $('#datepicker1').change(function(){
-                console.log("date selected");
+
+               var from = $('#datepicker').val();
+               var to = $('#datepicker1').val();
+
+              console.log("hello");
+
             });
         });
     </script>
