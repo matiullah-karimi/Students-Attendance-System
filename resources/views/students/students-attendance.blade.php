@@ -19,7 +19,7 @@
                         </select>
                     </td>
 
-                    <td>
+                    <td id="teacher-subjects">
                         <select name="subject" class="form-control hidden-print">
                             <option>Select Subject</option>
 
@@ -32,20 +32,18 @@
 
                 <tr>
                     <td>
-                        <div class="input-group date">
-                            <div class="input-group-addon">From</div>
-                            <input type="text" class="form-control pull-right datepicker" id="datepicker" name="from">
+                      <div class="input-group date" data-provide="datepicker-inline">
+                            <input type="text" class="form-control datepicker" placeholder="Start Date" name="from" id="datepicker">
                             <div class="input-group-addon">
-                                <i class="fa fa-calendar"></i>
+                                <span class="fa fa-calendar"></span>
                             </div>
                         </div>
                     </td>
                     <td>
-                        <div class="input-group date">
-                            <div class="input-group-addon">To</div>
-                            <input type="text" class="form-control pull-right datepicker" id="datepicker1" name="to">
+                        <div class="input-group date" data-provide="datepicker-inline">
+                            <input type="text" class="form-control datepicker" placeholder="End Date" id="datepicker1" name="to">
                             <div class="input-group-addon">
-                                <i class="fa fa-calendar"></i>
+                                <span class="fa fa-calendar"></span>
                             </div>
                         </div>
                     </td>
@@ -123,17 +121,7 @@
             });
         });
 
-        </script>
-        <script>
-            $(function(){
-                $('select[name="subject"]').change(function(){
-                    console.log("worked");
-
-                });
-            });
-
-        </script>
-
+    </script>
     <script>
         function filterSubjects(){
             var classId = $('select[name=class]').val();
@@ -152,11 +140,29 @@
     </script>
 
     <script>
-        $(function(){
-            $('#datepicker1').change(function(){
-                console.log("date selected");
+        $(document).ready(function(){
+            $('#datepicker1').datepicker().on('changeDate', function(e){
+
+                var classId = $('select[name=class]').val();
+                var subjectId = $('select[name=subject]').val();
+
+                var from_date = $('#datepicker').val();
+                var to_date = $('#datepicker1').val();
+
+                $.ajax({
+                    url: '/students/date/filter/'+classId+'/'+subjectId,
+                    data:{
+                        from:from_date,
+                        to:to_date
+                    },
+                    success:function(data){
+                        console.log(data);
+                    }
+                });
+
             });
         });
+
     </script>
 
 

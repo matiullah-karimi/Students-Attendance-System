@@ -233,15 +233,6 @@
 <script src="{{asset('dist/js/app.min.js')}}"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="{{asset('dist/js/demo.js')}}"></script>
-
-<script>
-    //Date picker
-    $('.datepicker').datepicker({
-        autoclose: true
-    });
-</script>
-
-
 @yield('page_specific_scripts')
 </body>
 </html>
