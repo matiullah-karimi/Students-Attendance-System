@@ -3,7 +3,7 @@
         <b>Subject:</b> {{$subject->name}}</div>
     <div class="box-body">
         <table class="table table-bordered table-responsive marginTop" bgcolor="white">
-            
+
             <thead>
             <th>Name</th>
             <th>F/Name</th>

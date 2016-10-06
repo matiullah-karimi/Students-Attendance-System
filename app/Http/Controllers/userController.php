@@ -171,4 +171,9 @@ class userController extends Controller
 
         return redirect('users');
     }
+
+    public function profile($id)
+    {
+        return view('teacher/profile');
+    }
 }
