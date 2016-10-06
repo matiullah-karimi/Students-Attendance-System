@@ -190,6 +190,31 @@ class studentController extends Controller
         return redirect()->back();
     }
 
+    public function filterByDate(Request $request, $id, $sid)
+    {
+        $class_id = $id;
+        $subject_id = $sid;
+        $class = Clas::find($class_id);
+        $subject = Subject::find($subject_id);
+
+        $from = date('Y-m-d', strtotime($request->get('from')));
+        $to = date('Y-m-d', strtotime($request->get('to')));
+
+        if (Auth::user()->role == 0){
+            $atts = Attendance::where('subject_id', $sid)
+                ->where('class_id', $id)
+                ->where('user_id', Auth::user()->id)
+                ->whereBetween('date', [$from, $to])->get();
+        }
+        else{
+            $atts = Attendance::where('subject_id', $sid)->where('class_id', $id)
+                ->whereBetween('date', [$from, $to])->get();
+        }
+
+        //return $atts;
+        return view('students/filter-by-date', compact('atts', 'class_id', 'subject_id', 'class', 'subject', 'from', 'to'));
+    }
+
 
 
 }

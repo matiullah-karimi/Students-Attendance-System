@@ -27,4 +27,7 @@
 .checkboxWidth{
     width:20px;
 }
-
+.pre-scrollable {
+    max-height: 100%;
+    overflow-y: hidden;
+}
