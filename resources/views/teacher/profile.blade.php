@@ -8,14 +8,14 @@
                     <!-- Add the bg color to the header using any of the bg-* classes -->
                     <div class="widget-user-header bg-aqua-active">
                         <h3 class="widget-user-username">{{Auth::user()->name}}</h3>
-                        @if(Auth::user()->role = 0)
+                        @if(Auth::user()->role == 0)
                         <h5 class="widget-user-desc">Lecturer</h5>
                         @else
                             <h5 class="widget-user-desc">Admin</h5>
                         @endif
                     </div>
                     <div class="widget-user-image">
-                        <img class="img-circle" src="{{asset('images/avatar5.png')}}" alt="User Avatar">
+                        <img class="img-circle" src="{{Auth::user()->image}}" alt="User Avatar">
                     </div>
                     <div class="box-footer">
                         <div class="row">
@@ -50,10 +50,91 @@
                         <!-- /.row -->
                     </div>
                     <div class="box-body">
-                        Hello
+                        <table class="table">
+                            <tr>
+                                <td>Name</td>
+                                <td>{{Auth::user()->name}}</td>
+                            </tr>
+
+                            <tr>
+                                <td>Email</td>
+                                <td>{{Auth::user()->email}}</td>
+                            </tr>
+                            <tr>
+                                <td>Classes</td>
+                                <td>@foreach(Auth::user()->classes as $class)
+                                    <ul>
+                                        <li> {{$class->name}}</li>
+                                    </ul>
+                                    @endforeach
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Subjects</td>
+                                <td>@foreach(Auth::user()->subjects as $subject)
+                                        <ul>
+                                            <li> {{$subject->name}}</li>
+                                        </ul>
+                                    @endforeach
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td colspan="2" class="text-center">
+                                    <button class="text-center btn btn-info" data-toggle="modal" data-target="#updateProfile">Edit</button>
+                                </td>
+                            </tr>
+
+                        </table>
                     </div>
                 </div>
                 <!-- /.widget-user -->
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="updateProfile" role="dialog" aria-labelledby="updateProfile" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title">Update Profile</h4>
+                    @if (count($errors) > 0)
+                        <div class="alert alert-danger">
+                            <ul>
+                                @foreach ($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    @endif
+                </div>
+                <form action="{{url('users/updateProfile/'.Auth::user()->id)}}" method="post" enctype="multipart/form-data">
+                    <div class="modal-body">
+                            <input type="hidden" name="_token" value="{{csrf_token()}}">
+
+                        <div class="form-group">
+                            <input type="text" placeholder="name" name="name" class="form-control" value="{{Auth::user()->name}}" required>
+                        </div>
+
+                        <div class="form-group">
+                            <input type="email" placeholder="email" name="email" class="form-control" value="{{Auth::user()->email}}" required>
+                        </div>
+
+                        <div class="form-group">
+                            <input type="password" placeholder="password" name="password" class="form-control" value="" required>
+                        </div>
+
+                        <div class="form-group">
+                            <input type="file" placeholder="image" name="image" class="form-control" value="{{Auth::user()->image}}" required>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                        <button type="submit" class="btn btn-danger confirm" id="confirm">Update</button>
+                    </div>
+                </form>
+
             </div>
         </div>
     </div>

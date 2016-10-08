@@ -15,6 +15,7 @@ Route::group(['middleware' => ['auth']], function () {
     Route::post('storeResult', 'HomeController@storeResult');
     Route::get('users/destroy/{id}', 'userController@destroy');
     Route::get('users/profile/{id}', 'userController@profile');
+    Route::post('users/updateProfile/{id}', 'userController@updateProfile');
 
     Route::resource('subjects', 'subjectController');
     Route::get('subjects/assignTeacher/{id}', 'subjectController@assignTeacher');

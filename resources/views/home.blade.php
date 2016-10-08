@@ -23,17 +23,22 @@
                         <form action="{{ url('storeResult') }}" method="POST">
                             <input type="hidden" name="_token" value="{{csrf_token()}}">
 
-                            <select name="class" class="form-control controlWidth">
-                                <option>Select Class</option>
-                                @foreach($teacher->classes as $class)
-                                    <option value="{{$class->id}}" id="classes" >{{$class->name}}</option>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <select name="class" class="form-control">
+                                        <option>Select Class</option>
+                                        @foreach($teacher->classes as $class)
+                                            <option value="{{$class->id}}" id="classes" >{{$class->name}}</option>
 
-                                @endforeach
-                            </select>
+                                        @endforeach
+                                    </select>
+                                </div>
+                                <div class="col-md-4">
+                                    <div id="teacher-subject"></div>
+                                </div>
+                            </div>
 
-                            <div id="teacher-subject" class="marginTop"></div>
-
-                            <div id="class-students"></div>
+                            <div id="class-students" class="marginTop"></div>
 
                         </form>
 
