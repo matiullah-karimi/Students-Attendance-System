@@ -26,6 +26,17 @@
                                 </div>
                                 <!-- /.description-block -->
                             </div>
+
+                            <!-- /.col -->
+                            <div class="col-sm-4">
+                                <div class="description-block">
+                                    <h5 class="description-header"></h5>
+                                    <span class="description-text"></span>
+                                </div>
+                                <!-- /.description-block -->
+                            </div>
+                            <!-- /.col -->
+
                             <!-- /.col -->
                             <div class="col-sm-4 border-right">
                                 <div class="description-block">
@@ -34,15 +45,7 @@
                                 </div>
                                 <!-- /.description-block -->
                             </div>
-                            <!-- /.col -->
-                            <div class="col-sm-4">
-                                <div class="description-block">
-                                    <h5 class="description-header">35</h5>
-                                    <span class="description-text">PRODUCTS</span>
-                                </div>
-                                <!-- /.description-block -->
-                            </div>
-                            <!-- /.col -->
+
                         </div>
                         <!-- /.row -->
                     </div>

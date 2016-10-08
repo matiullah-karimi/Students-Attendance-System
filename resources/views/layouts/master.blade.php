@@ -73,7 +73,8 @@
                             <!-- User image -->
 
                             <li class="user-header">
-                                <img src="{{asset('images/avatar5.png')}}" class="user-image" alt="User Image"></br>
+                                <img src="images/avatar5.png" class="img-circle" alt="User Image">
+
                                 <p>
                                     {{Auth::user()->name}}
                                     <small>{{Auth::user()->email}}</small>
