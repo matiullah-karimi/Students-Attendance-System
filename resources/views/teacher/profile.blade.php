@@ -15,9 +15,9 @@
                         @endif
                     </div>
                     <div class="widget-user-image">
-                        <img class="img-circle" src="{{Auth::user()->image}}" alt="User Avatar">
+                        <img class="img-circle" src="{{asset('images/'.Auth::user()->image)}}" alt="User Avatar">
                     </div>
-                    <div class="box-footer">
+                    <div class="box-footer bg-red-active">
                         <div class="row">
                             <div class="col-sm-4 border-right">
                                 <div class="description-block">
@@ -49,7 +49,7 @@
                         </div>
                         <!-- /.row -->
                     </div>
-                    <div class="box-body">
+                    <div class="box-body bg-orange-active">
                         <table class="table">
                             <tr>
                                 <td>Name</td>
@@ -81,7 +81,7 @@
 
                             <tr>
                                 <td colspan="2" class="text-center">
-                                    <button class="text-center btn btn-info" data-toggle="modal" data-target="#updateProfile">Edit</button>
+                                    <button class="text-center fa fa-edit btn btn-success" data-toggle="modal" data-target="#updateProfile">Edit</button>
                                 </td>
                             </tr>
 
@@ -126,7 +126,7 @@
                         </div>
 
                         <div class="form-group">
-                            <input type="file" placeholder="image" name="image" class="form-control" value="{{Auth::user()->image}}" required>
+                            <input type="file" placeholder="image" name="image" class="form-control" value="{{asset('images/'.Auth::user()->image)}}" required>
                         </div>
                     </div>
                     <div class="modal-footer">

@@ -188,15 +188,17 @@ class userController extends Controller
 
         $image = $request->file('image');
         $filename  = time() . '.' . $image->getClientOriginalExtension();
-        $path = public_path('/images/' . $filename);
-        Image::make($image->getRealPath())->resize(200, 200)->save($path);
-        
+        $request->file('image')->move(
+            base_path() . '/public/images/', $filename
+        );
         $user = User::find($id);
         $user->name = $name;
         $user->email = $email;
         $user->password = $password;
         $user->image = $filename;
         $user->update();
+
+        return redirect()->back();
 
     }
 }
