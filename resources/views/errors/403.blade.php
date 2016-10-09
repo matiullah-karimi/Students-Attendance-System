@@ -1,14 +1,10 @@
-<html>
-<head></head>
-    <body>
-    <div style="position: absolute;
-   top: 50%;
-   left: 50%;
-   width: 500px;
-   height: 500px;
-   margin-top: -250px; /* Half the height */
-   margin-left: -250px; /* Half the width */" class="text-center">
-        <img src="{{asset('images/access_denied.jpg')}}" alt="" style="vertical-align: middle" class="img-responsive center-block">
+@extends('layouts.master')
+@section('content')
+
+    <div class="text-center">
+        <h2 class="without-margin">Don't worry. It's <span class="text-warning"><big>403</big></span> error only.</h2>
+        <h4 class="text-warning">Access denied</h4>
+        <h4 class="text-warning">You do not have access to this page</h4>
     </div>
-    </body>
-</html>
+
+@endsection
