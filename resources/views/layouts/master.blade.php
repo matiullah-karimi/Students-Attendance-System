@@ -129,6 +129,8 @@
 
                 </li>
 
+                @if(Auth::user()->role==1)
+
                 <li>
                     <a href="{{url('/classes')}}">
                         <i class="fa fa-th"></i> <span>Classes</span>
@@ -165,6 +167,7 @@
             </span>
                     </a>
                 </li>
+                @endif
 
                 <li>
                     <a href="{{url('student/attendance')}}">

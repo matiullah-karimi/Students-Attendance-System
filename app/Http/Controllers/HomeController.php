@@ -42,6 +42,7 @@ class HomeController extends Controller
         $classes = Clas::all();
         $subjects = Subject::all();
 
+
         return view('home', compact('teacher', 'students', 'teachers', 'classes', 'subjects'));
     }
 
@@ -56,26 +57,37 @@ class HomeController extends Controller
         $subjectId = $request->get('subject');
         $classId = $request->get('class');
 
-        $attendance = new Attendance();
+        $limit = Attendance::where('user_id', $teacherId)
+            ->where('subject_id', $subjectId)
+            ->where('class_id', $classId)
+            ->where('date', date("Y/m/d"))
+            ->get()->count();
 
-        $attendance->subject_id = $subjectId;
-        $attendance->user_id = $teacherId;
-        $attendance->class_id = $classId;
-        $attendance->date = Carbon::now();
-        $attendance->save();
+        if ($limit <= 2) {
 
-        $student_status = $request->get('status');
+            $attendance = new Attendance();
 
-        foreach ($student_status as $key => $value){
+            $attendance->subject_id = $subjectId;
+            $attendance->user_id = $teacherId;
+            $attendance->class_id = $classId;
+            $attendance->date = Carbon::now();
+            $attendance->save();
 
-            $student =  Student::find($key);
-            if($value == 'on'){
-                $value = 1;
-            }else{
-                $value = 0;
+            $student_status = $request->get('status');
+
+            foreach ($student_status as $key => $value) {
+
+                $student = Student::find($key);
+                if ($value == 'on') {
+                    $value = 1;
+                } else {
+                    $value = 0;
+                }
+                $attendance->students()->attach($student->id, ['status' => $value]);
+
             }
-            $attendance->students()->attach($student->id, ['status' => $value]);
-
+        }else{
+            return redirect('/home')->with('status', 'You can not take attendance more than three times in a day ');
         }
         return redirect()->back();
     }
