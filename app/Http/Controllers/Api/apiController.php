@@ -24,6 +24,11 @@ class apiController extends Controller
         return response()->json(compact("classes"));
     }
 
+    public function products(){
+        $teachers = User::all();
+        return response()->json(compact('teachers'));
+    }
+
     public function authenticate(Request $request)
     {
         // grab credentials from the request

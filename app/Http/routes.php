@@ -48,4 +48,5 @@ Route::group(['namespace' => 'Api', 'prefix' => 'api'], function()
     });
 
     Route::post('teacher/login', 'apiController@authenticate');
+    Route::get('teacher/products', 'apiController@products');
 });

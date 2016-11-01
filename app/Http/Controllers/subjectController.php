@@ -175,17 +175,10 @@ class subjectController extends Controller
         $this->validate($request, [
             'teacher' => 'required|not_in:Select Teacher',
         ]);
-        // adding students to a class
-        $class = $request->get('class');
-
-
         // adding subjects to a class
         $subject = $request->get('subject');
-        $classModel = Clas::find($class);
-
         // adding teachers to a class
         $teacher = $request->get('teacher');
-       // $classModel->teachers()->attach($teacher);
 
         $subjectT = Subject::find($subject);
         $subjectT->teachers()->attach($teacher);
