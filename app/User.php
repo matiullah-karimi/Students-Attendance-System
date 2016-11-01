@@ -26,12 +26,12 @@ class User extends Authenticatable
 
     public function subjects(){
 
-        return $this->belongsToMany('App\Subject');
+        return $this->belongsToMany('App\Subject')->withTimestamps();
     }
 
     public function classes()
     {
-        return $this->belongsToMany('App\Clas', 'class_user', 'user_id', 'class_id');
+        return $this->belongsToMany('App\Clas', 'class_user', 'user_id', 'class_id')->withTimestamps();
     }
 
     public function attendances(){

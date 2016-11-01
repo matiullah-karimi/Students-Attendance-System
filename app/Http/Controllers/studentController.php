@@ -153,6 +153,7 @@ class studentController extends Controller
         $class = Clas::find($id);
         $class_id = $id;
 
+
         $from = date('Y').'-3-22';
         $to = date('Y').'-12-22';
 

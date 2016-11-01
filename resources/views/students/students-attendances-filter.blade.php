@@ -19,7 +19,8 @@
             </thead>
 
             <tbody>
-            <?php $students = $class->students ?>
+
+            <?php $students = $class->students()->whereYear('class_student.created_at','=', date('Y'))->get();?>
             @foreach($students as $student)
 
                 <tr>

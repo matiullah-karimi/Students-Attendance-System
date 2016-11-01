@@ -10,12 +10,12 @@ class Subject extends Model
 
     public function teachers(){
 
-        return $this->belongsToMany('App\User');
+        return $this->belongsToMany('App\User')->withTimestamps();
     }
 
     public function classes(){
 
-        return $this->belongsToMany('App\Clas', 'class_subject', 'subject_id', 'class_id');
+        return $this->belongsToMany('App\Clas', 'class_subject', 'subject_id', 'class_id')->withTimestamps();
     }
 
     public function attendances(){

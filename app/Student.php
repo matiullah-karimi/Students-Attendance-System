@@ -12,7 +12,7 @@ class Student extends Model
 
     public function classes(){
 
-      return $this->belongsToMany('App\Clas', 'class_student', 'student_id', 'class_id');
+      return $this->belongsToMany('App\Clas', 'class_student', 'student_id', 'class_id')->withTimestamps();
     }
 
     public function attendances(){
