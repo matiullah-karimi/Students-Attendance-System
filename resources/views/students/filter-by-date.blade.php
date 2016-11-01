@@ -12,6 +12,7 @@
             @endforeach
             <th>Total Present</th>
             <th>Total Absent</th>
+            <th>Status</th>
             </thead>
 
             <tbody>
@@ -43,6 +44,13 @@
                             ->where('subject_id', $subject_id)->having('status', '=', 0)->get()->count();?>
                     <td><?php echo $present?></td>
                     <td><?php echo $absent?></td>
+                    <td><?php if ($absent > (($present+$absent)/4)){
+                            echo 'Fail';
+                        }
+                        else{
+                            echo 'Pass';
+                        }
+                        ?></td>
                 </tr>
             @endforeach
 

@@ -153,13 +153,17 @@ class studentController extends Controller
         $class = Clas::find($id);
         $class_id = $id;
 
+        $from = date('Y').'-3-22';
+        $to = date('Y').'-12-22';
 
         if (Auth::user()->role == 0){
             $atts = Attendance::where('subject_id', $subject_id)->where('class_id', $id)
-                ->where('user_id', Auth::user()->id)->get();
+                ->where('user_id', Auth::user()->id)
+                ->whereBetween('date', [$from, $to])->get();
         }
         else{
-            $atts = Attendance::where('subject_id', $subject_id)->where('class_id', $id)->get();
+            $atts = Attendance::where('subject_id', $subject_id)->where('class_id', $id)
+                ->whereBetween('date', [$from, $to])->get();
         }
 
 
