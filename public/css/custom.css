@@ -31,3 +31,6 @@
     max-height: 100%;
     overflow-y: hidden;
 }
+.tdWidth{
+    max-width: 10px;
+}

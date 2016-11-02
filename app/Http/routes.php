@@ -1,7 +1,6 @@
 <?php
 
 Route::group(['middleware' => ['auth']], function () {
-
     Route::get('/home', 'HomeController@index');
 
     Route::resource('classes', 'classController');

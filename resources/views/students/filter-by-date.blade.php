@@ -16,7 +16,7 @@
             </thead>
 
             <tbody>
-            <?php $students = $class->students ?>
+
             @foreach($students as $student)
                 <tr>
                     <td>{{$student->name}}</td>

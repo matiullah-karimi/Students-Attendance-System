@@ -9,7 +9,13 @@
             <th>Name</th>
             <th>F/Name</th>
             @foreach($atts as $att)
-                <th>{{$att->date}}</th>
+                <th class="tdWidth">
+                    <table>
+                        <tr><td>{{date('Y', strtotime($att->date))}}</td></tr>
+                        <tr><td>{{date('m', strtotime($att->date))}}</td></tr>
+                        <tr><td>{{date('d', strtotime($att->date))}}</td></tr>
+                    </table>
+                </th>
             @endforeach
 
             <th>Total Present</th>

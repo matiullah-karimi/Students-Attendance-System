@@ -129,7 +129,7 @@ class studentController extends Controller
     public function filterStudents2($id){
 
         $class = Clas::find($id);
-        $students = $class->students;
+        $students = $class->students()->whereYear('class_student.created_at','=', date('Y'))->get();
 
         return view('students/class-students2', compact('students'));
     }
@@ -216,8 +216,9 @@ class studentController extends Controller
                 ->whereBetween('date', [$from, $to])->get();
         }
 
+        $students = $class->students()->whereBetween('class_student.created_at', [$from, $to])->get();
         //return $atts;
-        return view('students/filter-by-date', compact('atts', 'class_id', 'subject_id', 'class', 'subject', 'from', 'to'));
+        return view('students/filter-by-date', compact('atts', 'class_id', 'subject_id', 'class', 'subject', 'from', 'to','students'));
     }
 
 
