@@ -69,7 +69,7 @@ class apiController extends Controller
     public function classStudents ($id)
     {
         $class = Clas::find($id);
-        $students = $class->students;
+        $students = $class->students()->whereYear('class_student.created_at','=', date('Y'))->get();;
 
         return response()->json(compact("students"));
     }
