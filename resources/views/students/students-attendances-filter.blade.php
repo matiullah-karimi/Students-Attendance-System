@@ -10,11 +10,7 @@
             <th>F/Name</th>
             @foreach($atts as $att)
                 <th class="tdWidth">
-                    <table>
-                        <tr><td>{{date('Y', strtotime($att->date))}}</td></tr>
-                        <tr><td>{{date('m', strtotime($att->date))}}</td></tr>
-                        <tr><td>{{date('d', strtotime($att->date))}}</td></tr>
-                    </table>
+                        {{date('Y-m-d', strtotime($att->date))}}
                 </th>
             @endforeach
 

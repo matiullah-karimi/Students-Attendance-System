@@ -71,11 +71,10 @@
     </div>
 
             <div id="menu1" class="tab-pane fade">
-                <?php ?>
                 <select name="class" class="form-control controlWidth marginTop">
                     <option>Filter Students by class</option>
-                    @foreach($classes as $class)
-                        <option value="{{$class->id}}"  id="classes">{{$class->name}}</option>
+                    @foreach($classes as $classe)
+                        <option value="{{$classe->id}}"  id="classes">{{$classe->name}}</option>
                     @endforeach
                 </select>
                 <div id="preStudents" class="center-block marginTop">

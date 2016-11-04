@@ -173,9 +173,8 @@ class studentController extends Controller
 
     public function preStudents($id, $class_id)
     {
-
         $class = Clas::find($id);
-        $students = $class->students;
+        $students = $class->students()->whereYear('class_student.created_at','=', date('Y'))->get();
 
         return view('students/preStudents-filter', compact('students', 'class', 'class_id'));
 
