@@ -9,7 +9,7 @@
 
                     <div class="panel-body">
 
-                        <a href="{{url('subjects/create')}}" class="btn btn-lg btn-success">Create a Subject</a>
+                        <a href="{{url('subjects/create')}}" class="btn btn-success">Create a Subject</a>
 
 
                         <table class="table table-responsive table-bordered marginTop">

@@ -7,7 +7,7 @@
                     <div class="panel-heading">Teachers</div>
 
                     <div class="panel-body">
-                        <a href="{{url('users/create')}}" class="btn btn-lg btn-success">Add Teacher</a>
+                        <a href="{{url('users/create')}}" class="btn btn-success">Add Teacher</a>
 
                         <table class="table table-bordered table-responsive marginTop">
                             <thead>

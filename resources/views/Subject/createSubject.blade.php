@@ -10,9 +10,8 @@
                     <div class="panel-body">
                         <form method="post" action="{{ url('subjects') }}">
                             <input type="hidden" value="{{csrf_token()}}" name="_token">
-
+                            <label class="control-label">Select Classes</label>
                             <div class="form-group">
-
                                 <select id="classes" name="classes[]" multiple="multiple" class="form-control controlWidth">
                                     @foreach($classes as $class)
                                         <option value="{{$class->id}}">{{$class->name}}</option>
