@@ -54,7 +54,6 @@ class apiController extends Controller
         $teacher = User::find(Auth::user()->id);
         $class = Clas::find($id);
         $subjects = $class->subjects;
-        $students = $class->students;
         $teacherSubjects = array();
         foreach ($subjects as $subject)
         {
@@ -69,7 +68,7 @@ class apiController extends Controller
     public function classStudents ($id)
     {
         $class = Clas::find($id);
-        $students = $class->students()->whereYear('class_student.created_at','=', date('Y'))->get();;
+        $students = $class->students()->whereYear('class_student.created_at','=', date('Y'))->get();
 
         return response()->json(compact("students"));
     }
@@ -81,22 +80,35 @@ class apiController extends Controller
         $subjectId = $subject_id;
         $classId = $id;
 
-        $attendance = new Attendance();
-        $attendance->subject_id = $subjectId;
-        $attendance->user_id = $teacherId;
-        $attendance->class_id = $classId;
-        $attendance->date = Carbon::now();
-        
-      $attendance->save();
+        $limit = Attendance::where('user_id', $teacherId)
+            ->where('subject_id', $subjectId)
+            ->where('class_id', $classId)
+            ->where('date', date("Y/m/d"))
+            ->get()->count();
 
-        $student_status = $request->get('results');
+        if ($limit <=3){
+            $attendance = new Attendance();
+            $attendance->subject_id = $subjectId;
+            $attendance->user_id = $teacherId;
+            $attendance->class_id = $classId;
+            $attendance->date = Carbon::now();
 
-        foreach ($student_status as $key => $value){
-            $student =  Student::find($key);
-            $attendance->students()->attach($student->id, ['status' => $value]);
+            $attendance->save();
+
+            $student_status = $request->get('results');
+
+            foreach ($student_status as $key => $value){
+                $student =  Student::find($key);
+                $attendance->students()->attach($student->id, ['status' => $value]);
+            }
+
+            return response()->json(['message' => 'Successfully Submitted'], 200);
+        }
+        else {
+            return response()->json(['message' => 'You can not take attendance more than 4 times in a day'], 200);
         }
 
-        return response()->json(['message' => 'Successfully Submitted'], 200);
+
     }
 
 }

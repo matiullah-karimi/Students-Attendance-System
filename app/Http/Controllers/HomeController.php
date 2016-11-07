@@ -63,7 +63,7 @@ class HomeController extends Controller
             ->where('date', date("Y/m/d"))
             ->get()->count();
 
-        if ($limit <= 2) {
+        if ($limit <= 3) {
 
             $attendance = new Attendance();
 

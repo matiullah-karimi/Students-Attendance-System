@@ -129,8 +129,9 @@ class classController extends Controller
         }
 
         $class = Clas::find($id);
-        $classes = Clas::whereNotIn('id', [$class->id])->get() ;
+       // $classes = Clas::whereNotIn('id', [$class->id])->get() ;
 
+        $classes = Clas::all();
         return view('classes.assign-students', compact('class', 'classes'));
     }
 

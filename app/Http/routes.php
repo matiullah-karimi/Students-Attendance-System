@@ -31,6 +31,7 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('student/attendance', 'studentController@studentsAttendance');
     Route::get('students/destroy/{id}', 'studentController@destroy');
     Route::get('students/date/filter/{id}/{sid}', 'studentController@filterByDate');
+    Route::get('students/filter-preStudents-by-date/{sid}', 'studentController@filterPreStudentsByDate');
 
     Route::get('showChart', 'HomeController@showChart');
 

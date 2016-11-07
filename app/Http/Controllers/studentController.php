@@ -220,6 +220,14 @@ class studentController extends Controller
         return view('students/filter-by-date', compact('atts', 'class_id', 'subject_id', 'class', 'subject', 'from', 'to','students'));
     }
 
+    public function filterPreStudentsByDate (Request $request, $id){
+        $class = Clas::find($id);
+        $date = date('Y-m-d', strtotime($request->get('date')));
+        $students = $class->students()->whereYear('class_student.created_at','=', $date)->get();
+
+        return view('students.filter-preStudents-byDate', compact('students','id'));
+    }
+
 
 
 }

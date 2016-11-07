@@ -77,6 +77,18 @@
                         <option value="{{$classe->id}}"  id="classes">{{$classe->name}}</option>
                     @endforeach
                 </select>
+                <table class="table table-responsive controlWidth">
+                <tr>
+                    <td>
+                        <div class="input-group date" data-provide="datepicker-inline">
+                            <input type="text" class="form-control datepicker" placeholder="Filter by date" id="datepicker1" name="to">
+                            <div class="input-group-addon">
+                                <span class="fa fa-calendar"></span>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                </table>
                 <div id="preStudents" class="center-block marginTop">
                 </div>
             </div>
@@ -135,6 +147,31 @@
                 });
             });
 
+        });
+    </script>
+
+    <script>
+        $(document).ready(function(){
+            $('#datepicker1').datepicker().on('changeDate', function(e){
+
+                var classId = $('select[name=class]').val();
+
+                var date = $('#datepicker1').val();
+                console.log(classId);
+
+                $.ajax({
+                    url: '/students/filter-preStudents-by-date/'+classId,
+                    data:{
+                        date:date,
+                    },
+                    success:function(data){
+                        console.log(data);
+                        $('#preStudents').empty();
+                        $('#preStudents').append(data);
+                    }
+                });
+
+            });
         });
     </script>
 
