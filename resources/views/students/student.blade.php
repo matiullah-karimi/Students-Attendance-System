@@ -43,10 +43,10 @@
     </div>
 
 </div>
-
+@include('deleteModalConfirmation')
     @endsection
 
-@include('deleteModalConfirmation')
+
 @section('page_specific_scripts')
     <script>
 

@@ -92,6 +92,16 @@ class HomeController extends Controller
         return redirect()->back();
     }
 
+    public function editStudentsAttendance (Request $request, $cId, $sId){
+
+        $att = Attendance::where('user_id', Auth::user()->id)
+            ->where('class_id', $cId)
+            ->where('subject_id', $sId)
+            ->where('date', $request->get('date'))->get();
+        dd($att);
+        //return $students;
+    }
+
     public function ShowChart(){
         $classes = Clas::all();
        return view('showChart', compact('classes'));

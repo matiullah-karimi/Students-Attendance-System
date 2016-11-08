@@ -13,8 +13,11 @@
     width: 400px;
 }
 @media print {
-    .showInPrint{visibility: visible;}
+    .noMargin{
+    margin: 0mm;
+    }
 }
+
 @media print{
    .noprint{display:none !important;}
 }

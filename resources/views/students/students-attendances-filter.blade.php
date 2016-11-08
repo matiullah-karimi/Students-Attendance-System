@@ -1,15 +1,16 @@
-<div class="box scrollbox pre-scrollable">
-    <div class="box-header"><b>class:</b> {{$class->name}}</br>
+<div class="box pre-scrollable noMargin">
+    <div class="box-header">
+        <b>class:</b> {{$class->name}}</br>
         <b>Subject:</b> {{$subject->name}}</div>
+        <button data-toggle="modal" data-target="#updateProfile">Edit</button>
     <div class="box-body">
-
 
         <table class="table table-bordered table-responsive marginTop" bgcolor="white">
             <thead>
             <th>Name</th>
             <th>F/Name</th>
             @foreach($atts as $att)
-                <th class="tdWidth">
+                <th>
                         {{date('Y-m-d', strtotime($att->date))}}
                 </th>
             @endforeach
@@ -65,4 +66,74 @@
         </table>
     </div>
 </div>
+
+{{--modal--}}
+<div class="modal fade" id="updateProfile" role="dialog" aria-labelledby="updateProfile" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title">Update Profile</h4>
+                @if (count($errors) > 0)
+                    <div class="alert alert-danger">
+                        <ul>
+                            @foreach ($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                @endif
+            </div>
+            <form action="{{url('users/updateProfile/'.Auth::user()->id)}}" method="post" enctype="multipart/form-data">
+                <div class="modal-body">
+                    <input type="hidden" name="_token" value="{{csrf_token()}}">
+
+                    <div class="input-group date" data-provide="datepicker-inline">
+                        <input type="text" class="form-control datepicker" placeholder="Select Date" id="datepicker3" name="to">
+                        <div class="input-group-addon">
+                            <span class="fa fa-calendar"></span>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                    <button type="submit" class="btn btn-danger confirm" id="confirm">Update</button>
+                </div>
+            </form>
+
+        </div>
+    </div>
+</div>
+
+<script>
+    $(document).ajaxComplete(function(){
+        $(".datepicker").datepicker();
+    });
+
+    $(document).ready(function(){
+        $('#datepicker3').datepicker().on('changeDate', function(e){
+            console.log("called");
+            var classId = $('select[name=class]').val();
+            var subjectId = $('select[name=subject]').val();
+
+            var date = $('#datepicker1').val();
+
+            $.ajax({
+                url: '/edit-students-attendance/'+'{{$class->id}}'+'/'+'{{$subject->id}}}',
+                data:{
+                    date:date,
+                },
+                success:function(data){
+                    console.log(data);
+                    $('#students-atts').empty();
+                    $('#students-atts').append(data);
+                }
+            });
+
+        });
+    });
+</script>
+
+
 

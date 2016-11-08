@@ -132,6 +132,7 @@
                     console.log(data)
                     $('#students-atts').empty();
                     $('#students-atts').append(data);
+
                 }
             });
         }
@@ -163,6 +164,5 @@
             });
         });
     </script>
-
 
 @endsection

@@ -155,10 +155,12 @@ class userController extends Controller
 
     public function saveTeacherClasses($id, Request $request)
     {
+        $this->validate($request, [
+            array('class' => 'required|min:1')
+        ]);
 
-//        $this->validate($request, [
-//            'class' => 'required|not_in:None selected',
-//        ]);
+
+
         $teacher = User::find($id);
 
         $classes = $request->get('classes');
