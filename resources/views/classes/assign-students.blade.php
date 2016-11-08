@@ -6,7 +6,7 @@
         <h2>{{$class->name}}</h2>
         <ul class="nav nav-tabs">
             <li class="active"><a data-toggle="tab" href="#home">Home</a></li>
-            <li><a data-toggle="tab" href="#menu1">Pre-existing Students</a></li>
+            <li><a data-toggle="tab" href="#menu1">Assign Pre-existing Students</a></li>
 
         </ul>
 

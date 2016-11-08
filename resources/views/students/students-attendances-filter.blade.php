@@ -2,7 +2,7 @@
     <div class="box-header">
         <b>class:</b> {{$class->name}}</br>
         <b>Subject:</b> {{$subject->name}}</div>
-        <button data-toggle="modal" data-target="#updateProfile">Edit</button>
+        {{--<button data-toggle="modal" data-target="#updateProfile">Edit</button>--}}
     <div class="box-body">
 
         <table class="table table-bordered table-responsive marginTop" bgcolor="white">

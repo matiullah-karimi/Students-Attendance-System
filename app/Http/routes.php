@@ -15,12 +15,15 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('users/destroy/{id}', 'userController@destroy');
     Route::get('users/profile/{id}', 'userController@profile');
     Route::post('users/updateProfile/{id}', 'userController@updateProfile');
+    Route::get('users/remove-classes/{cId}/{tId}', 'userController@removeTeacherClasses');
 
     Route::resource('subjects', 'subjectController');
     Route::get('subjects/assignTeacher/{id}', 'subjectController@assignTeacher');
     Route::post('subjects/saveSubjectTeacher', 'subjectController@saveSubjectTeacher');
     Route::get('subjects/filterSubject/{id}', 'subjectController@filterSubjects');
     Route::get('subjects/destroy/{id}', 'subjectController@destroy');
+    Route::get('subjects/remove-teacher/{sid}/{tid}', 'subjectController@removeSubjectTeacher');
+    Route::get('subjects/remove-class/{sid}/{cid}', 'subjectController@removeSubjectClass');
 
     Route::resource('students', 'studentController');
     Route::get('students/filter/{id}', 'studentController@filterStudents');

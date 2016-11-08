@@ -45,11 +45,14 @@
                 </div>
             </div>
             <div id="menu1" class="tab-pane fade">
-                <ul>
+                <table class="table table-responsive table-striped marginTop">
                     @foreach($allClasses as $class)
-                        <li>{{$class->name}}</li>
+                        <tr>
+                            <td>{{$class->name}}</td>
+                            <td><a href="{{url('users/remove-classes/'.$class->id.'/'.$teacher->id)}}">Remove</a> </td>
+                        </tr>
                     @endforeach
-                </ul>
+                </table>
             </div>
 
 

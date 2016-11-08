@@ -8,6 +8,7 @@
         <ul class="nav nav-tabs">
             <li class="active"><a data-toggle="tab" href="#home">Home</a></li>
             <li><a data-toggle="tab" href="#menu1">Teachers</a></li>
+            <li><a data-toggle="tab" href="#classes">Classes</a></li>
 
         </ul>
 
@@ -61,14 +62,32 @@
                     </div>
                 </div>
             </div>
-            <div id="menu1" class="tab-pane fade">
 
-                <ul>
+            {{--teachers--}}
+            <div id="menu1" class="tab-pane fade">
+                <table class="table table-responsive table-striped marginTop">
                     @foreach($subjectTeachers as $teacher)
-                        <li>{{$teacher->name}}</li>
+                        <tr>
+                            <td>{{$teacher->name}}</td>
+                            <td><a href="{{url('subjects/remove-teacher/'.$subject->id.'/'.$teacher->id)}}">Remove</a> </td>
+                        </tr>
                     @endforeach
-                </ul>
+                </table>
             </div>
+
+            {{--classes--}}
+
+            <div id="classes" class="tab-pane fade">
+                <table class="table table-responsive table-striped marginTop">
+                    @foreach($classes as $class)
+                        <tr>
+                            <td>{{$class->name}}</td>
+                            <td><a href="{{url('subjects/remove-class/'.$subject->id.'/'.$class->id)}}">Remove</a> </td>
+                        </tr>
+                    @endforeach
+                </table>
+            </div>
+
         </div>
     </div>
 

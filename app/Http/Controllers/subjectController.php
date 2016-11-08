@@ -164,8 +164,9 @@ class subjectController extends Controller
         $subjectTeachers = User::whereIn('id', $subjectTeachers)->where('users.role', '=', 0)->get();
 
         $subject = Subject::find($id);
+        $classes = $subject->classes;
 
-        return view('Subject/assignTeacher', compact('teachers', 'subject', 'subjectTeachers'));
+        return view('Subject/assignTeacher', compact('teachers', 'subject', 'subjectTeachers', 'classes'));
     }
 
     public function saveSubjectTeacher(Request $request){
@@ -186,6 +187,17 @@ class subjectController extends Controller
         return redirect('subjects');
     }
 
+    public function removeSubjectTeacher($sid, $tid){
+        $subject = Subject::find($sid);
+        $subject->teachers()->detach($tid);
+        return redirect()->back();
+    }
+
+    public function removeSubjectClass($sid, $cid){
+        $subject = Subject::find($sid);
+        $subject->classes()->detach($cid);
+        return redirect()->back();
+    }
     public function filterSubjects($id){
 
         $class = Clas::find($id);

@@ -98,8 +98,8 @@ class HomeController extends Controller
             ->where('class_id', $cId)
             ->where('subject_id', $sId)
             ->where('date', $request->get('date'))->get();
-        dd($att);
-        //return $students;
+
+
     }
 
     public function ShowChart(){

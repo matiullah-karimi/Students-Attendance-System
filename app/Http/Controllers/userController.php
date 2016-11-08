@@ -159,8 +159,6 @@ class userController extends Controller
             array('class' => 'required|min:1')
         ]);
 
-
-
         $teacher = User::find($id);
 
         $classes = $request->get('classes');
@@ -172,6 +170,12 @@ class userController extends Controller
         }
 
         return redirect('users');
+    }
+
+    public function removeTeacherClasses($cId, $tId){
+        $class = Clas::find($cId);
+        $class->teachers()->detach($tId);
+        return redirect()->back();
     }
 
     public function profile($id)
