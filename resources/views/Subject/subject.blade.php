@@ -15,7 +15,7 @@
                         <table class="table table-responsive table-bordered marginTop">
                             <thead>
                             <th>Name</th>
-                            <th>Assign Students</th>
+                            <th>Assign Teacher</th>
                             <th colspan="2">Actions</th>
                             </thead>
 
