@@ -7,17 +7,17 @@
 
         <table class="table table-bordered table-responsive marginTop" bgcolor="white">
             <thead>
-            <th>Name</th>
-            <th>F/Name</th>
+            <th>@lang('language.name')</th>
+            <th>@lang('language.f-name')</th>
             @foreach($atts as $att)
                 <th>
                         {{date('Y-m-d', strtotime($att->date))}}
                 </th>
             @endforeach
 
-            <th>Total Present</th>
-            <th>Total Absent</th>
-            <th>Status</th>
+            <th>@lang('language.total-p')</th>
+            <th>@lang('language.total-a')</th>
+            <th>@lang('language.status')</th>
 
             </thead>
 

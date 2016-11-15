@@ -4,17 +4,17 @@
         <div class="row">
             <div class="col-md-10 col-md-offset-1">
                 <div class="panel panel-default">
-                    <div class="panel-heading">Teachers</div>
+                    <div class="panel-heading">@lang('language.teachers')</div>
 
                     <div class="panel-body">
-                        <a href="{{url('users/create')}}" class="btn btn-success">Add Teacher</a>
+                        <a href="{{url('users/create')}}" class="btn btn-success">@lang('language.create-teacher')</a>
 
                         <table class="table table-bordered table-responsive marginTop">
                             <thead>
-                            <th>Name</th>
-                            <th>Email</th>
-                            <th>Assign Classes</th>
-                            <th colspan="2">Actions</th>
+                            <th>@lang('language.name')</th>
+                            <th>@lang('language.email')</th>
+                            <th>@lang('language.assign-classes')</th>
+                            <th colspan="2">@lang('language.actions')</th>
                             </thead>
 
                             <tbody>
@@ -24,12 +24,12 @@
 
                                 <td>{{$teacher->name}}</td>
                                 <td>{{$teacher->email}}</td>
-                                <td><a href="{{url('users/assignClasses/'.$teacher->id)}}" class="btn btn-warning">Assign Classes</a></td>
-                                    <td> <a href="{{url('users/'.$teacher->id.'/edit')}}"  value="Edit" class="btn btn-info btn-group-sm">Edit</a></td>
+                                <td><a href="{{url('users/assignClasses/'.$teacher->id)}}" class="btn btn-warning">@lang('language.assign-classes')</a></td>
+                                    <td> <a href="{{url('users/'.$teacher->id.'/edit')}}"  value="Edit" class="btn btn-info btn-group-sm">@lang('language.edit')</a></td>
 
                                     <td>
                                         <a href="javascript:void(0)" id="{{ $teacher->id }}" class="btn btn-danger delete" onclick="confirm(this.id);">
-                                            Delete</a>
+                                            @lang('language.delete')</a>
                                     </td>
                             </tr>
 

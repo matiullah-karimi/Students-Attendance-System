@@ -12,7 +12,7 @@
                 <tr>
                     <td>
                         <select name="class" class="form-control hidden-print" >
-                            <option selected disabled>Select Class</option>
+                            <option selected disabled>@lang('language.select-class')</option>
                             @foreach($teacher->classes as $class)
                                 <option value="{{$class->id}}" id="classes" >{{$class->name}}</option>
                             @endforeach
@@ -21,7 +21,7 @@
 
                     <td id="teacher-subjects">
                         <select name="subject" class="form-control hidden-print">
-                            <option>Select Subject</option>
+                            <option>@lang('language.select-subject')</option>
 
                         </select>
                     </td>
@@ -56,7 +56,7 @@
                 <tr>
                     <td>
                         <select name="class" class="form-control">
-                            <option>Select Class</option>
+                            <option>@lang('language.select-class')</option>
                             @foreach($classes as $class)
                                 <option value="{{$class->id}}" id="classes" >{{$class->name}}</option>
                             @endforeach
@@ -65,7 +65,7 @@
                     <td>
                         <div id="teacher-subjects">
                             <select class="form-control">
-                                <option>Select Subject</option>
+                                <option>@lang('language.select-subject')</option>
                             </select>
                         </div>
                     </td>

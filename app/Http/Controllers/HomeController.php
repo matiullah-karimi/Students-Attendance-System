@@ -10,6 +10,7 @@ use App\Subject;
 use App\User;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Auth;
 use Maatwebsite\Excel\Facades\Excel;
 
@@ -33,6 +34,7 @@ class HomeController extends Controller
      */
     public function index()
     {
+        //dd(App::getLocale());
         $teacherId = Auth::user()->id;
 
         $teacher = User::find($teacherId);

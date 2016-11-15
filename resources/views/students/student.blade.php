@@ -5,7 +5,7 @@
 
     <select name="class" class="center-block form-control controlWidth">
 
-        <option>Filter Students by class</option>
+        <option>@lang('language.filter-class')</option>
         @foreach($classes as $class)
             <option value="{{$class->id}}"  id="classes">{{$class->name}}</option>
         @endforeach
@@ -15,9 +15,9 @@
 
     <table class="table table-responsive table-bordered marginTop" id="students_table">
         <thead>
-        <th>Name</th>
-        <th>F/Name</th>
-        <th colspan="2">Actions</th>
+        <th>@lang('language.name')</th>
+        <th>@lang('language.f-name')</th>
+        <th colspan="2">@lang('language.actions')</th>
         </thead>
 
         <tbody>
@@ -29,10 +29,10 @@
 
             <td>{{$student->name}}</td>
             <td>{{$student->fname}}</td>
-            <td><a href="{{url('students/'.$student->id.'/edit')}}" class="btn btn-info ">Edit</a></td>
+            <td><a href="{{url('students/'.$student->id.'/edit')}}" class="btn btn-info ">@lang('language.edit')</a></td>
             <td>
                 <a href="javascript:void(0)" id="{{ $student->id }}" class="btn btn-danger delete" onclick="confirm(this.id);">
-                    Delete</a>
+                    @lang('language.delete')</a>
             </td>
         </tr>
 

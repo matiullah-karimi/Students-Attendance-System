@@ -9,9 +9,9 @@
                     <div class="widget-user-header bg-aqua-active">
                         <h3 class="widget-user-username">{{Auth::user()->name}}</h3>
                         @if(Auth::user()->role == 0)
-                        <h5 class="widget-user-desc">Lecturer</h5>
+                        <h5 class="widget-user-desc">@lang('language.lecturer')</h5>
                         @else
-                            <h5 class="widget-user-desc">Admin</h5>
+                            <h5 class="widget-user-desc">@lang('language.admin')</h5>
                         @endif
                     </div>
                     <div class="widget-user-image">
@@ -22,7 +22,7 @@
                             <div class="col-sm-4 border-right">
                                 <div class="description-block">
                                     <h5 class="description-header">{{count(Auth::user()->classes)}}</h5>
-                                    <span class="description-text">CLASSES</span>
+                                    <span class="description-text">@lang('language.classes')</span>
                                 </div>
                                 <!-- /.description-block -->
                             </div>
@@ -41,7 +41,7 @@
                             <div class="col-sm-4 border-right">
                                 <div class="description-block">
                                     <h5 class="description-header">{{count(Auth::user()->subjects)}}</h5>
-                                    <span class="description-text">SUBJECTS</span>
+                                    <span class="description-text">@lang('language.subjects')</span>
                                 </div>
                                 <!-- /.description-block -->
                             </div>
@@ -52,16 +52,16 @@
                     <div class="box-body bg-orange-active">
                         <table class="table">
                             <tr>
-                                <td>Name</td>
+                                <td>@lang('language.name')</td>
                                 <td>{{Auth::user()->name}}</td>
                             </tr>
 
                             <tr>
-                                <td>Email</td>
+                                <td>@lang('language.email')</td>
                                 <td>{{Auth::user()->email}}</td>
                             </tr>
                             <tr>
-                                <td>Classes</td>
+                                <td>@lang('language.classes')</td>
                                 <td>@foreach(Auth::user()->classes as $class)
                                     <ul>
                                         <li> {{$class->name}}</li>
@@ -70,7 +70,7 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td>Subjects</td>
+                                <td>@lang('language.subjects')</td>
                                 <td>@foreach(Auth::user()->subjects as $subject)
                                         <ul>
                                             <li> {{$subject->name}}</li>
@@ -98,7 +98,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                    <h4 class="modal-title">Update Profile</h4>
+                    <h4 class="modal-title">@lang('language.update')</h4>
                     @if (count($errors) > 0)
                         <div class="alert alert-danger">
                             <ul>
@@ -130,8 +130,8 @@
                         </div>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-                        <button type="submit" class="btn btn-danger confirm" id="confirm">Update</button>
+                        <button type="button" class="btn btn-default" data-dismiss="modal">@lang('language.cancel')</button>
+                        <button type="submit" class="btn btn-danger confirm" id="confirm">@lang('language.update')</button>
                     </div>
                 </form>
 

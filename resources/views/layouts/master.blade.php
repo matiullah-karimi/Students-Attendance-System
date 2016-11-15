@@ -51,6 +51,7 @@
         </a>
         <!-- Header Navbar: style can be found in header.less -->
         <nav class="navbar navbar-static-top">
+
             <!-- Sidebar toggle button-->
             <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
                 <span class="sr-only">Toggle navigation</span>
@@ -58,9 +59,19 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </a>
-
             <div class="navbar-custom-menu">
                 <ul class="nav navbar-nav">
+                    <li>
+                        <div class="dropdown user user-menu">
+                            <a href="#" class="dropdown-toggle" type="button" data-toggle="dropdown">Language
+                                <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="{{url('language/en')}}">Enlish</a></li>
+                                <li><a href="{{url('language/pr')}}">Dari</a></li>
+                                <li><a href="{{url('language/en')}}" disabled>Pashtu</a></li>
+                            </ul>
+                        </div>
+                    </li>
 
 
                     <!-- User Account: style can be found in dropdown.less -->
@@ -74,7 +85,6 @@
 
                             <li class="user-header">
                                 <img src="{{asset('images/'.Auth::user()->image)}}" class="img-circle" alt="User Image">
-
                                 <p>
                                     {{Auth::user()->name}}
                                     <small>{{Auth::user()->email}}</small>
@@ -124,7 +134,7 @@
 
                 <li class="treeview">
                     <a href="{{url('/home')}}">
-                        <i class="fa fa-dashboard"></i> <span>Dashboard</span>
+                        <i class="fa fa-dashboard"></i> <span>{{trans('language.dashboard')}}</span>
                     </a>
 
                 </li>
@@ -133,7 +143,7 @@
 
                 <li>
                     <a href="{{url('/classes')}}">
-                        <i class="fa fa-th"></i> <span>Classes</span>
+                        <i class="fa fa-th"></i> <span>{{trans('language.classes')}}</span>
             <span class="pull-right-container">
 
             </span>
@@ -142,7 +152,7 @@
 
                 <li>
                     <a href="{{url('/users')}}">
-                        <i class="fa fa-user"></i> <span>Teachers</span>
+                        <i class="fa fa-user"></i> <span>{{trans('language.teachers')}}</span>
             <span class="pull-right-container">
 
             </span>
@@ -152,7 +162,7 @@
 
                 <li>
                     <a href="{{url('/subjects')}}">
-                        <i class="fa fa-book"></i> <span>Subjects</span>
+                        <i class="fa fa-book"></i> <span>{{trans('language.subjects')}}</span>
             <span class="pull-right-container">
 
             </span>
@@ -161,7 +171,7 @@
 
                 <li>
                     <a href="{{url('/students')}}">
-                        <i class="fa fa-users"></i> <span>Students</span>
+                        <i class="fa fa-users"></i> <span>{{trans('language.students')}}</span>
             <span class="pull-right-container">
 
             </span>
@@ -171,7 +181,7 @@
 
                 <li>
                     <a href="{{url('student/attendance')}}">
-                        <i class="fa fa-eye"></i> <span>Attendance</span>
+                        <i class="fa fa-eye"></i> <span>{{trans('language.attendance')}}</span>
             <span class="pull-right-container">
 
             </span>

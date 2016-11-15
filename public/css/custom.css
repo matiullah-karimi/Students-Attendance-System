@@ -37,3 +37,9 @@
 .tdWidth{
     max-width: 10px;
 }
+th{
+    text-align: center;
+}
+td{
+    text-align: center;
+}

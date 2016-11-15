@@ -5,12 +5,12 @@
         <div class="row">
             <div class="col-md-10 col-md-offset-1">
                 <div class="panel panel-default">
-                    <div class="panel-heading">Create Subject</div>
+                    <div class="panel-heading">@lang('language.create-subject')</div>
 
                     <div class="panel-body">
                         <form method="post" action="{{ url('subjects') }}">
                             <input type="hidden" value="{{csrf_token()}}" name="_token">
-                            <label class="control-label">Select Classes</label>
+                            <label class="control-label">@lang('language.select-classes')</label>
                             <div class="form-group">
                                 <select id="classes" name="classes[]" multiple="multiple" class="form-control controlWidth">
                                     @foreach($classes as $class)
@@ -19,7 +19,7 @@
                                 </select>
                             </div>
                             <div class="form-group marginTop">
-                                <button class="add_field_button btn btn-success">Add More Fields</button>
+                                <button class="add_field_button btn btn-success">@lang('language.create-more')</button>
 
                             </div>
                             <div class="form-group">
@@ -29,7 +29,7 @@
                             <div class="input_fields_wrap">
                             </div>
                             <div class="form-group marginTop">
-                                <input type="submit" class="form-control btn btn-info" value="Submit">
+                                <input type="submit" class="form-control btn btn-info" value="{{trans('language.submit')}}">
                             </div>
                         </form>
                     </div>

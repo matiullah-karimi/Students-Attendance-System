@@ -6,16 +6,16 @@
         <div class="row">
             <div class="col-md-10 col-md-offset-1">
                 <div class="panel panel-default">
-                    <div class="panel-heading">Teachers</div>
+                    <div class="panel-heading">@lang('language.classes')</div>
 
                     <div class="panel-body">
-                        <a href="{{url('classes/create')}}" class="btn btn-success">Add Class</a>
+                        <a href="{{url('classes/create')}}" class="btn btn-success">@lang('language.create-class')</a>
 
                         <table class="table table-bordered table-responsive marginTop">
                             <thead>
-                            <th>Name</th>
-                            <th>Assign Students</th>
-                            <th colspan="2">Actions</th>
+                            <th>@lang('language.name')</th>
+                            <th>@lang('language.assign-students')</th>
+                            <th colspan="2">@lang('language.actions')</th>
                             </thead>
 
                             <tbody>
@@ -24,12 +24,12 @@
                                 <tr>
 
                                     <td>{{$class->name}}</td>
-                                    <td><a href="{{url('classes/assignStudents/'.$class->id)}}" class="btn btn-warning">Assign Students</a> </td>
-                                    <td> <a href="{{url('classes/'.$class->id.'/edit')}}"  value="Edit" class="btn btn-info btn-group-sm fa fa-edit "> Edit</a></td>
+                                    <td><a href="{{url('classes/assignStudents/'.$class->id)}}" class="btn btn-warning">@lang('language.assign-students')</a> </td>
+                                    <td> <a href="{{url('classes/'.$class->id.'/edit')}}"  value="Edit" class="btn btn-info btn-group-sm fa fa-edit "> @lang('language.edit')</a></td>
 
                                     <td>
                                         <a href="javascript:void(0)" id="{{ $class->id }}" class="btn btn-danger delete" onclick="confirm(this.id);">
-                                                Delete</a>
+                                            @lang('language.delete')</a>
                                     </td>
                                 </tr>
 

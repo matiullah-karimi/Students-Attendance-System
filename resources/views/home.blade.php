@@ -56,7 +56,7 @@
                                 <span class="info-box-icon bg-aqua"><i class="fa fa-users"></i></span>
 
                                 <div class="info-box-content">
-                                    <span class="info-box-text"><a href="{{url('students')}}">Students</a></span>
+                                    <span class="info-box-text"><a href="{{url('students')}}">@lang('language.students')</a></span>
                                     <span class="info-box-number">{{count($students)}}</span>
                                 </div>
                                 <!-- /.info-box-content -->
@@ -69,7 +69,7 @@
                                 <span class="info-box-icon bg-green"><i class="fa fa-user"></i></span>
 
                                 <div class="info-box-content">
-                                    <span class="info-box-text"><a href="{{url('users')}}">Teachers</a></span>
+                                    <span class="info-box-text"><a href="{{url('users')}}">@lang('language.teachers')</a></span>
                                     <span class="info-box-number">{{count($teachers)}}</span>
                                 </div>
                                 <!-- /.info-box-content -->
@@ -82,7 +82,7 @@
                                 <span class="info-box-icon bg-orange"><i class="fa fa-th"></i></span>
 
                                 <div class="info-box-content">
-                                    <span class="info-box-text"><a href="{{url('classes')}}">Classes</a></span>
+                                    <span class="info-box-text"><a href="{{url('classes')}}">@lang('language.classes')</a></span>
                                     <span class="info-box-number">{{count($classes)}}</span>
                                 </div>
                                 <!-- /.info-box-content -->
@@ -95,7 +95,7 @@
                                 <span class="info-box-icon bg-red"><i class="fa fa-book"></i></span>
 
                                 <div class="info-box-content">
-                                    <span class="info-box-text"><a href="{{url('subjects')}}">Subjects</a></span>
+                                    <span class="info-box-text"><a href="{{url('subjects')}}">@lang('language.subjects')</a></span>
                                     <span class="info-box-number">{{count($subjects)}}</span>
                                 </div>
                                 <!-- /.info-box-content -->
@@ -143,7 +143,7 @@
                             "valueAxes": [{
                                 "axisAlpha": 0,
                                 "position": "left",
-                                "title": "Numbers of Students in each class"
+                                "title": "{{trans('language.number-of-students')}}"
                             }],
                             "startDuration": 1,
                             "graphs": [{

@@ -6,7 +6,7 @@
 
         <h2>{{$subject->name}}</h2>
         <ul class="nav nav-tabs">
-            <li class="active"><a data-toggle="tab" href="#home">Home</a></li>
+            <li class="active"><a data-toggle="tab" href="#home">@lang('language.home')</a></li>
             <li><a data-toggle="tab" href="#menu1">Teachers</a></li>
             <li><a data-toggle="tab" href="#classes">Classes</a></li>
 
@@ -19,7 +19,7 @@
 
                         <div class="panel panel-default">
                             <div class="panel-heading">
-                                Assign Teacher for <b>{{$subject->name}}</b> Course
+                                @lang('language.assign-teacher-for') <b>{{$subject->name}}</b>@lang('language.subject')
                             </div>
                             <div class="panel-body">
 
@@ -30,7 +30,7 @@
                                     <!-- teachers list -->
                                     <select class="form-control marginTop controlWidth center-block" name="teacher" >
 
-                                        <option>Select Teacher</option>
+                                        <option>@lang('language.select-teacher')</option>
                                         @foreach($teachers as $teacher)
                                             <option value="{{$teacher->id}}">{{$teacher->name}}</option>
                                         @endforeach
@@ -69,7 +69,7 @@
                     @foreach($subjectTeachers as $teacher)
                         <tr>
                             <td>{{$teacher->name}}</td>
-                            <td><a href="{{url('subjects/remove-teacher/'.$subject->id.'/'.$teacher->id)}}">Remove</a> </td>
+                            <td><a href="{{url('subjects/remove-teacher/'.$subject->id.'/'.$teacher->id)}}">@lang('language.remove')</a> </td>
                         </tr>
                     @endforeach
                 </table>
@@ -82,7 +82,7 @@
                     @foreach($classes as $class)
                         <tr>
                             <td>{{$class->name}}</td>
-                            <td><a href="{{url('subjects/remove-class/'.$subject->id.'/'.$class->id)}}">Remove</a> </td>
+                            <td><a href="{{url('subjects/remove-class/'.$subject->id.'/'.$class->id)}}">@lang('language.remove')</a> </td>
                         </tr>
                     @endforeach
                 </table>

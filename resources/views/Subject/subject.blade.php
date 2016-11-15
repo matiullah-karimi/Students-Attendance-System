@@ -5,18 +5,18 @@
         <div class="row">
             <div class="col-md-10 col-md-offset-1">
                 <div class="panel panel-default">
-                    <div class="panel-heading">Courses</div>
+                    <div class="panel-heading">@lang('language.subjects')</div>
 
                     <div class="panel-body">
 
-                        <a href="{{url('subjects/create')}}" class="btn btn-success">Create a Subject</a>
+                        <a href="{{url('subjects/create')}}" class="btn btn-success">@lang('language.create-subject')</a>
 
 
                         <table class="table table-responsive table-bordered marginTop">
                             <thead>
-                            <th>Name</th>
-                            <th>Assign Teacher</th>
-                            <th colspan="2">Actions</th>
+                            <th>@lang('language.name')</th>
+                            <th>@lang('language.assign-teacher')</th>
+                            <th colspan="2">@lang('language.actions')</th>
                             </thead>
 
                             <tbody>

@@ -6,7 +6,7 @@
         <h2>{{$class->name}}</h2>
         <ul class="nav nav-tabs">
             <li class="active"><a data-toggle="tab" href="#home">Home</a></li>
-            <li><a data-toggle="tab" href="#menu1">Assign Pre-existing Students</a></li>
+            <li><a data-toggle="tab" href="#menu1">@lang('language.assign-pre')</a></li>
 
         </ul>
 
@@ -17,7 +17,7 @@
 
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        Assign Students for <b>{{$class->name}}</b> Class
+                        @lang('language.assign-students-for') <b>{{$class->name}}</b> @lang('language.class')
                     </div>
                     <div class="panel-body">
 
@@ -25,7 +25,7 @@
                             <input type="hidden" name="_token" value="{{csrf_token()}}">
 
                             <div class="form-group marginTop">
-                            <button class="add_field_button btn btn-success">Add More Fields</button>
+                            <button class="add_field_button btn btn-success">@lang('language.create-more')</button>
                             </div>
 
                             <div class="row">

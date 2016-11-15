@@ -3,8 +3,8 @@
     <div class="container">
         <h2>{{$teacher->name}}</h2>
         <ul class="nav nav-tabs">
-            <li class="active"><a data-toggle="tab" href="#home">Home</a></li>
-            <li><a data-toggle="tab" href="#menu1">Classes</a></li>
+            <li class="active"><a data-toggle="tab" href="#home">@lang('language.assign-classes') </a></li>
+            <li><a data-toggle="tab" href="#menu1">@lang('language.classes')</a></li>
 
         </ul>
 
@@ -13,7 +13,7 @@
                 <div class="row marginTop">
                     <div class="col-md-10">
                         <div class="panel panel-default">
-                            <div class="panel-heading">Assign Class for <b>{{$teacher->name}}</b></div>
+                            <div class="panel-heading">@lang('language.assign-class-for') <b>{{$teacher->name}}</b></div>
                             <div class="panel-body">
                                 <form action="{{url('users/saveTeacherClasses/'.$teacher->id)}}" method="post">
                                     <input type="hidden" name="_token" value="{{csrf_token()}}">
@@ -25,7 +25,7 @@
                                         </select>
                                     </div>
                                     <div class="form-group">
-                                        <button type="submit" class="btn btn-info">Submit</button>
+                                        <button type="submit" class="btn btn-info">@lang('language.submit')</button>
                                     </div>
                                 </form>
                             </div>
@@ -49,7 +49,7 @@
                     @foreach($allClasses as $class)
                         <tr>
                             <td>{{$class->name}}</td>
-                            <td><a href="{{url('users/remove-classes/'.$class->id.'/'.$teacher->id)}}">Remove</a> </td>
+                            <td><a href="{{url('users/remove-classes/'.$class->id.'/'.$teacher->id)}}">@lang('language.remove')</a> </td>
                         </tr>
                     @endforeach
                 </table>
