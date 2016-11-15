@@ -5,7 +5,7 @@
 
         <h2>{{$class->name}}</h2>
         <ul class="nav nav-tabs">
-            <li class="active"><a data-toggle="tab" href="#home">Home</a></li>
+            <li class="active"><a data-toggle="tab" href="#home">{{trans('language.home')}}</a></li>
             <li><a data-toggle="tab" href="#menu1">@lang('language.assign-pre')</a></li>
 
         </ul>
@@ -72,7 +72,7 @@
 
             <div id="menu1" class="tab-pane fade">
                 <select name="class" class="form-control controlWidth marginTop">
-                    <option>Filter Students by class</option>
+                    <option>{{trans('language.filter-class')}}</option>
                     @foreach($classes as $classe)
                         <option value="{{$classe->id}}"  id="classes">{{$classe->name}}</option>
                     @endforeach
@@ -81,7 +81,7 @@
                 <tr>
                     <td>
                         <div class="input-group date" data-provide="datepicker-inline">
-                            <input type="text" class="form-control datepicker" placeholder="Filter by date" id="datepicker1" name="to">
+                            <input type="text" class="form-control datepicker" placeholder="{{trans('language.filter-date')}}" id="datepicker1" name="to">
                             <div class="input-group-addon">
                                 <span class="fa fa-calendar"></span>
                             </div>

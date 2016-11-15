@@ -43,3 +43,10 @@ th{
 td{
     text-align: center;
 }
+.dropdown, .dropup {
+    position: relative;
+    line-height: 50px;
+}
+#language-li{
+    right: 20px;
+}

@@ -9,11 +9,16 @@
     <script src="{{asset('bootstrap/js/jquery.min.js')}}"></script>
     <script src="{{asset('bootstrap/js/bootstrap.min.js')}}"></script>
     <link rel="stylesheet" href="{{asset('/bootstrap/css/bootstrap.min.css')}}">
-    <link rel="stylesheet" href="{{asset('/css/custom.css')}}">
+
     <script type="text/javascript" src="{{asset('bootstrap/js/bootstrap-multiselect.js')}}"></script>
     <script type="text/javascript" src="{{asset('js/datepicker.js')}}"></script>
     <link rel="stylesheet" href=" {{asset('bootstrap/css/bootstrap-multiselect.css')}}" type="text/css"/>
 
+    @if(App::getLocale() == 'en')
+        <link rel="stylesheet" href="{{asset('/css/custom.css')}}">
+            @else
+        <link rel="stylesheet" href="{{asset('/css/custom-rtl.css')}}">
+    @endif
 
     <!-- jQuery 2.2.3 -->
     {{--<script src="{{asset('plugins/jQuery/jquery-2.2.3.min.js')}}"></script>--}}
@@ -61,8 +66,8 @@
             </a>
             <div class="navbar-custom-menu">
                 <ul class="nav navbar-nav">
-                    <li>
-                        <div class="dropdown user user-menu">
+                    <li id="language-li">
+                        <div class="dropdown">
                             <a href="#" class="dropdown-toggle" type="button" data-toggle="dropdown">Language
                                 <span class="caret"></span></a>
                             <ul class="dropdown-menu">
@@ -104,7 +109,7 @@
                     </li>
                     <!-- Control Sidebar Toggle Button -->
                     <li>
-                        <a href="#" data-toggle="control-sidebar"><i class="fa fa-gears"></i></a>
+                        <a href="#" data-toggle="control-sidebar" id="gears"><i class="fa fa-gears"></i></a>
                     </li>
                 </ul>
             </div>
@@ -214,11 +219,9 @@
     <!-- /.content-wrapper -->
 
     <footer class="main-footer hidden-print">
-        <div class="pull-right hidden-xs">
-            <b>Version</b> 1.0.0
-        </div>
-        <strong>Copyright &copy; 2016 <a href="#">Matiullah Karimi</a>.</strong> All rights
-        reserved.
+        <div id="footer-text"><strong>Copyright &copy; 2016 <a href="#">Matiullah Karimi</a>.</strong> All rights
+            reserved.</div>
+
     </footer>
 
     <!-- Control Sidebar -->

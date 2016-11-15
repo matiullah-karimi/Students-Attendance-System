@@ -53,5 +53,6 @@ return [
     'lecturer' => 'Lecturer',
     'admin' => 'Admin',
     'dashboard' => 'Dashboard',
-    'attendance' => 'Attendance'
+    'attendance' => 'Attendance',
+    'filter-date' => 'Filter by date'
 ];

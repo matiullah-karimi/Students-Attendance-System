@@ -26,14 +26,14 @@
                         </select>
                     </td>
                     <td>
-                        <button class="btn btn-default" onclick="print()">Print</button>
+                        <button class="btn btn-default" onclick="print()">@lang('language.print')</button>
                     </td>
                 </tr>
 
                 <tr>
                     <td>
                       <div class="input-group date" data-provide="datepicker-inline">
-                            <input type="text" class="form-control datepicker" placeholder="Start Date" name="from" id="datepicker">
+                            <input type="text" class="form-control datepicker" placeholder="{{trans('language.start-date')}}" name="from" id="datepicker">
                             <div class="input-group-addon">
                                 <span class="fa fa-calendar"></span>
                             </div>
@@ -41,7 +41,7 @@
                     </td>
                     <td>
                         <div class="input-group date" data-provide="datepicker-inline">
-                            <input type="text" class="form-control datepicker" placeholder="End Date" id="datepicker1" name="to">
+                            <input type="text" class="form-control datepicker" placeholder="{{trans('language.end-date')}}" id="datepicker1" name="to">
                             <div class="input-group-addon">
                                 <span class="fa fa-calendar"></span>
                             </div>
@@ -70,13 +70,13 @@
                         </div>
                     </td>
                     <td>
-                        <button class="btn btn-default" onclick="print()">Print</button>
+                        <button class="btn btn-default" onclick="print()">@lang('language.print')</button>
                     </td>
                 </tr>
                 <tr>
                     <td>
                         <div class="input-group date" data-provide="datepicker-inline">
-                            <input type="text" class="form-control datepicker" placeholder="Start Date" name="from" id="datepicker">
+                            <input type="text" class="form-control datepicker" placeholder="{{trans('language.start-date')}}" name="from" id="datepicker">
                             <div class="input-group-addon">
                                 <span class="fa fa-calendar"></span>
                             </div>
@@ -84,7 +84,7 @@
                     </td>
                     <td>
                         <div class="input-group date" data-provide="datepicker-inline">
-                            <input type="text" class="form-control datepicker" placeholder="End Date" id="datepicker1" name="to">
+                            <input type="text" class="form-control datepicker" placeholder="{{trans('language.end-date')}}" id="datepicker1" name="to">
                             <div class="input-group-addon">
                                 <span class="fa fa-calendar"></span>
                             </div>

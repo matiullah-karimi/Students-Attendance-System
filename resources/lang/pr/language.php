@@ -52,5 +52,6 @@ return [
     'lecturer' => 'استاد',
     'admin' => 'مدیر',
     'dashboard' => 'داشبورد',
-    'attendance' => 'حاضری'
+    'attendance' => 'حاضری',
+    'filter-date' => 'فیلتر به اساس تاریخ'
 ];
