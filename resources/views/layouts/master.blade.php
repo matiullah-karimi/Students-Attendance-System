@@ -73,7 +73,7 @@
                             <ul class="dropdown-menu">
                                 <li><a href="{{url('language/en')}}">Enlish</a></li>
                                 <li><a href="{{url('language/pr')}}">Dari</a></li>
-                                <li><a href="{{url('language/en')}}" disabled>Pashtu</a></li>
+                                <li><a href="{{url('language/pa')}}">Pashtu</a></li>
                             </ul>
                         </div>
                     </li>

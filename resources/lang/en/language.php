@@ -44,7 +44,7 @@ return [
     'assign-students-for' => 'Assign Students for',
     'total-p' => 'Total Present',
     'total-a' => 'Total Absent',
-    'Status' => 'Status',
+    'status' => 'Status',
     'home' => 'Home',
     'assign-teacher-for' => 'Assign Teacher for',
     'select-teacher' => 'Select Teacher',
