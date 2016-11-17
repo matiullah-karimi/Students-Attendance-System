@@ -215,7 +215,10 @@ class studentController extends Controller
                 ->whereBetween('date', [$from, $to])->get();
         }
 
-        $students = $class->students()->whereBetween('class_student.created_at', [$from, $to])->get();
+        $fromm = date('Y').'-3-22';
+        $too = date('Y').'-12-22';
+
+        $students = $class->students()->whereBetween('class_student.created_at', [$fromm, $too])->get();
         //return $atts;
         return view('students/filter-by-date', compact('atts', 'class_id', 'subject_id', 'class', 'subject', 'from', 'to','students'));
     }
