@@ -48,7 +48,7 @@
 
     <header class="main-header">
         <!-- Logo -->
-        <a href="{{asset('images/avatar5.png')}}" class="logo">
+        <a href="{{asset('images/'.Auth::user()->image)}}" class="logo">
             <!-- mini logo for sidebar mini 50x50 pixels -->
             <span class="logo-mini"><b>A</b>S</span>
             <!-- logo for regular state and mobile devices -->
@@ -68,12 +68,12 @@
                 <ul class="nav navbar-nav">
                     <li id="language-li">
                         <div class="dropdown">
-                            <a href="#" class="dropdown-toggle" type="button" data-toggle="dropdown">Language
+                            <a href="#" class="dropdown-toggle" id="lang-a" data-toggle="dropdown">@lang('language.language')
                                 <span class="caret"></span></a>
                             <ul class="dropdown-menu">
                                 <li><a href="{{url('language/en')}}">Enlish</a></li>
-                                <li><a href="{{url('language/pr')}}">Dari</a></li>
-                                <li><a href="{{url('language/pa')}}">Pashtu</a></li>
+                                <li><a href="{{url('language/pr')}}">دری</a></li>
+                                <li><a href="{{url('language/pa')}}">پشتو</a></li>
                             </ul>
                         </div>
                     </li>
@@ -99,10 +99,10 @@
                             <!-- Menu Footer-->
                             <li class="user-footer">
                                 <div class="pull-left">
-                                    <a href="{{url('users/profile/'.Auth::user()->id)}}" class="btn btn-default btn-flat fa fa-user"> Profile</a>
+                                    <a href="{{url('users/profile/'.Auth::user()->id)}}" class="btn btn-default btn-flat fa fa-user"> @lang('language.profile')</a>
                                 </div>
                                 <div class="pull-right">
-                                    <a href="{{url('/logout')}}" class="btn btn-default btn-flat fa fa-sign-out"> Sign out</a>
+                                    <a href="{{url('/logout')}}" class="btn btn-default btn-flat fa fa-sign-out"> @lang('language.sign-out')</a>
                                 </div>
                             </li>
                         </ul>

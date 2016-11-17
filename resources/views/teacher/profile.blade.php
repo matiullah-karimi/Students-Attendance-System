@@ -81,7 +81,7 @@
 
                             <tr>
                                 <td colspan="2" class="text-center">
-                                    <button class="text-center fa fa-edit btn btn-success" data-toggle="modal" data-target="#updateProfile">Edit</button>
+                                    <button class="text-center fa fa-edit btn btn-success" data-toggle="modal" data-target="#updateProfile">@lang('language.edit')</button>
                                 </td>
                             </tr>
 

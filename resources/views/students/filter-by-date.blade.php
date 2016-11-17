@@ -1,18 +1,18 @@
 <div class="box pre-scrollable">
-    <div class="box-header"><b>class:</b> {{$class->name}}</br>
-        <b>Subject:</b> {{$subject->name}}</div>
+    <div class="box-header"><b>@lang('language.class'):</b> {{$class->name}}</br>
+        <b>@lang('language.subject'):</b> {{$subject->name}}</div>
     <div class="box-body">
         <table class="table table-bordered table-responsive marginTop" bgcolor="white">
 
             <thead>
-            <th>Name</th>
-            <th>F/Name</th>
+            <th>@lang('language.name')</th>
+            <th>@lang('language.f-name')</th>
             @foreach($atts as $att)
                 <th>{{$att->date}}</th>
             @endforeach
-            <th>Total Present</th>
-            <th>Total Absent</th>
-            <th>Status</th>
+            <th>@lang('language.total-p')</th>
+            <th>@lang('language.total-a')</th>
+            <th>@lang('language.Status')</th>
             </thead>
 
             <tbody>
@@ -45,10 +45,10 @@
                     <td><?php echo $present?></td>
                     <td><?php echo $absent?></td>
                     <td><?php if ($absent > (($present+$absent)/4)){
-                            echo 'Fail';
+                            echo trans('language.fail');
                         }
                         else{
-                            echo 'Pass';
+                            echo trans('language.pass');
                         }
                         ?></td>
                 </tr>

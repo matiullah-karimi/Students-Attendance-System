@@ -54,5 +54,13 @@ return [
     'admin' => 'Admin',
     'dashboard' => 'Dashboard',
     'attendance' => 'Attendance',
-    'filter-date' => 'Filter by date'
+    'filter-date' => 'Filter by date',
+    'delete-message' => 'Are you sure this?',
+    'delete-header' => 'Delete Permanently',
+    'ok' => 'Ok',
+    'language' => 'Language',
+    'profile' => 'Profile',
+    'sign-out' => 'Sign out',
+    'pass' => 'Pass',
+    'fail' => 'Fail'
 ];

@@ -1,21 +1,20 @@
 <div class="box">
     <div class="box-header">
-<h2>Students Attendance</h2>
+<h2><th>@lang('language.students')</th>
+    @lang('language.attendance')</h2>
     </div>
     <div class="box-body">
         <table class="table table-condensed marginTop" id="students_table">
             <thead>
-            <th>ID</th>
-            <th>Name</th>
-            <th>F/Name</th>
-            <th>Status</th>
+            <th>@lang('language.name')</th>
+            <th>@lang('language.f-name')</th>
+            <th>@lang('language.Status')</th>
             </thead>
 
             <tbody>
 
             @foreach($students as $student)
                 <tr>
-                    <td>{{$student->id}}</td>
                     <td>{{$student->name}}</td>
                     <td>{{$student->fname}}</td>
                     <input type="hidden" name="status[{{$student->id}}]" value="off" class="form-control">

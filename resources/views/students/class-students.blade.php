@@ -7,8 +7,6 @@
 
     <tbody>
 
-
-
     @foreach($students as $student)
         <tr>
 

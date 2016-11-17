@@ -1,7 +1,7 @@
 <div class="box pre-scrollable noMargin">
     <div class="box-header">
-        <b>class:</b> {{$class->name}}</br>
-        <b>Subject:</b> {{$subject->name}}</div>
+        <b>@lang('language.class'):</b> {{$class->name}}</br>
+        <b>@lang('language.subject'):</b> {{$subject->name}}</div>
         {{--<button data-toggle="modal" data-target="#updateProfile">Edit</button>--}}
     <div class="box-body">
 
@@ -17,7 +17,7 @@
 
             <th>@lang('language.total-p')</th>
             <th>@lang('language.total-a')</th>
-            <th>@lang('language.status')</th>
+            <th>@lang('language.Status')</th>
 
             </thead>
 
@@ -51,10 +51,10 @@
                     <td><?php echo $present?></td>
                     <td><?php echo $absent?></td>
                     <td><?php if ($absent > (($present+$absent)/4)){
-                            echo 'Fail';
+                            echo trans('language.fail');
                             }
                             else{
-                                echo 'Pass';
+                                echo trans('language.pass');
                             }
                          ?></td>
 
@@ -97,8 +97,8 @@
 
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-                    <button type="submit" class="btn btn-danger confirm" id="confirm">Update</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">@lang('language.cancel')</button>
+                    <button type="submit" class="btn btn-danger confirm" id="confirm">@lang('language.update')</button>
                 </div>
             </form>
 

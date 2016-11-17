@@ -1,5 +1,5 @@
 <select name="subject" onchange="filterSubjects()" class="form-control">
-    <option>Select Subject</option>
+    <option>@lang('language.select-subject')</option>
     <?php $subjects = $class->subjects?>
     @foreach($subjects as $subject)
         @if($teacher->role == 0)

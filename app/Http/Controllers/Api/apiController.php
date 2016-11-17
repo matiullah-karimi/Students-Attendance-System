@@ -101,7 +101,17 @@ class apiController extends Controller
             return response()->json(['message' => 'You can not take attendance more than 4 times in a day'], 200);
         }
 
+    }
 
+    public function TeacherClasses(){
+        $classes = Auth::user()->classes()->get();
+
+        return response()->json(compact('classes'));
+    }
+    public function TeacherSubjects(){
+        $subjects = Auth::user()->subjects()->get();
+
+        return response()->json(compact('subjects'));
     }
 
 }

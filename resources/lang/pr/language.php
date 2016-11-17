@@ -53,5 +53,13 @@ return [
     'admin' => 'مدیر',
     'dashboard' => 'داشبورد',
     'attendance' => 'حاضری',
-    'filter-date' => 'فیلتر به اساس تاریخ'
+    'filter-date' => 'فیلتر به اساس تاریخ',
+    'delete-message' => 'آیا مطمئن هستید؟',
+    'delete-header' => 'حذف دائمی',
+    'ok' => 'بلی',
+    'language' => 'زبان',
+    'profile' => 'پروفایل',
+    'sign-out' => 'خارج',
+    'pass' => 'کامیاب',
+    'fail' => 'محروم'
 ];
