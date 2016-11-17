@@ -31,7 +31,7 @@
                             <div class="row">
                                 <div class="col-md-4">
                                     <select name="class" class="form-control">
-                                        <option>Select Class</option>
+                                        <option>@lang('language.select-class')</option>
                                         @foreach($teacher->classes as $class)
                                             <option value="{{$class->id}}" id="classes" >{{$class->name}}</option>
 

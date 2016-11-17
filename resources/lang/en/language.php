@@ -62,5 +62,6 @@ return [
     'profile' => 'Profile',
     'sign-out' => 'Sign out',
     'pass' => 'Pass',
-    'fail' => 'Fail'
+    'fail' => 'Fail',
+    'students-att' => 'Students Attendance'
 ];

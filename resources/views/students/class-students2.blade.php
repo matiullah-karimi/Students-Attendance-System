@@ -1,7 +1,6 @@
 <div class="box">
     <div class="box-header">
-<h2><th>@lang('language.students')</th>
-    @lang('language.attendance')</h2>
+<h2><th>@lang('language.students-att')</th></h2>
     </div>
     <div class="box-body">
         <table class="table table-condensed marginTop" id="students_table">
@@ -23,7 +22,7 @@
             @endforeach
             </tbody>
         </table>
-        <input type="submit" value="Submit" class="btn btn-success">
+        <input type="submit" value="{{trans('language.submit')}}" class="btn btn-success">
     </div>
 </div>
 
