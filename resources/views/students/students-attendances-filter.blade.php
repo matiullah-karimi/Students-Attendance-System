@@ -1,4 +1,4 @@
-<div class="box pre-scrollable noMargin">
+<div class="box noMargin pre-scrollable hide-scroll">
     <div class="box-header">
         <b>@lang('language.class'):</b> {{$class->name}}</br>
         <b>@lang('language.subject'):</b> {{$subject->name}}</div>

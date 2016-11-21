@@ -19,7 +19,15 @@
 }
 
 @media print{
-   .noprint{display:none !important;}
+   .noprint{
+       display:none !important;
+   }
+
+}
+@media print {
+    .hide-scroll{
+        overflow: hidden;
+    }
 }
 .hide{
     visibility: hidden;
@@ -52,4 +60,7 @@ td{
 }
 #lang-a{
     color: #ffffff;
+}
+.box-scroll{
+    overflow: scroll;
 }
