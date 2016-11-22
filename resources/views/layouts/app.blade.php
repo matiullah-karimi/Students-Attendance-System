@@ -18,6 +18,11 @@
     <style>
         body {
             font-family: 'Lato';
+            background: url(/images/cs1.jpg) no-repeat center center fixed;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
         }
 
         .fa-btn {
@@ -28,7 +33,7 @@
     @yield('page_specific_styles')
 </head>
 <body id="app-layout">
-    <nav class="navbar navbar-default navbar-static-top">
+    <nav class="navbar navbar-default navbar-static-top bg-success">
         <div class="container">
             <div class="navbar-header">
 

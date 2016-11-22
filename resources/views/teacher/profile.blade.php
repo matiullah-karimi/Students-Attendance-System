@@ -63,18 +63,18 @@
                             <tr>
                                 <td>@lang('language.classes')</td>
                                 <td>@foreach(Auth::user()->classes as $class)
-                                    <ul>
-                                        <li> {{$class->name}}</li>
-                                    </ul>
+
+                                        <p> {{$class->name}}</p>
+
                                     @endforeach
                                 </td>
                             </tr>
                             <tr>
                                 <td>@lang('language.subjects')</td>
                                 <td>@foreach(Auth::user()->subjects as $subject)
-                                        <ul>
-                                            <li> {{$subject->name}}</li>
-                                        </ul>
+
+                                            <p> {{$subject->name}}</p>
+
                                     @endforeach
                                 </td>
                             </tr>

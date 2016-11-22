@@ -11,7 +11,7 @@
             <th>@lang('language.f-name')</th>
             @foreach($atts as $att)
                 <th>
-                        {{date('Y-m-d', strtotime($att->date))}}
+                    {{$att->date}}
                 </th>
             @endforeach
 

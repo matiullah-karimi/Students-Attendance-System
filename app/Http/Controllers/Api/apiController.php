@@ -52,10 +52,14 @@ class apiController extends Controller
 
     public function teacherClassSubjects($id)
     {
+        $class = Clas::find($id);
+        $teacherSubjects = collect();
+        $subjects = $class->subjects;
+        foreach($subjects as $subject){
+            $teacherSubjects = $teacherSubjects->merge(Auth::user()->subjects()->where('subject_id', $subject->id)->get());
+        }
 
-        $teacherSubjects = DB::select('select `subjects`.*, `class_subject`.`class_id` as `pivot_class_id`, `class_subject`.`subject_id` as `pivot_subject_id`, `class_subject`.`created_at` as `pivot_created_at`, `class_subject`.`updated_at` as `pivot_updated_at` from `subjects` inner join `class_subject` on `subjects`.`id` = `class_subject`.`subject_id` where `class_subject`.`class_id` ='.$id);
-
-        return response()->json(compact("teacherSubjects"));
+            return response()->json(compact("teacherSubjects"));
     }
 
     public function classStudents ($id)

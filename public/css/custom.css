@@ -22,6 +22,14 @@
    .noprint{
        display:none !important;
    }
+    #students-atts{
+        width:1300px;
+        left:0px;
+    }
+    #print-con{
+        width:1300px;
+        left:0px;
+    }
 
 }
 @media print {
@@ -63,4 +71,8 @@ td{
 }
 .box-scroll{
     overflow: scroll;
+}
+.login-div{
+    opacity: 0.8;
+    margin:auto;
 }
