@@ -192,6 +192,15 @@
             </span>
                     </a>
                 </li>
+
+                <li>
+                    <a href="{{url('/analytics')}}">
+                        <i class="fa fa-eye"></i> <span>{{trans('language.analytics')}}</span>
+            <span class="pull-right-container">
+
+            </span>
+                    </a>
+                </li>
                 </ul>
 
         </section>
@@ -250,6 +259,16 @@
 <script src="{{asset('dist/js/app.min.js')}}"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="{{asset('dist/js/demo.js')}}"></script>
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-89668545-1', 'auto');
+    ga('send', 'pageview');
+
+</script>
 @yield('page_specific_scripts')
 </body>
 </html>

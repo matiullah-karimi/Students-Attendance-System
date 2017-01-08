@@ -12,8 +12,8 @@ use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Auth;
-use Maatwebsite\Excel\Facades\Excel;
-
+use Spatie\Analytics\AnalyticsFacade;
+use Spatie\Analytics\Period;
 
 class HomeController extends Controller
 {
@@ -108,4 +108,6 @@ class HomeController extends Controller
         $classes = Clas::all();
        return view('showChart', compact('classes'));
     }
+
+
 }

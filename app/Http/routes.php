@@ -8,6 +8,7 @@ Route::get('language/{locale}', function ($locale) {
 
     Route::group(['middleware' => \App\Http\Middleware\SetLocale::class], function(){
         Route::get('/home', 'HomeController@index');
+        Route::get('', 'HomeController@index');
 
         Route::resource('classes', 'classController');
         Route::get('classes/destroy/{id}', 'classController@destroy');
@@ -45,6 +46,14 @@ Route::get('language/{locale}', function ($locale) {
 
 
         Route::get('showChart', 'HomeController@showChart');
+        Route::get('/analytics', 'ChartController@analytics');
+        Route::get('/mostVisitedPages', 'ChartController@analyticsChart');
+        Route::get('/browsers', 'ChartController@browsers');
+        Route::get('/referers', 'ChartController@referers');
+        Route::get('/pageViews', 'ChartController@pageViews');
+        Route::get('/sessionByCountry', 'ChartController@sessionByCountry');
+        Route::get('/operatingSystems', 'ChartController@operatingSystems');
+        Route::get('/mobileTraffics', 'ChartController@mobileTraffics');
 
     });
 });
@@ -64,4 +73,5 @@ Route::group(['namespace' => 'Api', 'prefix' => 'api'], function()
     });
 
     Route::post('teacher/login', 'apiController@authenticate');
+    Route::get('teacher/products', 'apiController@products');
 });

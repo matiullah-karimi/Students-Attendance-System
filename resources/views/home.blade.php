@@ -9,19 +9,6 @@
     <div class="row">
         <div class="col-md-10 col-md-offset-1">
 
-            <?php
-            $data = array();
-            $counter = 0;
-            foreach($classes as $class)
-            {
-                $data[$counter]['country'] = $class->name;
-                $data[$counter]['visits'] = $class->students->count();
-                $data[$counter]['color'] = "#FF0F00";
-                $counter++;
-            }
-            header( 'Content-Type: application/json' );
-
-            ?>
 
                 @if(Auth::user()->role != 1)
 

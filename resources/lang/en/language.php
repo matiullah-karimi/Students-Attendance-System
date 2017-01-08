@@ -63,5 +63,6 @@ return [
     'sign-out' => 'Sign out',
     'pass' => 'Pass',
     'fail' => 'Fail',
-    'students-att' => 'Students Attendance'
+    'students-att' => 'Students Attendance',
+    'analytics' => 'Analytics'
 ];

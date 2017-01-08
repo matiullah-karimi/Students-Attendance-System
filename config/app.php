@@ -158,6 +158,7 @@ return [
 
         'Maatwebsite\Excel\ExcelServiceProvider',
         'Tymon\JWTAuth\Providers\JWTAuthServiceProvider',
+         Spatie\Analytics\AnalyticsServiceProvider::class,
 
     ],
 
@@ -207,6 +208,7 @@ return [
 
         'Excel' => 'Maatwebsite\Excel\Facades\Excel',
         'JWTAuth' => 'Tymon\JWTAuth\Facades\JWTAuth',
+        'Analytics' => Spatie\Analytics\AnalyticsFacade::class,
 
     ],
 
